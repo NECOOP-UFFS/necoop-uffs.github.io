@@ -13,7 +13,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--papel);color:var(--tinta);font-family:'Work Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
-.wrap{max-width:900px;margin:0 auto;padding:0 28px;}
+.wrap{max-width:800px;margin:0 auto;padding:0 28px;}
 h1,h2{font-family:'Fraunces',serif;font-weight:600;color:var(--verde-mata);}
 a{color:var(--terra);text-decoration:none;border-bottom:1px solid rgba(139,66,38,0.35);}
 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--terra);font-weight:500;}
@@ -25,13 +25,20 @@ header{border-bottom:1px solid var(--linha);position:sticky;top:0;background:var
 nav a{font-size:0.86rem;font-weight:500;color:var(--tinta);border-bottom:none;}
 .page-head{padding:56px 0 20px;border-bottom:1px solid var(--linha);}
 .page-head h1{font-size:clamp(1.7rem,4vw,2.4rem);}
-.section{padding:40px 0;}
-.section h2{font-size:1.2rem;margin-bottom:20px;}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 32px;}
-.membro{padding:14px 0;border-bottom:1px solid var(--linha);}
-.membro b{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;}
-.membro span{display:block;font-size:0.88rem;color:#584f40;margin-top:2px;}
-@media (max-width:700px){.grid{grid-template-columns:1fr;}}
+.section{padding:36px 0;}
+.section h2{font-size:1.1rem;margin-bottom:18px;}
+.membro{padding:16px 0;border-bottom:1px solid var(--linha);}
+.membro b{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;display:block;}
+.membro span{display:block;font-size:0.9rem;color:#584f40;margin-top:3px;}
+.tag-coord{
+  display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.68rem;
+  color:var(--terra);border:1px solid var(--terra);border-radius:3px;
+  padding:2px 8px;margin-left:8px;vertical-align:middle;text-transform:uppercase;
+}
+.callout{background:var(--papel-alt);border-left:3px solid var(--terra);padding:20px 22px;margin-top:8px;border-radius:2px;font-size:0.96rem;}
+.callout p{margin-bottom:12px;}
+.callout p:last-child{margin-bottom:0;}
+.btn{display:inline-block;padding:11px 20px;border-radius:3px;font-weight:600;font-size:0.9rem;background:var(--verde-mata);color:var(--papel)!important;border:none!important;margin-top:6px;}
 footer{background:var(--verde-mata);color:var(--papel);padding:40px 0;}
 footer .wrap{max-width:1120px;}
 footer p{font-size:0.86rem;color:#c9d4c5;}
@@ -59,43 +66,31 @@ footer p{font-size:0.86rem;color:#c9d4c5;}
   </div>
 
   <div class="section">
-    <h2>Equipe atual</h2>
-    <div class="grid">
-      <div class="membro"><b>Pedro Ivan Christoffoli</b><span>Coordenador do NECOOP; Doutor em Desenvolvimento Sustentável</span></div>
-      <div class="membro"><b>Anelize Campos</b><span>Mestre em Agroecologia e Desenvolvimento Rural Sustentável</span></div>
-      <div class="membro"><b>Jonathan Barbosa</b><span>Discente de Ciências Econômicas, ênfase em cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Rosecleia Burei</b><span>Mestranda em Agroecologia e Desenvolvimento Rural Sustentável</span></div>
-      <div class="membro"><b>Ana Hammel</b><span>Professora na Universidade Federal da Fronteira Sul</span></div>
+    <h2>Coordenação</h2>
+    <div class="membro">
+      <b>Pedro Ivan Christoffoli<span class="tag-coord">Coordenador</span></b>
+      <span>Doutor em Desenvolvimento Sustentável — Universidade Federal da Fronteira Sul (UFFS)</span>
     </div>
   </div>
 
   <div class="section">
-    <h2>Antigos membros</h2>
-    <div class="grid">
-      <div class="membro"><b>Felipe Passos</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Cristina Sturmer</b><span>Mestra em Agroecologia e Desenvolvimento Sustentável</span></div>
-      <div class="membro"><b>Thiago da Costa</b><span>Administrador; Professor da UFFS; Doutorando na UDESC</span></div>
-      <div class="membro"><b>Leonardo Machado</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Matheus Andrade</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Débora Coelho</b><span>Bacharel em Ciências Econômicas</span></div>
-      <div class="membro"><b>Josilaine Bini</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Juan Felipe</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Luter Santos</b><span>Agronomia — ênfase em Agroecologia</span></div>
-      <div class="membro"><b>David Brandão</b><span>Licenciatura em Educação no Campo</span></div>
-      <div class="membro"><b>Andrea Rodrigues</b><span>Bacharel em Ciências Econômicas</span></div>
-      <div class="membro"><b>Heitor Flores</b><span>Agronomia — ênfase em Agroecologia</span></div>
-      <div class="membro"><b>Marcio Oliveira</b><span>Bacharel em Ciências Econômicas</span></div>
-      <div class="membro"><b>Raoni Fernandes Azeredo</b><span>Contador, Mestre em Geografia (UNESP)</span></div>
-      <div class="membro"><b>Micheli Becker</b><span>Engenharia de Aquicultura</span></div>
-      <div class="membro"><b>Giovana Paludo</b><span>Bacharel em Nutrição</span></div>
-      <div class="membro"><b>Débora Românio</b><span>Acadêmica de Economia</span></div>
-      <div class="membro"><b>Renata Rocha Gadelha</b><span>Filósofa, Mestra em Agroecologia e Desenvolvimento Rural Sustentável</span></div>
-      <div class="membro"><b>Marisela García Hernandez</b><span>Doutoranda pela Unicamp</span></div>
-      <div class="membro"><b>Isabelle Zacari</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Andrea Pires</b><span>Agronomia — ênfase em Agroecologia</span></div>
-      <div class="membro"><b>Tais Ebert</b><span>Agronomia — ênfase em Agroecologia</span></div>
-      <div class="membro"><b>Micaelli Lobo</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
-      <div class="membro"><b>Junior Vieira</b><span>Ciências Econômicas — cooperativismo e desenvolvimento</span></div>
+    <h2>Colaboradores</h2>
+    <div class="membro">
+      <b>Profa. Josimeire Ap. Leandrini</b>
+      <span>Universidade Federal da Fronteira Sul (UFFS)</span>
+    </div>
+    <div class="membro">
+      <b>Prof. Raoni Fernandes Azerêdo</b>
+      <span>Universidade Federal do Sul e Sudeste do Pará (UFESSPA)</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Equipe em recomposição</h2>
+    <div class="callout">
+      <p>A equipe do NECOOP está em fase de recomposição, com novos colaboradores a definir. Há duas formas de participar: como <b>bolsista ou servidor da UFFS</b>, ou como <b>pesquisador externo</b> colaborador.</p>
+      <p>Quem tiver interesse em se voluntariar pode escrever para a coordenação:</p>
+      <a class="btn" href="mailto:pedroivanc@uffs.edu.br?subject=Interesse%20em%20colaborar%20com%20o%20NECOOP">pedroivanc@uffs.edu.br</a>
     </div>
   </div>
 </div>
