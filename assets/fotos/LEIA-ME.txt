@@ -1,0 +1,36 @@
+COMO ADICIONAR FOTOS AO SITE DO NECOOP
+========================================
+
+Esta pasta alimenta duas coisas no site:
+1. O carrossel de fotos da página inicial
+2. As imagens que você for anexando em posts novos
+
+CARROSSEL DA HOME
+------------------
+O carrossel procura automaticamente por arquivos com estes nomes exatos,
+nesta pasta (assets/fotos/):
+
+  foto-1.jpg   foto-2.jpg   foto-3.jpg   foto-4.jpg
+  foto-5.jpg   foto-6.jpg   foto-7.jpg   foto-8.jpg
+
+- Pode usar .jpg ou .png (o site tenta os dois formatos automaticamente).
+- Não precisa usar todos os 8 espaços — o carrossel mostra só as fotos que
+  encontrar. Se só existir foto-1.jpg e foto-2.jpg, o carrossel mostra
+  essas duas.
+- Para trocar uma foto, é só subir um novo arquivo com o mesmo nome
+  (ex: substituir foto-3.jpg) — o GitHub avisa que vai sobrescrever.
+- Tamanho recomendado: pelo menos 1200px de largura, formato paisagem
+  (mais largo que alto) para não cortar o rosto das pessoas nas bordas.
+
+LEGENDAS (opcional)
+--------------------
+Se quiser legenda embaixo de uma foto do carrossel, me avise qual foto
+é (ex: "a foto-3 é da oficina de jogos cooperativos em tal escola,
+em tal data") e eu adiciono o texto no código.
+
+FOTOS PARA POSTS
+------------------
+Pode subir qualquer foto aqui com o nome que quiser (ex:
+oficina-laranjeiras-2026.jpg) e me avisar o nome do arquivo quando eu
+for montar um post novo — assim eu já uso a foto certa direto do
+repositório, sem precisar reenviar pelo chat.
