@@ -327,9 +327,6 @@ footer li a:hover{color:var(--milho);}
 
 <script>
 (function(){
-  var MAX_FOTOS = 8;
-  var EXTS = ['jpg','png'];
-  var legendas = {};
   var track = document.getElementById('carrosselTrack');
   var dotsWrap = document.getElementById('carrosselDots');
   var prevBtn = document.getElementById('carrosselPrev');
@@ -337,47 +334,31 @@ footer li a:hover{color:var(--milho);}
   var slides = [];
   var current = 0;
   var timer = null;
+  var API_URL = 'https://api.github.com/repos/NECOOP-UFFS/necoop-uffs.github.io/contents/assets/fotos';
+  var IMG_RE = /\.(jpe?g|png|avif|webp|gif)$/i;
 
-  function tryLoad(n){
-    return new Promise(function(resolve){
-      var i = 0;
-      function attempt(){
-        if(i >= EXTS.length){ resolve(null); return; }
-        var src = 'assets/fotos/foto-' + n + '.' + EXTS[i];
-        var img = new Image();
-        img.onload = function(){ resolve(src); };
-        img.onerror = function(){ i++; attempt(); };
-        img.src = src;
-      }
-      attempt();
-    });
-  }
-
-  Promise.all(Array.from({length:MAX_FOTOS}, function(_,idx){ return tryLoad(idx+1); }))
-    .then(function(results){
-      var found = results.filter(Boolean);
-      if(found.length === 0) return;
+  fetch(API_URL)
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .catch(function(){ return []; })
+    .then(function(files){
+      if(!Array.isArray(files)) return;
+      var fotos = files.filter(function(f){ return f.type === 'file' && IMG_RE.test(f.name); });
+      if(fotos.length === 0) return;
 
       track.innerHTML = '';
-      found.forEach(function(src, idx){
+      fotos.forEach(function(f, idx){
         var slide = document.createElement('div');
         slide.className = 'carrossel-slide';
         var img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Atuação do NECOOP — foto ' + (idx+1);
+        img.src = f.download_url;
+        img.alt = 'Atuação do NECOOP — ' + f.name.replace(/\.[^.]+$/, '');
         slide.appendChild(img);
-        if(legendas[src]){
-          var leg = document.createElement('div');
-          leg.className = 'carrossel-legenda';
-          leg.textContent = legendas[src];
-          slide.appendChild(leg);
-        }
         track.appendChild(slide);
       });
-      slides = found;
+      slides = fotos;
 
       if(slides.length > 1){
-        found.forEach(function(_, idx){
+        fotos.forEach(function(_, idx){
           var dot = document.createElement('button');
           dot.className = 'carrossel-dot' + (idx===0 ? ' ativo' : '');
           dot.addEventListener('click', function(){ goTo(idx); resetTimer(); });
