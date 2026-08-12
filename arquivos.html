@@ -26,7 +26,25 @@ nav a{font-size:0.86rem;font-weight:500;color:var(--tinta);border-bottom:none;}
 .page-head{padding:56px 0 20px;border-bottom:1px solid var(--linha);}
 .page-head h1{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:14px;}
 .page-head p{font-size:1.02rem;color:#40392e;}
-.section{padding:36px 0;}
+.section{padding:36px 0;border-bottom:1px solid var(--linha);}
+.section:last-of-type{border-bottom:none;}
+.section h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--verde-mata);margin-bottom:6px;}
+.section .desc{font-size:0.92rem;color:#584f40;margin-bottom:16px;max-width:560px;}
+.pasta-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
+.pasta-links a{
+  font-family:'JetBrains Mono',monospace;font-size:0.74rem;border:1px solid var(--terra);
+  padding:6px 12px;border-radius:3px;
+}
+.doc-card{
+  background:var(--papel-alt);border-radius:6px;padding:16px 18px;margin-bottom:10px;
+  border:1px dashed var(--linha);
+}
+.doc-card b{font-family:'Fraunces',serif;font-weight:600;font-size:0.98rem;color:var(--tinta);display:block;margin-bottom:4px;}
+.doc-card p{font-size:0.88rem;color:#584f40;margin-bottom:0;}
+.doc-vazio{
+  font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--verde-broto);
+  padding:14px 0;
+}
 .item{
   display:flex;justify-content:space-between;align-items:center;
   padding:16px 0;border-bottom:1px solid var(--linha);
@@ -56,19 +74,51 @@ footer p{font-size:0.86rem;color:#c9d4c5;}
   <div class="page-head">
     <span class="eyebrow">Biblioteca virtual</span>
     <h1>Arquivos</h1>
-    <p>Artigos e textos sobre cooperativismo, economia solidária e temas relacionados, organizados por tema. Clique em qualquer item abaixo para acessar a pasta correspondente no Google Drive.</p>
+    <p>Artigos, estudos e materiais técnicos produzidos ou reunidos pelo NECOOP, organizados por tema.</p>
+    <div class="item" style="margin-top:20px;border-top:1px solid var(--linha);"><b>Ver acervo completo no Drive</b><a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGa21pYXNLbXZJRTg?usp=sharing" target="_blank" rel="noopener">Acessar</a></div>
   </div>
 
   <div class="section">
-    <div class="item"><b>Todos os arquivos</b><a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGa21pYXNLbXZJRTg?usp=sharing" target="_blank" rel="noopener">Acessar</a></div>
-    <div class="item"><b>Estudos de caso</b><a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGS1AwbDMtV3ZsbzQ?usp=sharing" target="_blank" rel="noopener">Acessar</a></div>
-    <div class="item"><b>Relatos de práticas</b><a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGM3VsNXpRNEUta00?usp=sharing" target="_blank" rel="noopener">Acessar</a></div>
-    <div class="item"><b>Gestão de empreendimento da ECOSOL</b><a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGcVdLcC1oZ2NYTVE?usp=sharing" target="_blank" rel="noopener">Acessar</a></div>
-    <div class="item"><b>Relações humanas na autogestão</b><a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGMjYzc1Z2cmlLR2c?usp=sharing" target="_blank" rel="noopener">Acessar</a></div>
-    <div class="item"><b>Teoria da autogestão</b><a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGV0dRWWYyMF9taDA?usp=sharing" target="_blank" rel="noopener">Acessar</a></div>
-    <div class="item"><b>Publicações NECOOP</b><a href="https://drive.google.com/drive/u/1/folders/0BxVhwXR30r9vWklWODdVM3NsMDA" target="_blank" rel="noopener">Acessar</a></div>
-    <div class="callout">Esses links apontam para as mesmas pastas do Google Drive já usadas no site anterior — nada do acervo foi movido ou perdido na migração.</div>
+    <h2>Estudos de caso e relatos de prática</h2>
+    <p class="desc">Análises de experiências concretas de cooperativismo e economia solidária acompanhadas pelo NECOOP.</p>
+    <div class="pasta-links">
+      <a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGS1AwbDMtV3ZsbzQ?usp=sharing" target="_blank" rel="noopener">Pasta: Estudos de caso →</a>
+      <a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGM3VsNXpRNEUta00?usp=sharing" target="_blank" rel="noopener">Pasta: Relatos de prática →</a>
+    </div>
+    <div class="doc-vazio">Os documentos individuais desta categoria serão listados aqui em breve.</div>
   </div>
+
+  <div class="section">
+    <h2>Formação em autogestão e economia solidária</h2>
+    <p class="desc">Materiais de apoio sobre gestão de empreendimentos, relações humanas e teoria da autogestão.</p>
+    <div class="pasta-links">
+      <a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGcVdLcC1oZ2NYTVE?usp=sharing" target="_blank" rel="noopener">Pasta: Gestão ECOSOL →</a>
+      <a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGMjYzc1Z2cmlLR2c?usp=sharing" target="_blank" rel="noopener">Pasta: Relações Humanas →</a>
+      <a href="https://drive.google.com/drive/folders/0B5hxbKcUpnUGV0dRWWYyMF9taDA?usp=sharing" target="_blank" rel="noopener">Pasta: Teoria da Autogestão →</a>
+    </div>
+    <div class="doc-vazio">Os documentos individuais desta categoria serão listados aqui em breve.</div>
+  </div>
+
+  <div class="section">
+    <h2>Publicações do NECOOP</h2>
+    <p class="desc">Materiais produzidos diretamente pelo Núcleo: artigos, guias e cartilhas.</p>
+    <div class="pasta-links">
+      <a href="https://drive.google.com/drive/u/1/folders/0BxVhwXR30r9vWklWODdVM3NsMDA" target="_blank" rel="noopener">Pasta completa →</a>
+    </div>
+    <div class="doc-card">
+      <b>Guia da Cooperação na Escola</b>
+      <p>Material de apoio para educadores trabalharem cooperação em sala de aula.</p>
+      <a href="https://drive.google.com/file/d/1JmrEQqsaXMks9rAxaCguxTZ1S_5uSs0G/view?usp=sharing" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:0.74rem;">Baixar epub →</a>
+    </div>
+    <div class="doc-card">
+      <b>Guia Metodológico de Agroecologia</b>
+      <p>Orientações metodológicas para o trabalho com agroecologia em contextos de ensino e formação.</p>
+      <a href="https://drive.google.com/file/d/13DLMLBbfPci605hQhZdMMbFM_pigv4MA/view?usp=drive_link" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:0.74rem;">Baixar epub →</a>
+    </div>
+    <div class="doc-vazio">Mais publicações serão listadas aqui em breve.</div>
+  </div>
+
+  <div class="callout" style="margin:8px 0 40px;">Os links de pasta apontam para o acervo já existente no Google Drive — nada foi movido ou perdido nesta reorganização. Assim que os títulos dos documentos forem enviados, cada um ganha seu próprio card aqui, com resumo.</div>
 </div>
 
 <footer><div class="wrap"><p>NECOOP/UFFS — Núcleo de Estudos em Cooperação, ligado à Universidade Federal da Fronteira Sul — Campus Laranjeiras do Sul, PR.</p></div></footer>
