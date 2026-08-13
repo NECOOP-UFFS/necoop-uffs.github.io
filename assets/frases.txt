@@ -1,0 +1,61 @@
+# Frases do carrossel "Frases para refletir e agir" (página inicial do NECOOP)
+#
+# COMO ADICIONAR UMA NOVA FRASE
+# 1. Copie o bloco de exemplo abaixo (as 4 linhas com FRASE / TRADUCAO / AUTOR / FONTE).
+# 2. Cole ao final deste arquivo, deixando uma linha em branco antes dele.
+# 3. Preencha os campos. TRADUCAO e REF são opcionais; FRASE, AUTOR e FONTE são obrigatórios.
+# 4. Não apague nem renomeie os rótulos (FRASE:, TRADUCAO:, AUTOR:, FONTE:, REF:) — o site lê exatamente esses nomes.
+# 5. Sempre confira a frase numa fonte confiável antes de adicionar — cite a fonte com o máximo
+#    de precisão possível (livro, obra, número do pensamento/página, site oficial etc.).
+#
+# Bloco de exemplo (apague os parênteses e escreva o conteúdo real):
+# FRASE: (texto original da frase, na língua original)
+# TRADUCAO: (tradução para o português — pode ser omitida se a frase já estiver em português)
+# AUTOR: (nome do autor ou autora)
+# FONTE: (obra e localização exata — ex.: nome do livro, número do capítulo/pensamento)
+# REF: (link para a fonte, se houver — não aparece no site, é só para conferência futura)
+#
+# Para REMOVER uma frase do carrossel, apague o bloco inteiro (as 4-5 linhas) e a linha em branco extra.
+# Cada bloco é separado dos outros por uma linha em branco.
+
+FRASE: Saber es poder y para democratizar el poder hay que socializar previamente el saber.
+TRADUCAO: Saber é poder, e para democratizar o poder é preciso antes socializar o saber.
+AUTOR: José María Arizmendiarrieta
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº193
+REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
+
+FRASE: Saber es poder. Hay que socializar el saber para democratizar el poder.
+TRADUCAO: Saber é poder. É preciso socializar o saber para democratizar o poder.
+AUTOR: José María Arizmendiarrieta
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº184–185
+REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
+
+FRASE: Es necesaria la redistribución de la riqueza, pero más apremiante la socialización de la cultura, para poder pensar en la verdadera humanización del trabajo.
+TRADUCAO: É necessária a redistribuição da riqueza, mas mais urgente é a socialização da cultura, para pensarmos a verdadeira humanização do trabalho.
+AUTOR: José María Arizmendiarrieta
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº204
+REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
+
+FRASE: La enseñanza es un elemento indispensable para la verdadera emancipación del obrero.
+TRADUCAO: O ensino é um elemento indispensável para a verdadeira emancipação do trabalhador.
+AUTOR: José María Arizmendiarrieta
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº201
+REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
+
+FRASE: El hombre o el pueblo que sea consciente de su dignidad, o no quiera estar a expensas ajenas o extrañas, tiene que promover ante todo el cultivo y el desarrollo de su propia inteligencia y voluntad.
+TRADUCAO: O homem ou o povo consciente de sua dignidade, que não queira depender de terceiros, precisa antes de tudo promover o cultivo e o desenvolvimento de sua própria inteligência e vontade.
+AUTOR: José María Arizmendiarrieta
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº202
+REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
+
+FRASE: La emancipación de una clase o de un pueblo tiene que comenzar por la capacitación más o menos masiva de sus componentes.
+TRADUCAO: A emancipação de uma classe ou de um povo tem que começar pela capacitação, mais ou menos massiva, de seus integrantes.
+AUTOR: José María Arizmendiarrieta
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº194
+REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
+
+FRASE: La cultura como privilegio de una clase es una de las mayores rémoras de los pueblos en orden a su progreso.
+TRADUCAO: A cultura como privilégio de uma classe é um dos maiores entraves ao progresso dos povos.
+AUTOR: José María Arizmendiarrieta
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº199
+REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
