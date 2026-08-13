@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jogo da Cooperação — NECOOP/UFFS</title>
+<meta name="description" content="Conheça o Jogo Cooperação, jogo educacional do NECOOP/UFFS voltado ao movimento cooperativo, usado em formações sobre cooperativismo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://necoop-uffs.github.io/jogo-da-cooperacao.html">
+<meta property="og:title" content="Jogo da Cooperação — NECOOP/UFFS">
+<meta property="og:description" content="Conheça o Jogo Cooperação, jogo educacional do NECOOP/UFFS voltado ao movimento cooperativo, usado em formações sobre cooperativismo.">
+<meta property="og:image" content="https://necoop-uffs.github.io/assets/necoop-simbolo.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jogo da Cooperação — NECOOP/UFFS">
+<meta name="twitter:description" content="Conheça o Jogo Cooperação, jogo educacional do NECOOP/UFFS voltado ao movimento cooperativo, usado em formações sobre cooperativismo.">
+<meta name="twitter:image" content="https://necoop-uffs.github.io/assets/necoop-simbolo.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --verde-mata:#1E3D2F; --verde-broto:#6B8E4E; --terra:#B2622D;
+  --milho:#E0A94B; --papel:#F5EAD8; --papel-alt:#EDE0C7; --tinta:#24211C;
+  --linha:rgba(36,33,28,0.14);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--papel);color:var(--tinta);font-family:'Figtree',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;color:var(--verde-mata);}
+a{color:var(--terra);text-decoration:none;border-bottom:1px solid rgba(139,66,38,0.35);}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--terra);font-weight:500;}
+header{border-bottom:1px solid var(--linha);position:sticky;top:0;background:var(--papel);z-index:20;}
+.header-inner{max-width:1120px;margin:0 auto;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;flex-direction:column;gap:6px;font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--verde-mata);line-height:1;}
+.logo-mark{width:48px;height:48px;object-fit:contain;}
+.logo small{display:block;font-family:'Figtree',sans-serif;font-weight:500;font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--verde-broto);margin-top:2px;}
+nav a{font-size:0.86rem;font-weight:500;color:var(--tinta);border-bottom:none;}
+.page-head{padding:56px 0 24px;border-bottom:1px solid var(--linha);}
+.page-head h1{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:16px;}
+.page-head p{font-size:1.02rem;margin-bottom:14px;}
+.section{padding:30px 0;border-bottom:1px solid var(--linha);}
+.section h2{font-size:1.15rem;margin-bottom:12px;}
+.section p{margin-bottom:12px;font-size:0.98rem;}
+.section ul{margin:0 0 14px 20px;}
+.section li{margin-bottom:8px;font-size:0.96rem;}
+.step-num{font-family:'JetBrains Mono',monospace;color:var(--verde-broto);font-size:0.8rem;}
+.callout{background:var(--papel-alt);border-left:3px solid var(--terra);padding:16px 20px;margin:16px 0;border-radius:2px;font-size:0.92rem;}
+footer{background:var(--verde-mata);color:var(--papel);padding:40px 0;}
+footer .wrap{max-width:1120px;}
+footer p{font-size:0.86rem;color:#c9d4c5;}
+</style>
+<script data-goatcounter="https://necoop.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html" style="border:none;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none;">
+      <img class="logo-mark" src="assets/necoop-simbolo.png" alt="Símbolo NECOOP">
+      <div>NECOOP<small>Núcleo de Estudos em Cooperação · UFFS</small></div>
+      </a>
+    </div>
+    <nav><a href="jogos-cooperativos.html">← Jogos Cooperativos</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">Atuação · Cooperativismo</span>
+    <h1>O Jogo Cooperação</h1>
+    <p>COOPERAÇÃO é um jogo educacional criativo projetado para o crescente movimento cooperativo. Os jogos provaram ser recursos únicos que moldam a forma como as pessoas aprendem, trabalham e interagem umas com as outras, mas este é mais do que apenas um jogo de tabuleiro. É uma forma inovadora de aprender sobre cooperativas e praticar a cooperação.</p>
+    <p>No jogo, os jogadores devem colaborar para fundar e administrar um negócio democrático. Para sobreviver como indivíduos e lutar pelo sucesso de sua cooperativa, fazem escolhas difíceis diante de grandes e pequenos desafios, testando suas habilidades de trabalho em equipe. COOPERAÇÃO é um emocionante jogo de habilidade e solidariedade, onde todos ganham ou todos perdem.</p>
+  </div>
+
+  <div class="section">
+    <span class="step-num">01</span>
+    <h2>Montando o tabuleiro</h2>
+    <ul>
+      <li>Coloque os cartões "Recurso", "Mundo", "Desafio" e "Trabalho" virados para baixo no local indicado no tabuleiro.</li>
+      <li>Coloque todos os pontos no Banco de Pontos.</li>
+      <li>Dê a cada jogador uma "Ficha de Controle", para ajudar a manter o controle das suas informações.</li>
+      <li>A peça que representa a cooperativa deve ser colocada no espaço "Início do Ano", com um cronômetro ou ampulheta para marcar o tempo.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <span class="step-num">02</span>
+    <h2>Personagens</h2>
+    <ul>
+      <li>Cada jogador pega, aleatoriamente, um Cartão "Personagem", com informações como o que ele faz, sua idade, quantos filhos tem, pontos de partida e custo de vida.</li>
+      <li>Os Pontos de Partida representam o dinheiro inicial de cada participante; o Custo de Vida representa as despesas pessoais; a quantidade de filhos contribui para uma melhor simulação, já que personagens com filhos arcam com despesas extras.</li>
+      <li>Cada jogador recolhe seus Pontos de Partida conforme o Cartão "Personagem".</li>
+      <li>Recomenda-se que todos compartilhem a história do seu personagem, para dinamizar.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <span class="step-num">03</span>
+    <h2>Ficha de controle</h2>
+    <p>Ao receber a Ficha de Controle, cada jogador preenche as informações conforme o Cartão "Personagem". Durante o jogo, o valor da remuneração de cada jogador pode mudar, assim como o custo de vida ou o número de filhos — cada alteração deve ser anotada nos espaços correspondentes.</p>
+  </div>
+
+  <div class="section">
+    <span class="step-num">04</span>
+    <h2>Fundando a primeira cooperativa</h2>
+    <ul>
+      <li>Para iniciar o jogo, os participantes fundam a primeira cooperativa: cada jogador contribui com 20 pontos para os "Pontos da Cooperativa".</li>
+      <li>Recomenda-se decidir o ramo da cooperativa — isso ajuda nas decisões durante o jogo.</li>
+      <li>Todos os jogadores podem expressar interesses.</li>
+      <li>Jogue o dado e comece o jogo!</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <span class="step-num">05</span>
+    <h2>Iniciando</h2>
+    <p>Todos os participantes se movem pelo tabuleiro com a mesma peça, que representa a cooperativa, revezando-se para rolar o dado e pegar cartões. Um critério possível para decidir quem começa é a idade do personagem (o mais novo começa), ou lançar o dado e quem tirar o maior número inicia.</p>
+  </div>
+
+  <div class="section">
+    <span class="step-num">06</span>
+    <h2>Cartões e espaços</h2>
+    <p>Existem quatro tipos de cartões que você pega ao cair em determinados espaços:</p>
+    <ul>
+      <li><b>Cartões Mundo</b> — afetam positiva ou negativamente jogadores ou a cooperativa, com quatro tópicos: Pontos, Social, Doenças e Danos. Alguns possuem uma história ao final, que pode ser compartilhada.</li>
+      <li><b>Cartões Recurso</b> — recursos que a cooperativa pode optar por comprar, como "Novos Equipamentos" ou "Plano de Saúde", pagando ao Banco de Pontos com o dinheiro da Cooperativa.</li>
+      <li><b>Cartões Trabalho</b> — simulam como a cooperativa ganha ou perde pontos, através de um pequeno jogo de mímica ou desenho (30 segundos, sem falar, escrever letras ou fazer barulhos). Acertando dentro do tempo, a cooperativa ganha os pontos do cartão; não acertando, perde.</li>
+      <li><b>Cartões Desafio</b> — grandes obstáculos ou oportunidades; os jogadores discutem a melhor decisão e quais propostas aceitar.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <span class="step-num">07</span>
+    <h2>Banco de Pontos</h2>
+    <p>Os pontos são a moeda da cooperativa. Honorários, gastos e ganhos da cooperativa entram ou saem do Banco de Pontos.</p>
+  </div>
+
+  <div class="section">
+    <span class="step-num">08</span>
+    <h2>Pontos da Cooperativa</h2>
+    <p>Pertencem igualmente a todos os membros, então todos precisam concordar em como devem ser usados.</p>
+  </div>
+
+  <div class="section">
+    <span class="step-num">09</span>
+    <h2>Dia do Pagamento</h2>
+    <ul>
+      <li>Independente do número tirado no dado, o espaço "Dia do Pagamento" é parada obrigatória.</li>
+      <li>Nesse espaço, a cooperativa paga o "salário" dos jogadores, e os jogadores pagam seu custo de vida ao Banco de Pontos.</li>
+      <li>Cada jogador começa com remuneração mensal de 12 pontos, que a cooperativa pode alterar a qualquer momento. É a cooperativa que paga os salários — nunca o Banco de Pontos.</li>
+    </ul>
+    <div class="callout">
+      Os únicos momentos em que jogadores podem dar ou receber pontos entre si ou da cooperativa são nos espaços "Dia do Pagamento" e "Final do Ano". A cooperativa e os jogadores não podem ficar sem pontos (falência encerra o jogo); o máximo que se pode receber por vez é 12 pontos; jogadores podem ficar sem receber, se for decisão da cooperativa.
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="step-num">10</span>
+    <h2>Final do Ano</h2>
+    <p>Uma volta completa no tabuleiro corresponde a um ano — mas isso não encerra o jogo. Independente do número tirado, a cooperativa deve parar no espaço "Final do Ano", quando os jogadores pagam novamente seus custos de vida.</p>
+  </div>
+
+  <div class="section">
+    <span class="step-num">11</span>
+    <h2>Como perder</h2>
+    <p>Se a cooperativa ou algum jogador falir, todos perdem e o jogo acaba. Os participantes devem se auxiliar e trabalhar em grupo para que isso não aconteça.</p>
+  </div>
+
+  <div class="section" style="border-bottom:none;">
+    <span class="step-num">12</span>
+    <h2>Como vencer</h2>
+    <p>Para ganhar o jogo, os participantes devem iniciar uma segunda cooperativa. Alguns Cartões "Desafio" permitem tentar isso — os cartões "Inicie uma Nova Cooperativa" variam entre maior investimento com menor risco, ou menor investimento com mais risco. Completando o desafio, o objetivo do jogo é alcançado.</p>
+    <p>Os participantes também escolhem o que a nova cooperativa faz. Fundar a segunda cooperativa não encerra o jogo — dá para continuar descobrindo novos desafios e situações.</p>
+  </div>
+</div>
+
+<footer><div class="wrap"><p>NECOOP/UFFS — Núcleo de Estudos em Cooperação, ligado à Universidade Federal da Fronteira Sul — Campus Laranjeiras do Sul, PR.</p></div></footer>
+</body>
+</html>
