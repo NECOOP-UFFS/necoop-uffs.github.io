@@ -18,10 +18,10 @@
 # Para REMOVER uma frase do carrossel, apague o bloco inteiro (as 4-5 linhas) e a linha em branco extra.
 # Cada bloco é separado dos outros por uma linha em branco.
 
-FRASE: Saber es poder y para democratizar el poder hay que socializar previamente el saber.
-TRADUCAO: Saber é poder, e para democratizar o poder é preciso antes socializar o saber.
+FRASE: L o social  debe acreditarse por lo económico no menos que lo económico debe autentificar-se por lo social..
+TRADUCAO: O aspecto social deve ser validado pelo econômico, não menos do que o econômico deva ser validado pelo social. Uma cooperativa não se valida sómente pelo econômico, nem tampouco apenas pelo social 
 AUTOR: José María Arizmendiarrieta
-FONTE: Pensamientos de Don José María Arizmendiarrieta, nº193
+FONTE: Pensamientos de Don José María Arizmendiarrieta, nº 08
 REF: https://arizmendiarrieta.org/wp-content/uploads/2017/09/pensamientos.pdf
 
 FRASE: Saber es poder. Hay que socializar el saber para democratizar el poder.
