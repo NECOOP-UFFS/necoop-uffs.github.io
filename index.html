@@ -296,6 +296,7 @@ footer li a:hover{color:var(--milho);}
         <li><a href="equipe.html">Equipe</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="arquivos.html">Arquivos</a></li>
+        <li><a href="publicacoes.html">Publicações</a></li>
         <li><a href="#contato" class="nav-cta">Contato</a></li>
       </ul>
     </nav>
@@ -645,6 +646,7 @@ footer li a:hover{color:var(--milho);}
         <li><b><a href="metodologia.html" style="border:none;color:inherit;">Metodologia</a></b> Como o núcleo planeja e conduz o trabalho de campo</li>
         <li><b><a href="projetos.html" style="border:none;color:inherit;">Projetos em execução</a></b> Iniciativas ativas no momento</li>
         <li><b><a href="arquivos.html" style="border:none;color:inherit;">Arquivos</a></b> Materiais, cartilhas e publicações para consulta</li>
+        <li><b><a href="publicacoes.html" style="border:none;color:inherit;">Publicações dos membros</a></b> Artigos e trabalhos de pesquisadores do núcleo, por tema</li>
       </ul>
     </div>
   </div>
@@ -678,6 +680,7 @@ footer li a:hover{color:var(--milho);}
           <li><a href="equipe.html">Equipe</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="arquivos.html">Arquivos</a></li>
+          <li><a href="publicacoes.html">Publicações</a></li>
           <li><a href="links-uteis.html">Links úteis</a></li>
         </ul>
       </div>
@@ -692,9 +695,35 @@ footer li a:hover{color:var(--milho);}
     <div class="footer-bottom">
       <span>NECOOP/UFFS</span>
       <span>© 2026 · UFFS Laranjeiras do Sul</span>
+      <span>Visitantes desde ago/2026: <span id="contador-visitas">—</span></span>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var el = document.getElementById('contador-visitas');
+  if(!el) return;
+  var chave = 'necoop-uffs-github-io-visitas-2026';
+  function formatar(n){ return Number(n).toLocaleString('pt-BR'); }
+  fetch('https://countapi.mileshilliard.com/api/v1/hit/' + chave)
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(dados){
+      if(dados && typeof dados.value !== 'undefined'){ el.textContent = formatar(dados.value); return; }
+      throw new Error('sem dados');
+    })
+    .catch(function(){
+      // serviço alternativo, caso o principal esteja indisponível
+      fetch('https://abacus.jasoncameron.dev/hit/necoop-uffs.github.io/visitas-2026')
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(dados){
+          if(dados && typeof dados.value !== 'undefined'){ el.textContent = formatar(dados.value); return; }
+          throw new Error('sem dados');
+        })
+        .catch(function(){ el.textContent = 'indisponível'; });
+    });
+})();
+</script>
 
 </body>
 </html>
