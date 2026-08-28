@@ -138,63 +138,71 @@ footer p{font-size:0.86rem;color:#c9d4c5;}
   flex-direction:column !important;
 }
 
-/* Área dos logos */
+
+/* ============================================================
+   LOGOS — DIMENSIONAMENTO VISUAL
+   ============================================================ */
+
 .card-logo{
-  width:100% !important;
-  height:105px !important;
-  max-width:100% !important;
-  object-fit:contain !important;
-  object-position:center !important;
-  display:block !important;
-  margin:0 0 18px !important;
+  width:100%;
+  height:125px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+  overflow:hidden;
 }
 
-/* Nome da instituição */
-.card b{
-  font-size:1.08rem !important;
-  line-height:1.25 !important;
-  margin-bottom:7px !important;
+.card-logo img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:90%;
+  max-height:115px;
+  object-fit:contain;
+  object-position:center;
 }
 
-/* Descrição */
-.card span{
-  font-size:0.88rem !important;
-  line-height:1.55 !important;
+/* Logos horizontais */
+.card-logo img[src*="uffs"]{
+  max-width:240px;
+  max-height:105px;
 }
 
-/* Link */
-.card .arrow{
-  margin-top:auto !important;
-  padding-top:14px !important;
-  font-size:0.74rem !important;
+.card-logo img[src*="cnpq"]{
+  max-width:250px;
+  max-height:100px;
 }
 
-/* Logo do Governo Federal/SENAES */
-.card img[src*="govbr"]{
-  height:105px !important;
+.card-logo img[src*="fundacao-araucaria"]{
+  max-width:260px;
+  max-height:115px;
 }
 
-/* Logos que precisam de maior presença visual */
-.card img[src*="uffs"],
-.card img[src*="fundacao-araucaria"],
-.card img[src*="ceagro"],
-.card img[src*="proext"]{
-  height:115px !important;
+.card-logo img[src*="mundukide"]{
+  max-width:250px;
+  max-height:95px;
 }
 
-/* Mundukide é horizontal */
-.card img[src*="mundukide"]{
-  height:95px !important;
+.card-logo img[src*="conscientia"]{
+  max-width:245px;
+  max-height:90px;
 }
 
-/* Conscientia é horizontal */
-.card img[src*="conscientia"]{
-  height:95px !important;
+/* Logos quadrados */
+.card-logo.quadrado img{
+  max-width:125px;
+  max-height:115px;
 }
 
-/* CNPq */
-.card img[src*="cnpq"]{
-  height:105px !important;
+.card-logo img[src*="proext"]{
+  max-width:150px;
+  max-height:115px;
+}
+
+.card-logo.gov img{
+  max-width:180px;
+  max-height:75px;
 }
 
 /* Responsividade */
