@@ -1,2 +1,6 @@
 *.bak-*
 NECOOP_V2_congelado/
+
+# Python
+__pycache__/
+*.pyc
