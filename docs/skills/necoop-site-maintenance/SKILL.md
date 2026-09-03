@@ -225,13 +225,24 @@ A skill deve prever uma ferramenta local de geração de prancha, inicialmente d
 
 `gerar_prancha_necoop.py`
 
-Entrada padrão:
+Entrada:
+- a ferramenta deve receber explicitamente o diretório de candidatas a processar;
+- não deve varrer automaticamente todo o acervo quando usada para uma seleção específica.
 
-`/home/pedro/Cloud-Drive/Necoop web/acervo_visual/`
+Estrutura operacional do fluxo de pranchas:
 
-Saída preferencial:
+`/home/pedro/Cloud-Drive/Necoop web/acervo_visual/_processamento_pranchas/`
 
-`pranchas/` dentro do fluxo de trabalho do acervo, sem modificar originais.
+com:
+
+```text
+candidatos/
+pranchas/
+inventarios/
+selecoes/
+```
+
+As saídas de trabalho devem permanecer nessa camada operacional, sem modificar os originais do acervo.
 
 A ferramenta deve:
 
@@ -610,12 +621,12 @@ Para novos materiais, identificar apenas:
 
 Preservar conteúdo e links existentes quando estiverem corretos.
 
-# Module 18 — Planned local tools
+# Module 18 — Local tools
 
 A skill deve evoluir acompanhada de ferramentas locais específicas:
 
 ```text
-tools/
+tools/necoop/
 ├── gerar_prancha_necoop.py
 ├── inventariar_acervo.py
 ├── verificar_imagens.py
@@ -673,10 +684,13 @@ Uma rodada de atualização visual pode produzir:
 
 ```text
 acervo_visual/
-├── candidatas/
-├── pranchas/
-├── selecionadas/
-└── historico/
+└── _processamento_pranchas/
+    ├── candidatos/
+    ├── pranchas/
+    ├── inventarios/
+    └── selecoes/
+
+A camada `_processamento_pranchas/` é operacional e não substitui a organização histórica do acervo. Os originais permanecem em seus locais de origem.
 
 Git/
 └── assets/img/necoop/
@@ -697,4 +711,4 @@ Além disso:
 
 # Version note
 
-**V2.0** incorpora o aprendizado da primeira rodada de atualização visual: separação rigorosa entre estado publicado e desenvolvimento; definição explícita das duas áreas físicas do projeto; seleção fotográfica sob autoridade do usuário; geração automatizada de pranchas; matriz editorial; preservação de originais; controle de transformações; gates técnicos/editoriais/Git; sincronização remota segura; verificação pública; registro e rollback.
+**V2.1** consolida o protocolo operacional e incorpora o aprendizado da primeira rodada de atualização visual: separação rigorosa entre estado publicado e desenvolvimento; definição explícita das duas áreas físicas do projeto; seleção fotográfica sob autoridade do usuário; geração automatizada de pranchas; matriz editorial; preservação de originais; controle de transformações; gates técnicos/editoriais/Git; sincronização remota segura; verificação pública; registro e rollback.
