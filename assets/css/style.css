@@ -435,3 +435,510 @@ img {
     font-size: 1.5rem;
   }
 }
+
+/* =========================================================
+   HOME — COMPOSIÇÃO VISUAL V2
+   ========================================================= */
+
+.home-hero {
+  padding: 72px 0 76px;
+  background: var(--papel);
+  border-bottom: 1px solid var(--linha);
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.home-hero-copy h1 {
+  max-width: 720px;
+  color: var(--verde-mata);
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.7rem, 5vw, 4.35rem);
+  line-height: 1.04;
+}
+
+.home-hero-copy h1 em {
+  color: var(--terra);
+  font-style: italic;
+}
+
+.home-hero-copy > p:not(.eyebrow) {
+  max-width: 650px;
+  margin-top: 24px;
+  color: #40392e;
+  font-size: 1.08rem;
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 12px 18px;
+  background: var(--verde-mata);
+  color: var(--papel);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--verde-mata);
+}
+
+.home-button:hover {
+  background: var(--terra);
+  border-color: var(--terra);
+}
+
+.home-button.secondary {
+  background: transparent;
+  color: var(--verde-mata);
+}
+
+.home-button.secondary:hover {
+  color: var(--papel);
+}
+
+.home-hero-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--papel-alt);
+}
+
+.home-hero-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.home-image-caption {
+  padding: 10px 14px;
+  background: var(--verde-mata);
+  color: var(--papel);
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   HOME — INTRODUÇÃO
+   ========================================================= */
+
+.home-intro {
+  padding: 76px 0;
+  background: var(--papel-alt);
+}
+
+.home-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: 60px;
+  align-items: center;
+}
+
+.home-intro-image {
+  overflow: hidden;
+}
+
+.home-intro-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.home-intro-copy h2 {
+  max-width: 650px;
+  color: var(--verde-mata);
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.12;
+}
+
+.home-intro-copy p:not(.eyebrow) {
+  max-width: 650px;
+  margin-top: 18px;
+  color: #584f40;
+}
+
+.home-intro-copy a {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--terra);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-intro-copy a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   HOME — CABEÇALHOS DE SEÇÃO
+   ========================================================= */
+
+.home-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .75fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.home-section-eyebrow {
+  margin-bottom: 8px;
+  color: var(--terra);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.home-section-head h2 {
+  color: var(--verde-mata);
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.home-section-head > p {
+  color: #584f40;
+}
+
+
+/* =========================================================
+   HOME — ÁREAS DE ATUAÇÃO
+   ========================================================= */
+
+.home-areas {
+  background: var(--papel);
+}
+
+.home-area-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-area-card {
+  overflow: hidden;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.home-area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(36,33,28,.09);
+}
+
+.home-area-card > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.home-area-body {
+  padding: 20px;
+}
+
+.home-area-body h3 {
+  margin-bottom: 9px;
+  color: var(--verde-mata);
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.home-area-body p {
+  color: #584f40;
+  font-size: .91rem;
+}
+
+.home-area-body a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--terra);
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   HOME — PROJETOS E TERRITÓRIOS
+   ========================================================= */
+
+.home-projects {
+  background: var(--papel-alt);
+}
+
+.home-project-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, .75fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.home-project-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
+  background: var(--papel);
+  border: 1px solid var(--linha);
+}
+
+.home-project-card > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.home-project-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+
+.label {
+  margin-bottom: 10px;
+  color: var(--verde-broto);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .66rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.home-project-body h3,
+.home-side-card h3 {
+  margin-bottom: 12px;
+  color: var(--verde-mata);
+  font-family: 'Fraunces', serif;
+  font-size: 1.55rem;
+  line-height: 1.15;
+}
+
+.home-project-body p:not(.label),
+.home-side-card p:not(.label) {
+  color: #584f40;
+}
+
+.home-project-body a,
+.home-side-card a {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--terra);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-project-body a:hover,
+.home-side-card a:hover {
+  text-decoration: underline;
+}
+
+.home-side-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  background: var(--verde-mata);
+  color: var(--papel);
+}
+
+.home-side-card h3 {
+  color: var(--papel);
+}
+
+.home-side-card p:not(.label) {
+  color: #dce5d8;
+}
+
+.home-side-card .label {
+  color: var(--milho);
+}
+
+.home-side-card a {
+  color: var(--milho);
+}
+
+
+/* =========================================================
+   HOME — ACERVO
+   ========================================================= */
+
+.home-knowledge {
+  background: var(--papel);
+}
+
+.home-knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-knowledge-card {
+  padding: 28px;
+  background: var(--papel-alt);
+  border: 1px solid var(--linha);
+}
+
+.home-knowledge-card .number {
+  margin-bottom: 22px;
+  color: var(--terra);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+}
+
+.home-knowledge-card h3 {
+  margin-bottom: 10px;
+  color: var(--verde-mata);
+  font-family: 'Fraunces', serif;
+  font-size: 1.45rem;
+}
+
+.home-knowledge-card p {
+  color: #584f40;
+}
+
+.home-knowledge-card a {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--terra);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   HOME — ENCERRAMENTO
+   ========================================================= */
+
+.home-final {
+  padding: 58px 0;
+  background: var(--verde-mata);
+  color: var(--papel);
+}
+
+.home-final-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.home-final h2 {
+  max-width: 680px;
+  margin-bottom: 10px;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.12;
+}
+
+.home-final p {
+  max-width: 680px;
+  color: #dce5d8;
+}
+
+.home-final-link {
+  flex: 0 0 auto;
+  padding: 12px 18px;
+  border: 1px solid var(--milho);
+  color: var(--milho);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-final-link:hover {
+  background: var(--milho);
+  color: var(--verde-mata);
+}
+
+
+/* =========================================================
+   HOME — RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  .home-hero-grid,
+  .home-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .home-area-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-project-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-section-head {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+
+  .home-hero {
+    padding: 54px 0 58px;
+  }
+
+  .home-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-button {
+    text-align: center;
+  }
+
+  .home-intro {
+    padding: 58px 0;
+  }
+
+  .home-area-grid,
+  .home-knowledge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-project-card > img {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .home-final-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-final-link {
+    width: 100%;
+    text-align: center;
+  }
+}

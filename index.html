@@ -6,39 +6,464 @@
 
   <title>NECOOP/UFFS — Núcleo de Estudos em Cooperação</title>
 
-  <meta
-    name="description"
-    content="NECOOP/UFFS — Núcleo de Estudos em Cooperação da Universidade Federal da Fronteira Sul. Pesquisa, extensão e formação em cooperação, cooperativismo, agroecologia e reforma agrária."
-  >
+  <meta name="description" content="NECOOP/UFFS — Núcleo de Estudos em Cooperação da Universidade Federal da Fronteira Sul. Pesquisa, extensão e formação em cooperação, cooperativismo, agroecologia e reforma agrária.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://necoop-uffs.github.io/">
   <meta property="og:title" content="NECOOP/UFFS — Núcleo de Estudos em Cooperação">
-  <meta
-    property="og:description"
-    content="Pesquisa, extensão e formação em cooperação, cooperativismo, agroecologia e reforma agrária."
-  >
-  <meta
-    property="og:image"
-    content="https://necoop-uffs.github.io/assets/necoop-simbolo.png"
-  >
+  <meta property="og:description" content="Pesquisa, extensão e formação em cooperação, cooperativismo, agroecologia e reforma agrária.">
+  <meta property="og:image" content="https://necoop-uffs.github.io/assets/img/necoop/rodada1/home-01.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* =========================================================
+       HOME — COMPOSIÇÃO VISUAL V1
+       ========================================================= */
+
+    .home-hero {
+      padding: 64px 0 72px;
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .home-hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .home-hero-copy .eyebrow {
+      margin-bottom: 18px;
+      color: var(--terra);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .home-hero-copy h1 {
+      color: var(--verde-mata);
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 5vw, 4.25rem);
+      line-height: 1.04;
+    }
+
+    .home-hero-copy h1 em {
+      color: var(--terra);
+      font-style: italic;
+    }
+
+    .home-hero-copy > p {
+      max-width: 620px;
+      margin-top: 24px;
+      color: #40392e;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .home-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .home-button {
+      display: inline-block;
+      padding: 11px 17px;
+      border: 1px solid var(--verde-mata);
+      background: var(--verde-mata);
+      color: var(--papel);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home-button.secondary {
+      background: transparent;
+      color: var(--verde-mata);
+    }
+
+    .home-button:hover {
+      background: var(--terra);
+      border-color: var(--terra);
+      color: var(--papel);
+    }
+
+    .home-hero-image {
+      position: relative;
+    }
+
+    .home-hero-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .home-image-caption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 82%;
+      padding: 10px 14px;
+      background: rgba(30,61,47,.92);
+      color: var(--papel);
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .home-intro {
+      padding: 72px 0;
+    }
+
+    .home-intro-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .home-intro-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .home-intro-copy .eyebrow,
+    .home-section-eyebrow {
+      color: var(--terra);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .home-intro-copy h2 {
+      margin-top: 8px;
+      color: var(--verde-mata);
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      line-height: 1.12;
+    }
+
+    .home-intro-copy p {
+      margin-top: 18px;
+      color: #584f40;
+      font-size: 1rem;
+    }
+
+    .home-intro-copy a {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--terra);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home-areas {
+      background: var(--papel-alt);
+    }
+
+    .home-section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .home-section-head h2 {
+      margin-top: 5px;
+      color: var(--verde-mata);
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+    }
+
+    .home-section-head > p {
+      max-width: 500px;
+      color: #584f40;
+    }
+
+    .home-area-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .home-area-card {
+      background: var(--papel);
+      border: 1px solid var(--linha);
+    }
+
+    .home-area-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .home-area-body {
+      padding: 20px;
+    }
+
+    .home-area-body h3 {
+      color: var(--verde-mata);
+      font-size: 1.08rem;
+      line-height: 1.2;
+    }
+
+    .home-area-body p {
+      margin-top: 9px;
+      color: #584f40;
+      font-size: .9rem;
+    }
+
+    .home-area-body a {
+      display: inline-block;
+      margin-top: 13px;
+      color: var(--terra);
+      font-size: .86rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home-projects {
+      padding-bottom: 72px;
+    }
+
+    .home-project-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+    }
+
+    .home-project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--papel-alt);
+      border: 1px solid var(--linha);
+    }
+
+    .home-project-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .home-project-body {
+      padding: 30px;
+      align-self: center;
+    }
+
+    .home-project-body .label {
+      color: var(--terra);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .home-project-body h3 {
+      margin-top: 8px;
+      color: var(--verde-mata);
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem;
+      line-height: 1.15;
+    }
+
+    .home-project-body p {
+      margin-top: 13px;
+      color: #584f40;
+    }
+
+    .home-project-body a {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--terra);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home-side-card {
+      padding: 30px;
+      background: var(--verde-mata);
+      color: var(--papel);
+    }
+
+    .home-side-card .label {
+      color: var(--milho);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .home-side-card h3 {
+      margin-top: 8px;
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem;
+      line-height: 1.15;
+    }
+
+    .home-side-card p {
+      margin-top: 14px;
+      color: #dce4d9;
+    }
+
+    .home-side-card a {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--milho);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home-knowledge {
+      background: var(--papel-alt);
+    }
+
+    .home-knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .home-knowledge-card {
+      padding: 26px;
+      background: var(--papel);
+      border: 1px solid var(--linha);
+    }
+
+    .home-knowledge-card .number {
+      color: var(--terra);
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem;
+    }
+
+    .home-knowledge-card h3 {
+      margin-top: 4px;
+      color: var(--verde-mata);
+      font-size: 1.18rem;
+    }
+
+    .home-knowledge-card p {
+      margin-top: 9px;
+      color: #584f40;
+    }
+
+    .home-knowledge-card a {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--terra);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home-final {
+      padding: 68px 0 76px;
+    }
+
+    .home-final-inner {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .home-final h2 {
+      color: var(--verde-mata);
+      font-family: 'Fraunces', serif;
+      font-size: 2.15rem;
+    }
+
+    .home-final p {
+      max-width: 650px;
+      margin-top: 12px;
+      color: #584f40;
+    }
+
+    .home-final-link {
+      justify-self: end;
+      padding: 14px 20px;
+      background: var(--terra);
+      color: var(--papel);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 960px) {
+      .home-hero-grid,
+      .home-intro-grid,
+      .home-project-grid,
+      .home-final-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .home-area-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .home-final-link {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .home-hero {
+        padding: 48px 0 54px;
+      }
+
+      .home-hero-grid {
+        gap: 32px;
+      }
+
+      .home-section-head {
+        display: block;
+      }
+
+      .home-section-head > p {
+        margin-top: 12px;
+      }
+
+      .home-area-grid,
+      .home-knowledge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .home-project-card img {
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+      }
+
+      .home-project-body,
+      .home-side-card {
+        padding: 24px;
+      }
+
+      .home-image-caption {
+        position: static;
+        max-width: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header class="site-header">
   <div class="container site-header-inner">
-
     <a class="site-logo" href="index.html">
       <img src="assets/necoop-simbolo.png" alt="Símbolo do NECOOP">
       <span class="site-logo-text">NECOOP/UFFS</span>
@@ -54,194 +479,250 @@
         <li><a href="noticias.html">Notícias</a></li>
       </ul>
     </nav>
-
   </div>
 </header>
 
 <main>
 
-  <!-- =======================================================
-       APRESENTAÇÃO
-       ======================================================= -->
+  <section class="home-hero">
+    <div class="container home-hero-grid">
 
-  <section class="hero">
-    <div class="container">
+      <div class="home-hero-copy">
+        <p class="eyebrow">Núcleo de Estudos em Cooperação · UFFS</p>
 
-      <p class="eyebrow">Núcleo de Estudos em Cooperação · UFFS</p>
+        <h1>
+          Conhecimento para
+          <em>cooperar, organizar e transformar.</em>
+        </h1>
 
-      <h1>
-        Pesquisa, extensão e formação
-        <em>em cooperação.</em>
-      </h1>
+        <p>
+          O NECOOP desenvolve pesquisa, extensão e formação em torno
+          da cooperação, do cooperativismo, da agroecologia, da reforma
+          agrária e das formas coletivas de organização econômica e social.
+        </p>
 
-      <p>
-        O NECOOP desenvolve estudos, projetos, processos educativos e
-        experiências relacionadas à cooperação, ao cooperativismo,
-        à agroecologia e à reforma agrária.
-      </p>
+        <div class="home-hero-actions">
+          <a class="home-button" href="atuacao.html">Conheça nossa atuação →</a>
+          <a class="home-button secondary" href="producoes.html">Explore as produções →</a>
+        </div>
+      </div>
 
-    </div>
-  </section>
-
-
-  <!-- =======================================================
-       ATUAÇÃO
-       ======================================================= -->
-
-  <section class="section">
-    <div class="container">
-
-      <h2 class="section-title">Áreas de atuação</h2>
-
-      <div class="grid grid-3">
-
-        <article class="card">
-          <h3>Cooperativismo e Economia Solidária</h3>
-
-          <p>
-            Estudos e experiências relacionados ao cooperativismo,
-            às organizações econômicas coletivas, à economia solidária
-            e à autogestão.
-          </p>
-
-          <a href="atuacao.html">Conheça a atuação →</a>
-        </article>
-
-
-        <article class="card">
-          <h3>Agroecologia</h3>
-
-          <p>
-            Pesquisa, extensão e formação relacionadas à agroecologia
-            e aos processos de transição dos sistemas de produção.
-          </p>
-
-          <a href="atuacao.html">Conheça a atuação →</a>
-        </article>
-
-
-        <article class="card">
-          <h3>Reforma Agrária</h3>
-
-          <p>
-            Estudos e experiências relacionados aos assentamentos,
-            às organizações sociais e aos processos econômicos
-            e produtivos da Reforma Agrária.
-          </p>
-
-          <a href="atuacao.html">Conheça a atuação →</a>
-        </article>
-
-
-        <article class="card">
-          <h3>Educação e Formação</h3>
-
-          <p>
-            Processos educativos, metodologias, materiais pedagógicos
-            e experiências de formação.
-          </p>
-
-          <a href="atuacao.html">Conheça a atuação →</a>
-        </article>
-
+      <div class="home-hero-image">
+        <img src="assets/img/necoop/rodada1/home-01.jpg" alt="Atividade de formação do NECOOP com participantes reunidos em torno de experiências agroecológicas">
+        <div class="home-image-caption">
+          Formação e intercâmbio de experiências em agroecologia.
+        </div>
       </div>
 
     </div>
   </section>
 
 
-  <!-- =======================================================
-       PRODUÇÕES
-       ======================================================= -->
+  <section class="home-intro">
+    <div class="container home-intro-grid">
 
-  <section class="section" style="background: var(--papel-alt);">
+      <div class="home-intro-image">
+        <img src="assets/img/necoop/rodada1/home-02.jpg" alt="Participantes de atividade do NECOOP apresentando produtos agroecológicos">
+      </div>
+
+      <div class="home-intro-copy">
+        <p class="eyebrow">Pesquisa · Extensão · Formação</p>
+        <h2>Um núcleo que articula conhecimento e experiência.</h2>
+        <p>
+          O NECOOP atua na interface entre universidade, organizações
+          sociais, cooperativas, escolas e comunidades. Seu trabalho parte
+          de situações concretas e busca produzir conhecimento útil para
+          compreender e transformar realidades.
+        </p>
+        <p>
+          A pesquisa acadêmica, os processos educativos e a atuação
+          territorial são entendidos como dimensões articuladas de uma
+          mesma prática de construção coletiva.
+        </p>
+        <a href="atuacao.html">Conheça o modo de atuação do NECOOP →</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section home-areas">
     <div class="container">
 
-      <h2 class="section-title">Produções do NECOOP</h2>
+      <div class="home-section-head">
+        <div>
+          <p class="home-section-eyebrow">Onde atuamos</p>
+          <h2>Áreas de atuação</h2>
+        </div>
+        <p>
+          Diferentes temas convergem no trabalho do Núcleo a partir
+          da cooperação, da organização coletiva e da transformação social.
+        </p>
+      </div>
 
-      <div class="grid grid-3">
+      <div class="home-area-grid">
 
-        <article class="card">
-          <h3>Publicações</h3>
-          <p>
-            Artigos, livros, capítulos, trabalhos acadêmicos
-            e outras produções científicas e técnicas.
-          </p>
-          <a href="producoes/publicacoes.html">Acessar publicações →</a>
+        <article class="home-area-card">
+          <img src="assets/img/necoop/rodada1/cooperativismo-01.jpg" alt="Atividade relacionada ao cooperativismo">
+          <div class="home-area-body">
+            <h3>Cooperativismo e Economia Solidária</h3>
+            <p>
+              Cooperativismo, organizações econômicas coletivas,
+              economia solidária e autogestão.
+            </p>
+            <a href="atuacao.html">Conhecer →</a>
+          </div>
         </article>
 
-        <article class="card">
+        <article class="home-area-card">
+          <img src="assets/img/necoop/rodada1/agroecologia-03.jpg" alt="Atividade relacionada à agroecologia">
+          <div class="home-area-body">
+            <h3>Agroecologia</h3>
+            <p>
+              Pesquisa, extensão e formação voltadas aos processos
+              de transição agroecológica.
+            </p>
+            <a href="atuacao.html">Conhecer →</a>
+          </div>
+        </article>
+
+        <article class="home-area-card">
+          <img src="assets/img/necoop/rodada1/home-03.jpg" alt="Grupo em atividade de campo e intercâmbio territorial">
+          <div class="home-area-body">
+            <h3>Reforma Agrária</h3>
+            <p>
+              Assentamentos, organizações sociais e processos
+              econômicos e produtivos da Reforma Agrária.
+            </p>
+            <a href="atuacao.html">Conhecer →</a>
+          </div>
+        </article>
+
+        <article class="home-area-card">
+          <img src="assets/img/necoop/rodada1/formacao-03.jpg" alt="Atividade de planejamento coletivo">
+          <div class="home-area-body">
+            <h3>Educação e Formação</h3>
+            <p>
+              Processos educativos, metodologias, materiais pedagógicos
+              e experiências de formação.
+            </p>
+            <a href="atuacao.html">Conhecer →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section home-projects">
+    <div class="container">
+
+      <div class="home-section-head">
+        <div>
+          <p class="home-section-eyebrow">Experiências concretas</p>
+          <h2>Projetos e territórios</h2>
+        </div>
+        <p>
+          O conhecimento produzido pelo NECOOP está ligado a projetos,
+          organizações e processos desenvolvidos em situações concretas.
+        </p>
+      </div>
+
+      <div class="home-project-grid">
+
+        <article class="home-project-card">
+          <img src="assets/img/necoop/rodada1/territorio-01.jpg?v=20260902" alt="Grupo de mulheres do Quilombo Paiol de Telha em atividade coletiva">
+          <div class="home-project-body">
+            <p class="label">Território · Organização · Produção</p>
+            <h3>Conhecimento construído no território</h3>
+            <p>
+              Projetos de pesquisa e extensão aproximam universidade,
+              organizações sociais e experiências concretas de produção,
+              cooperação e organização econômica.
+            </p>
+            <a href="projetos.html">Conhecer os projetos →</a>
+          </div>
+        </article>
+
+        <article class="home-side-card">
+          <p class="label">Metodologias</p>
+          <h3>Da realidade à reflexão e à ação.</h3>
+          <p>
+            O Núcleo utiliza e desenvolve métodos e instrumentos para
+            processos participativos, educativos e de investigação.
+          </p>
+          <a href="metodologias.html">Conhecer metodologias →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section home-knowledge">
+    <div class="container">
+
+      <div class="home-section-head">
+        <div>
+          <p class="home-section-eyebrow">Acervo e conhecimento</p>
+          <h2>Explore o que produzimos e reunimos</h2>
+        </div>
+        <p>
+          Publicações, materiais educativos e leituras selecionadas
+          formam um acervo aberto para pesquisa, ensino e formação.
+        </p>
+      </div>
+
+      <div class="home-knowledge-grid">
+
+        <article class="home-knowledge-card">
+          <div class="number">01</div>
+          <h3>Publicações</h3>
+          <p>
+            Artigos, livros, capítulos e outras produções científicas
+            e técnicas de pesquisadores e integrantes do NECOOP.
+          </p>
+          <a href="producoes/publicacoes.html">Ver publicações →</a>
+        </article>
+
+        <article class="home-knowledge-card">
+          <div class="number">02</div>
           <h3>Biblioteca</h3>
           <p>
-            Materiais de referência reunidos pelo NECOOP para
-            pesquisa, formação e estudo.
+            Estudos de caso, relatos de prática e materiais de referência
+            reunidos pelo Núcleo.
           </p>
           <a href="producoes/biblioteca.html">Acessar biblioteca →</a>
         </article>
 
-        <article class="card">
-          <h3>Recursos Educativos</h3>
+        <article class="home-knowledge-card">
+          <div class="number">03</div>
+          <h3>Recursos educativos</h3>
           <p>
-            Guias, jogos e materiais destinados a educadores,
-            escolas, comunidades e processos de formação.
+            Guias, jogos e materiais destinados a educadores, escolas,
+            comunidades e processos de formação.
           </p>
-          <a href="producoes/recursos-educativos.html">
-            Acessar recursos →
-          </a>
+          <a href="producoes/recursos-educativos.html">Ver recursos →</a>
         </article>
 
       </div>
-
     </div>
   </section>
 
 
-  <!-- =======================================================
-       PROJETOS / METODOLOGIAS
-       ======================================================= -->
-
-  <section class="section">
-    <div class="container">
-
-      <div class="grid grid-3">
-
-        <article class="card">
-          <h3>Projetos</h3>
-
-          <p>
-            Conheça projetos de pesquisa, extensão, formação
-            e desenvolvimento realizados pelo NECOOP.
-          </p>
-
-          <a href="projetos.html">Conhecer projetos →</a>
-        </article>
-
-
-        <article class="card">
-          <h3>Metodologias</h3>
-
-          <p>
-            Abordagens, métodos e instrumentos utilizados ou
-            desenvolvidos nas atividades do Núcleo.
-          </p>
-
-          <a href="metodologias.html">Conhecer metodologias →</a>
-        </article>
-
-
-        <article class="card">
-          <h3>Notícias</h3>
-
-          <p>
-            Acompanhe atividades, eventos, projetos, publicações
-            e outras novidades do NECOOP.
-          </p>
-
-          <a href="noticias.html">Ver notícias →</a>
-        </article>
-
+  <section class="home-final">
+    <div class="container home-final-inner">
+      <div>
+        <h2>Um espaço para acompanhar o trabalho do NECOOP.</h2>
+        <p>
+          Projetos, atividades, publicações e experiências serão
+          incorporados progressivamente ao site. Acompanhe também
+          as notícias e atualizações do Núcleo.
+        </p>
       </div>
 
+      <a class="home-final-link" href="noticias.html">Acompanhar notícias →</a>
     </div>
   </section>
 
@@ -249,24 +730,20 @@
 
 
 <footer class="site-footer">
-
   <div class="container">
 
     <div class="footer-grid">
 
       <div>
         <h3>NECOOP/UFFS</h3>
-
         <p>
           Núcleo de Estudos em Cooperação da Universidade Federal
           da Fronteira Sul.
         </p>
       </div>
 
-
       <div>
         <h4>Explorar</h4>
-
         <ul>
           <li><a href="atuacao.html">Atuação</a></li>
           <li><a href="projetos.html">Projetos</a></li>
@@ -276,10 +753,8 @@
         </ul>
       </div>
 
-
       <div>
         <h4>Institucional</h4>
-
         <ul>
           <li><a href="equipe.html">Equipe</a></li>
           <li><a href="links-uteis.html">Links úteis</a></li>
@@ -289,15 +764,12 @@
 
     </div>
 
-
     <div class="footer-bottom">
       NECOOP/UFFS · Universidade Federal da Fronteira Sul
     </div>
 
   </div>
-
 </footer>
-
 
 <script src="assets/js/site.js"></script>
 
