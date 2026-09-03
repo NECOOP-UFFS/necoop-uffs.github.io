@@ -1,126 +1,549 @@
-# Skill: NECOOP Site Maintenance
+# Skill: NECOOP Site Maintenance V2
 
 ## Purpose
 
-Manter e evoluir o site do Núcleo de Estudos em Cooperação (NECOOP), articulando acervo científico, produção de conhecimento, notícias, projetos, extensão, monitoramento temático e publicação controlada no GitHub Pages.
+Manter e evoluir o site do Núcleo de Estudos em Cooperação (NECOOP) como plataforma institucional e de conhecimento, articulando pesquisa, extensão, formação, acervo, publicações, notícias, projetos, monitoramento temático e publicação controlada no GitHub Pages.
 
-## Core principle
+A skill deve funcionar como **protocolo operacional de atualização de páginas**, não apenas como orientação geral de manutenção.
 
-**Process local-first. Use AI only where interpretation, synthesis, classification, editorial judgment or contextual reasoning adds value.**
+## Core principles
 
-**Nunca presumir que o arquivo local aberto é a versão atualmente publicada. Antes de alterar qualquer página, identificar explicitamente o estado público, o estado local e eventuais versões alternativas em produção.**
+1. **Local-first.** Usar processamento local sempre que possível; usar IA para interpretação, síntese, classificação, curadoria, produção editorial e raciocínio contextual.
+2. **Published-first diagnosis.** Nunca presumir que arquivo local, `HEAD`, branch ou versão de desenvolvimento corresponde ao site público.
+3. **Incremental evolution.** Evoluir a versão publicada de forma incremental, preservando o que já funciona.
+4. **Human editorial authority.** O responsável humano decide ou aprova as escolhas editoriais institucionais, especialmente fotografias e sua associação às seções.
+5. **Originals are immutable.** Nunca alterar os arquivos originais do acervo para preparar material para o site.
+6. **Every change is traceable and reversible.** Toda alteração relevante deve ser rastreável pelo Git ou por registro de trabalho e deve poder ser revertida.
+7. **Stop on ambiguity.** Dúvidas sobre versão publicada, arquivo ativo, imagem, branch, commit ou escopo devem interromper a edição até serem resolvidas.
+
+## Project storage map
+
+O projeto possui duas áreas físicas principais, com funções distintas.
+
+### A. Repositório Git do site
+
+`/home/pedro/Documentos/2026/A - Projetos/NECOOP Site e observatório/necoop-uffs.github.io`
+
+Função: código, HTML, CSS, conteúdos e cópias de recursos efetivamente preparados para o site e versionados/publicáveis.
+
+### B. Acervo visual
+
+`/home/pedro/Cloud-Drive/Necoop web/acervo_visual/`
+
+Função: acervo mestre de fotografias e recursos visuais candidatos ou históricos.
+
+**Regra:** o acervo visual não é o diretório de publicação do site.
+
+### Fluxo padrão de recursos visuais
+
+```text
+ACERVO VISUAL
+    ↓
+CANDIDATAS
+    ↓
+PRANCHA AUTOMÁTICA
+    ↓
+SELEÇÃO DO USUÁRIO
+    ↓
+MATRIZ EDITORIAL
+    ↓
+CÓPIA/PREPARAÇÃO PARA WEB
+    ↓
+GIT
+    ↓
+PÁGINA
+```
+
+Não colocar fotografias candidatas diretamente nas pastas de publicação do Git apenas para testá-las.
 
 ## Architecture
 
-- **IDrive/Cloud-Drive:** armazenamento e preservação do acervo e arquivos de trabalho.
-- **Local processing:** extração, OCR, metadados, conversão, deduplicação, índices e logs.
-- **Obsidian:** sistema geral de conhecimento; a área NECOOP é um espaço especializado dentro do vault.
-- **AI:** síntese, interpretação, classificação, relações entre documentos, curadoria e produção editorial.
+- **Acervo visual/Cloud-Drive:** preservação e fonte dos recursos originais.
+- **Local processing:** inventário, hashes, metadados, conversão, redimensionamento, orientação, deduplicação, índices e logs.
+- **Obsidian:** sistema geral de conhecimento; a área NECOOP é um espaço especializado.
+- **AI:** síntese, interpretação, classificação, relações entre documentos, curadoria e produção editorial, sem substituir decisões editoriais humanas institucionais.
 - **GitHub:** versionamento e publicação dos conteúdos do site.
 - **GitHub Pages:** distribuição pública.
 
-## Modules
+## Operational workflow
 
-### pdf-ingest-local
-Processa PDFs localmente sem alterar os originais.
+Toda atualização relevante de página deve seguir esta sequência:
 
-Pipeline:
-1. localizar arquivos;
-2. registrar hash/tamanho/data;
-3. extrair metadados;
-4. extrair texto;
-5. verificar qualidade;
-6. executar OCR apenas quando necessário;
-7. gerar metadados preliminares;
-8. gerar ficha estruturada;
-9. registrar logs/checkpoint;
-10. encaminhar somente casos que exigem interpretação para IA/humano.
+```text
+PEDIDO
+  ↓
+GATE 0 — ESTADO PUBLICADO × LOCAL
+  ↓
+GATE 1 — ESCOPO
+  ↓
+DIAGNÓSTICO DA PÁGINA
+  ↓
+PREPARAÇÃO DE RECURSOS
+  ↓
+SELEÇÃO EDITORIAL HUMANA
+  ↓
+PREPARAÇÃO DAS CÓPIAS
+  ↓
+IMPLEMENTAÇÃO
+  ↓
+TESTE LOCAL
+  ↓
+VALIDAÇÃO HUMANA
+  ↓
+GATE GIT
+  ↓
+COMMIT
+  ↓
+FETCH / DIAGNÓSTICO DE DIVERGÊNCIA
+  ↓
+PUSH
+  ↓
+VERIFICAÇÃO PÚBLICA
+  ↓
+REGISTRO DA ALTERAÇÃO
+```
 
-### content-curation
-Classificar documentos e conteúdos segundo temas, tipos, territórios, projetos e potencial de publicação. Distinguir material publicável, material apenas catalogável e material que deve ser referenciado externamente.
+Nenhuma etapa posterior deve mascarar uma falha de etapa anterior.
 
-### news-monitoring
-Monitorar cooperação, cooperativismo, economia solidária, agroecologia, reforma agrária, agricultura familiar, políticas públicas e temas correlatos. Priorizar fontes confiáveis e produzir material editorial com contexto e fontes.
+# Module 0 — State identification
 
-### site-publishing
-Preparar e revisar conteúdos para o GitHub, verificar links, metadados, estrutura, acessibilidade e consistência antes da publicação.
+## GATE 0 — Identificar o estado atual antes de editar
 
-## Protocolo obrigatório antes de alterar qualquer página
-
-### 1. Identificar a página efetivamente publicada
-
-Antes de editar HTML, CSS, imagens ou estrutura de uma página, o agente deve:
+Antes de alterar HTML, CSS, imagens ou estrutura:
 
 1. acessar a URL pública correspondente;
-2. verificar qual conteúdo e layout estão efetivamente carregados;
-3. registrar mentalmente ou em relatório curto o estado público observado;
-4. identificar a URL exata da página que será alterada.
-
-**Não considerar o conteúdo de uma cópia local, branch, arquivo de backup ou versão de desenvolvimento como sendo a página publicada sem confirmação.**
+2. verificar conteúdo e layout efetivamente carregados;
+3. identificar a URL exata da página-alvo;
+4. identificar branch e commit remoto relevantes;
+5. verificar branch e commit locais;
+6. verificar `git status`;
+7. verificar diferenças local/remoto;
+8. procurar versões V1, V2, V2.x, backups ou outras cópias relevantes;
+9. determinar qual versão será a base da evolução.
 
 Para a Home, verificar explicitamente:
 
 `https://necoop-uffs.github.io/index.html`
 
-Quando houver dúvida entre páginas com nomes semelhantes, URLs antigas, arquivos legados ou versões V1/V2, interromper a edição até resolver a correspondência.
+**Nunca considerar automaticamente `HEAD`, arquivo aberto no editor, backup ou cópia local mais recente como versão publicada.**
 
-### 2. Identificar versões alternativas em produção
+Se houver ambiguidade, parar.
 
-Depois de verificar a página pública, verificar o ambiente local/repositório de desenvolvimento para determinar:
+# Module 1 — Scope and baseline
 
-- qual arquivo corresponde à página pública;
-- se existem modificações locais não publicadas;
-- se existe uma versão mais nova em desenvolvimento;
-- se existem backups, versões congeladas, branches ou cópias alternativas;
-- qual versão deve ser tomada como base para a alteração solicitada.
+## GATE 1 — Definir escopo
 
-**Nunca assumir que `HEAD`, o arquivo aberto no editor ou a cópia local mais recente corresponde automaticamente ao site público.**
+Registrar antes da edição:
 
-Quando houver uma versão alternativa mais nova, comparar a versão pública e a versão em desenvolvimento antes de editar. Registrar qual delas será preservada/evoluída.
+```text
+Página-alvo:
+Objetivo:
+Elementos a alterar:
+Elementos que não serão alterados:
+Recursos necessários:
+```
 
-### 3. Estabelecer a linha de base antes da edição
+Trabalhar apenas dentro do escopo definido.
 
-Antes de modificar uma página:
+## Linha de base
 
-1. verificar `git status`;
-2. verificar os últimos commits relevantes;
-3. verificar diferenças locais (`git diff`) quando existirem;
-4. identificar backups e versões anteriores relevantes;
-5. fazer backup do arquivo que será alterado quando a alteração for substantiva;
-6. confirmar que os recursos referenciados pela página existem no repositório.
+Antes de uma alteração substantiva:
 
-**Não apagar, sobrescrever ou substituir alterações locais legítimas sem antes identificá-las.**
+- executar/verificar `git status`;
+- verificar commits recentes relevantes;
+- verificar `git diff` quando houver alterações;
+- identificar backups;
+- confirmar existência dos recursos referenciados;
+- preservar alterações locais legítimas.
 
-### 4. Alterar somente o alvo definido
+Não apagar ou sobrescrever trabalho local sem diagnóstico.
 
-O agente deve trabalhar de forma incremental e localizada.
+# Module 2 — Page diagnosis
 
-- Não fazer substituições globais sem verificar todas as ocorrências.
-- Não alterar outras páginas apenas porque parecem semelhantes.
-- Não redesenhar páginas não incluídas na tarefa.
-- Não substituir uma versão inteira por outra sem comparação prévia.
-- Preservar conteúdo, links e estrutura existentes quando estiverem corretos.
+Antes da implementação, diagnosticar a página-alvo em quatro dimensões:
 
-Quando a tarefa for visual, primeiro alterar a página-alvo e seus recursos diretamente relacionados; depois avaliar a necessidade de propagar o padrão para outras páginas.
+### Estrutura
 
-## Protocolo visual e editorial
+- HTML;
+- CSS relacionado;
+- imagens;
+- links;
+- títulos e seções.
 
-O site do NECOOP deve ser **bonito, funcional, legível e expressivo do sentido do trabalho do Núcleo**. Não deve parecer apenas um conjunto de páginas textuais ou um catálogo de links.
+### Conteúdo
 
-### Texto + imagens
+- o que existe;
+- o que falta;
+- duplicações;
+- informações potencialmente desatualizadas;
+- coerência com a arquitetura do site.
 
-As páginas institucionais e de apresentação, especialmente a Home e as páginas de atuação, devem combinar adequadamente:
+### Visual
+
+- hierarquia;
+- espaçamento;
+- tipografia;
+- imagens;
+- cards;
+- contraste;
+- responsividade;
+- coerência com a identidade existente.
+
+### Editorial
+
+- o que a página comunica;
+- para quem comunica;
+- relação com pesquisa, extensão, formação e território;
+- coerência com o papel do NECOOP como plataforma de conhecimento.
+
+# Module 3 — Visual archive and image selection
+
+## Regra de autoridade editorial
+
+**A seleção final das fotografias e a associação fotografia → página/seção são decisões do usuário/responsável humano. A IA não deve escolher autonomamente a fotografia final nem atribuir uma atividade específica apenas pela aparência da imagem.**
+
+A IA pode localizar, organizar, catalogar, preparar, verificar e apresentar candidatos.
+
+Quando decisões de seleção já estiverem registradas no projeto, reutilizá-las; não pedir novamente escolhas já estabelecidas.
+
+Uma mesma fotografia pode ser usada em mais de uma temática quando isso tiver sido decidido/aprovado editorialmente.
+
+## Prioridade das imagens
+
+Quando disponíveis, priorizar:
+
+1. fotografias próprias/históricas do NECOOP;
+2. fotografias existentes no acervo visual;
+3. outros recursos documentais devidamente identificados;
+4. imagens externas somente quando justificadas e com fonte/licença adequadamente verificadas.
+
+Não substituir fotografia documental por imagem gerada por IA.
+
+## Geração automática de prancha
+
+A skill deve prever uma ferramenta local de geração de prancha, inicialmente denominada:
+
+`gerar_prancha_necoop.py`
+
+Entrada padrão:
+
+`/home/pedro/Cloud-Drive/Necoop web/acervo_visual/`
+
+Saída preferencial:
+
+`pranchas/` dentro do fluxo de trabalho do acervo, sem modificar originais.
+
+A ferramenta deve:
+
+- localizar imagens candidatas;
+- gerar miniaturas;
+- preservar proporções;
+- numerar cada imagem de maneira inequívoca;
+- exibir nome do arquivo;
+- informar, quando possível, dimensões e orientação;
+- gerar uma prancha visual única ou conjunto de pranchas quando o volume exigir;
+- gerar inventário textual/CSV correspondente;
+- nunca alterar o arquivo original.
+
+A prancha é um **instrumento de seleção humana**, não uma seleção automatizada pela IA.
+
+## Matriz editorial de imagens
+
+Depois da seleção humana, registrar:
+
+| ID | Arquivo original | Página | Seção | Status |
+|---:|---|---|---|---|
+| ... | ... | ... | ... | selecionada |
+
+A matriz deve permitir reconstruir posteriormente por que uma determinada imagem foi usada em determinada seção.
+
+# Module 4 — Image preparation
+
+Somente depois da seleção humana, preparar as cópias para o site.
+
+Operações permitidas sobre cópias:
+
+- cópia;
+- renomeação;
+- redimensionamento;
+- compressão;
+- conversão de formato;
+- correção técnica de orientação;
+- corte, quando explicitamente solicitado ou necessário para adequação visual.
+
+Fluxo:
+
+```text
+ORIGINAL
+   ≠
+CÓPIA DE TRABALHO
+   ≠
+VERSÃO WEB
+```
+
+## Regra de orientação e edição
+
+Quando o usuário fornecer uma fotografia e solicitar rotação, corte, redimensionamento ou outra transformação, trabalhar sobre uma cópia da fotografia fornecida.
+
+**Não usar geração de imagem para substituir, recriar ou “corrigir” uma fotografia documental existente.**
+
+Registrar transformações relevantes quando necessário:
+
+```text
+original:
+tratamento:
+resultado:
+```
+
+## Estrutura de publicação de imagens no Git
+
+Manter a lógica de lotes/rodadas:
+
+```text
+assets/img/necoop/
+├── rodada1/
+├── rodada2/
+└── ...
+```
+
+Somente imagens efetivamente selecionadas/preparadas devem entrar nessas pastas de publicação.
+
+Arquivos temporários, backups e candidatos não devem ser publicados.
+
+# Module 5 — Page implementation
+
+Implementar de forma localizada:
+
+- alterar somente os arquivos necessários;
+- evitar substituições globais;
+- não alterar outras páginas sem escopo;
+- preservar conteúdo correto;
+- preservar links corretos;
+- manter a identidade visual existente;
+- inserir somente recursos selecionados.
+
+## Identidade visual
+
+A evolução deve ser incremental. Preservar, salvo decisão explícita em contrário:
+
+- paleta;
+- tipografia;
+- proporções;
+- estilo de títulos;
+- cards;
+- espaços em branco;
+- elementos institucionais.
+
+O objetivo é melhorar a apresentação, não reiniciar o design.
+
+## Texto + imagens
+
+Quando houver recursos adequados, páginas institucionais e de atuação devem equilibrar:
 
 - texto claro e conciso;
-- fotografias reais das atividades do NECOOP, quando disponíveis;
-- elementos gráficos coerentes com a identidade do site;
-- espaços em branco e boa hierarquia visual;
-- navegação funcional;
-- chamadas para conteúdos, projetos, produções e notícias.
+- fotografias reais;
+- hierarquia visual;
+- espaços em branco;
+- navegação;
+- chamadas para projetos, produções, recursos e notícias.
 
-**Não tratar imagens como decoração dispensável.** Fotografias devem ajudar a mostrar o que o NECOOP faz, onde atua, com quem trabalha e que tipo de conhecimento e experiência produz.
+As imagens devem contribuir para mostrar o que o NECOOP faz, onde atua, com quem trabalha e que conhecimentos/experiências produz.
 
-A apresentação visual deve contribuir para comunicar:
+# Module 6 — Local validation
+
+Antes do commit, verificar tecnicamente:
+
+### HTML/CSS
+
+- página carrega;
+- estrutura íntegra;
+- CSS aplicado corretamente;
+- links válidos;
+- referências a arquivos existentes.
+
+### Imagens
+
+- arquivo correto;
+- orientação correta;
+- proporção/corte adequado;
+- nenhuma repetição indevida;
+- `alt` adequado;
+- caminho correto.
+
+### Visual
+
+Verificar pelo menos:
+
+- desktop;
+- largura intermediária;
+- celular;
+- hierarquia;
+- legibilidade;
+- equilíbrio texto/imagem.
+
+# Module 7 — Human validation
+
+A validação técnica da IA não substitui a aprovação editorial humana.
+
+O usuário/responsável deve poder avaliar especialmente:
+
+- fotografia escolhida;
+- ordem das imagens;
+- associação imagem/seção;
+- destaque visual;
+- significado institucional;
+- adequação do texto.
+
+Quando o usuário aprovar, a alteração pode seguir para o gate Git.
+
+# Module 8 — Git safety gate
+
+Antes do commit, verificar:
+
+```bash
+git status
+git diff
+git diff --cached
+git diff --cached --name-only
+```
+
+Confirmar que não entraram no staging:
+
+- backups;
+- arquivos temporários;
+- candidatos não selecionados;
+- arquivos fora do escopo;
+- recursos de trabalho.
+
+Antes de qualquer publicação, revisar o conjunto exato de arquivos do commit.
+
+## Operações proibidas sem autorização explícita
+
+Não usar para “resolver” problemas de fluxo:
+
+```bash
+git reset --hard
+git clean
+ git push --force
+```
+
+ou operações equivalentes destrutivas.
+
+# Module 9 — Remote synchronization
+
+Antes do `push`:
+
+```bash
+git fetch origin
+git status
+git log --oneline --decorate
+git log --oneline --left-right HEAD...origin/main
+```
+
+Se houver divergência entre local e remoto, diagnosticar primeiro.
+
+Preferir integração segura por `rebase` ou `merge`, conforme o histórico, preservando ambos os trabalhos.
+
+Nunca usar `force push` como primeira solução.
+
+# Module 10 — Publication
+
+Fluxo:
+
+```text
+commit
+  ↓
+fetch
+  ↓
+diagnóstico de divergência
+  ↓
+push
+  ↓
+aguardar GitHub Pages
+```
+
+Uma alteração não é considerada publicada apenas porque o `push` foi aceito.
+
+# Module 11 — Public verification
+
+Depois da publicação, verificar a URL pública e comparar com a versão pretendida.
+
+Conferir:
+
+- página correta;
+- layout;
+- imagens;
+- orientação das imagens;
+- links;
+- recursos carregados;
+- ausência de arquivos inexistentes;
+- correspondência entre commit e conteúdo servido.
+
+Se a página pública não corresponder ao esperado, não iniciar novas alterações às cegas. Diagnosticar primeiro:
+
+- branch;
+- commit;
+- GitHub Pages;
+- arquivo efetivamente servido;
+- cache/CDN;
+- estado remoto.
+
+# Module 12 — Change record
+
+Para alterações relevantes, registrar:
+
+```text
+Página:
+Versão/rodada:
+Data:
+Objetivo:
+Alterações:
+Imagens utilizadas:
+Decisões editoriais:
+Commit:
+URL pública:
+Observações:
+```
+
+Esse registro deve preservar a rastreabilidade das decisões e facilitar futuras rodadas.
+
+# Module 13 — Rollback
+
+Toda alteração relevante deve poder ser revertida.
+
+Preferir:
+
+- reversão de commit;
+- restauração de arquivo específico;
+- recuperação de versão identificada.
+
+Evitar operações destrutivas para resolver problemas de desenvolvimento.
+
+# Module 14 — Page-specific protocol: Home
+
+A Home é a principal porta de entrada e deve ser tratada como página editorial central.
+
+Antes de modificar:
+
+1. verificar Home pública;
+2. verificar Home local;
+3. identificar V1/V2/V2.x ou outra versão;
+4. comparar estados;
+5. escolher explicitamente a base;
+6. preservar a versão pública até validar a nova;
+7. aplicar somente textos/imagens aprovados;
+8. testar localmente;
+9. validar visualmente;
+10. publicar;
+11. verificar novamente a Home pública.
+
+Uma Home local diferente da pública não é automaticamente erro; pode ser desenvolvimento. O erro é não distinguir os estados.
+
+# Module 15 — Content and editorial rules
+
+O NECOOP deve ser tratado como plataforma de conhecimento, não apenas como vitrine institucional.
+
+O conteúdo deve articular, conforme pertinente:
 
 - pesquisa;
 - extensão;
@@ -130,162 +553,148 @@ A apresentação visual deve contribuir para comunicar:
 - economia solidária;
 - agroecologia;
 - reforma agrária;
+- agricultura familiar;
 - território;
-- experiências coletivas e transformação social.
+- experiências coletivas;
+- transformação social.
 
-### Seleção de fotografias
+Não inventar informações, autoria, datas, atividades, identificação de pessoas ou contexto de fotografias.
 
-Quando houver acervo fotográfico próprio, priorizá-lo em relação a imagens genéricas de bancos ou imagens produzidas por IA.
+Para documentos e publicações:
 
-**A associação entre fotografia e atividade/tema deve ser determinada ou aprovada pelo responsável humano quando houver contexto institucional específico.** O agente não deve inventar a identificação de uma fotografia nem atribuir uma atividade apenas com base na aparência visual.
+- não inventar metadados bibliográficos;
+- publicar somente dados confirmados;
+- preservar rastreabilidade para a fonte;
+- distinguir conteúdo próprio de textos de outros autores;
+- não duplicar desnecessariamente arquivos que já têm acervo em sua origem.
 
-Uma mesma fotografia pode ser pertinente a mais de uma temática ou seção quando isso for editorialmente justificável.
+# Module 16 — Existing content/acervo modules
 
-Não pedir novamente ao responsável identificações que já tenham sido registradas no projeto. Recuperar e reutilizar as decisões já tomadas quando estiverem disponíveis.
+## pdf-ingest-local
 
-### Identidade visual
+Processar PDFs localmente sem alterar originais:
 
-Melhorar a apresentação de forma incremental, preservando a identidade visual já estabelecida, salvo decisão explícita em contrário.
+1. localizar;
+2. registrar hash/tamanho/data;
+3. extrair metadados;
+4. extrair texto;
+5. verificar qualidade;
+6. OCR quando necessário;
+7. gerar metadados preliminares;
+8. gerar ficha estruturada;
+9. registrar logs/checkpoint;
+10. encaminhar para IA/humano apenas o que exigir interpretação.
 
-Não substituir desnecessariamente:
+## content-curation
 
-- paleta;
-- tipografia;
-- proporções;
-- estilo de títulos;
-- estrutura de cards;
-- uso de espaços em branco;
-- elementos institucionais.
+Classificar documentos por temas, tipos, territórios, projetos e potencial de publicação. Distinguir material publicável, catalogável e material que deve ser apenas referenciado externamente.
 
-A evolução visual deve partir do que já foi aprovado e evitar redesign radical sem justificativa.
+## news-monitoring
 
-## Protocolo específico para evolução da Home
+Monitorar cooperação, cooperativismo, economia solidária, agroecologia, reforma agrária, agricultura familiar, políticas públicas e temas correlatos, priorizando fontes confiáveis e produzindo material editorial contextualizado.
 
-A Home é a principal porta de entrada do site e deve ser tratada como página editorial central.
+## site-publishing
 
-Antes de modificar a Home:
+Preparar conteúdos para o GitHub, verificar links, metadados, estrutura, acessibilidade, imagens e consistência antes da publicação.
 
-1. verificar a Home pública;
-2. verificar a Home local;
-3. identificar se há V1, V2, V2.x ou outra versão em desenvolvimento;
-4. comparar as versões;
-5. confirmar qual versão constitui a base atual de evolução;
-6. preservar a versão pública até que a nova versão esteja conferida;
-7. aplicar as fotografias e textos aprovados na versão correta;
-8. testar localmente antes de publicar;
-9. somente depois publicar no GitHub Pages;
-10. verificar novamente a Home pública após a publicação.
+# Module 17 — Maintenance and incremental updates
 
-**Uma página local visualmente diferente da página pública não é, por si só, um erro: pode ser uma versão em desenvolvimento. O erro é alterar a versão errada por não distinguir os estados.**
+Não reconstruir o acervo ou páginas inteiras a cada atualização.
 
-## Controle de publicação
+Para novos materiais, identificar apenas:
 
-Uma alteração só deve ser considerada publicada quando houver correspondência clara entre:
-
-```text
-página pública atual
-        ↓
-versão local/repositório escolhida como base
-        ↓
-alteração revisada
-        ↓
-commit/versionamento
-        ↓
-GitHub Pages
-        ↓
-verificação da URL pública
-```
-
-Após publicar uma alteração:
-
-- verificar a URL pública;
-- conferir se a página carregada corresponde à versão pretendida;
-- conferir imagens, links e elementos essenciais;
-- verificar se não foram introduzidas referências para arquivos inexistentes;
-- considerar cache/CDN quando a alteração ainda não aparecer imediatamente.
-
-Se a página pública não corresponder ao que foi publicado, **não iniciar novas alterações às cegas**. Primeiro diagnosticar branch, commit, GitHub Pages, cache ou arquivo efetivamente servido.
-
-## Data rules
-
-- Nunca modificar o PDF original durante ingestão.
-- Não publicar automaticamente um documento ingerido.
-- Preservar rastreabilidade entre original, ficha, conteúdo derivado e publicação.
-- Usar processamento incremental e checkpoints.
-- Preferir ferramentas locais gratuitas/open-source quando adequadas.
-- Evitar enviar para IA grandes volumes de texto que possam ser processados localmente.
-
-## Editorial rules
-
-O NECOOP deve ser tratado como plataforma de conhecimento, não apenas como vitrine institucional. Conteúdos devem articular pesquisa, extensão, formação, cooperação, economia solidária, agroecologia e reforma agrária, preservando a especificidade de cada documento e evitando atribuições não sustentadas pelas fontes.
-
-O site deve afirmar visual e editorialmente o sentido do trabalho do NECOOP. Sempre que apropriado, deve mostrar a relação entre conhecimento acadêmico, experiências concretas, processos educativos, organizações coletivas, territórios e transformação social.
-
-Não transformar a página em excesso de texto para explicar aquilo que pode ser comunicado de forma mais clara por uma combinação equilibrada de texto, fotografia, estrutura e navegação.
-
-## Manutenção incremental do site
-
-Não reconstruir o acervo inteiro a cada inclusão.
-
-Ao receber novos materiais, identificar apenas:
 1. registros novos;
 2. registros modificados;
 3. links quebrados;
-4. páginas que precisam ser atualizadas.
+4. páginas que realmente precisam de atualização.
 
 Preservar conteúdo e links existentes quando estiverem corretos.
 
-## Procedimento de segurança para alterações
+# Module 18 — Planned local tools
 
-Toda alteração relevante deve ser reversível.
+A skill deve evoluir acompanhada de ferramentas locais específicas:
 
-Antes de uma alteração substantiva:
+```text
+tools/
+├── gerar_prancha_necoop.py
+├── inventariar_acervo.py
+├── verificar_imagens.py
+├── verificar_links.py
+├── verificar_site.py
+└── preparar_imagens_web.py
+```
 
-- criar backup ou garantir que a versão anterior esteja recuperável pelo Git;
-- fazer uma alteração por vez quando possível;
-- verificar o diff antes do commit;
-- evitar comandos destrutivos ou limpeza automática sem necessidade;
-- não usar `git reset --hard`, `git clean` ou operações equivalentes para resolver problemas de desenvolvimento sem autorização explícita;
-- não sobrescrever uma versão local sem saber o que ela contém.
+Prioridade de implementação:
 
-Quando um comando for fornecido ao responsável para execução local, o comando deve ser previamente revisado e, sempre que possível, não destrutivo e específico para a tarefa.
+1. `gerar_prancha_necoop.py`;
+2. `inventariar_acervo.py`;
+3. `verificar_imagens.py`;
+4. `verificar_links.py`;
+5. `verificar_site.py`;
+6. `preparar_imagens_web.py`.
 
-## Regra de parada diante de ambiguidade
+As ferramentas devem ser não destrutivas, trabalhar por padrão sobre cópias/índices e produzir saídas identificáveis.
 
-Se houver dúvida sobre:
+# Rule of responsibility
+
+| Decisão/ação | IA | Usuário |
+|---|:---:|:---:|
+| Diagnóstico técnico | ✓ | |
+| Organização do acervo | ✓ | |
+| Geração da prancha | ✓ | |
+| Seleção final das fotos | | **✓** |
+| Associação foto/seção | sugestão técnica | **✓ decisão** |
+| Preparação técnica da imagem | ✓ | |
+| Conteúdo factual | pesquisa/verificação | **aprovação quando institucional** |
+| Proposta de design incremental | ✓ | **aprovação** |
+| Código | ✓ | |
+| Teste técnico | ✓ | |
+| Aprovação visual/editorial | | **✓** |
+| Commit/push | ✓ | acompanhamento |
+
+# Stop conditions
+
+Parar antes de editar quando houver dúvida sobre:
 
 - qual página está publicada;
 - qual arquivo é a versão ativa;
 - qual versão é mais nova;
-- qual imagem corresponde a determinada atividade;
+- qual imagem foi escolhida;
+- qual imagem corresponde a uma atividade;
 - qual alteração local deve ser preservada;
 - qual branch/commit será publicado;
+- qual é o escopo da alteração.
 
-**não editar. Primeiro diagnosticar e esclarecer a ambiguidade.**
+A segurança do estado do projeto tem prioridade sobre velocidade.
 
-Essa regra tem prioridade sobre a tentativa de avançar rapidamente.
+# Expected process outputs
 
-## First implementation target
-
-O primeiro teste operacional desta skill é o lote de 17 PDFs atualmente localizado em:
-
-`~/Cloud-Drive/Necoop web/Arquivos do site necoop (via chatgpt)/`
-
-O primeiro objetivo é produzir um inventário local, texto extraído, metadados preliminares, fichas estruturadas e relatório de processamento, sem alterar os arquivos originais.
-
-## Expected outputs
+Uma rodada de atualização visual pode produzir:
 
 ```text
-_necoop_processado/
-├── texto/
-├── metadados/
-├── fichas/
-├── logs/
-└── relatorio.csv
+acervo_visual/
+├── candidatas/
+├── pranchas/
+├── selecionadas/
+└── historico/
+
+Git/
+└── assets/img/necoop/
+    ├── rodada1/
+    ├── rodada2/
+    └── ...
 ```
 
-A implementação dos scripts locais pode evoluir separadamente do conteúdo do site.
+Além disso:
 
-## Version note
+- prancha visual;
+- inventário/CSV;
+- matriz editorial de imagens;
+- arquivos preparados;
+- diff revisado;
+- commit identificado;
+- verificação pública.
 
-Esta versão incorpora um protocolo reforçado de **identificação da versão publicada, identificação de versões em desenvolvimento, preservação da linha de base e controle visual/editorial da relação entre texto e imagens**, após ocorrência de alterações iniciadas sobre uma versão diferente daquela efetivamente carregada no site público.
+# Version note
+
+**V2.0** incorpora o aprendizado da primeira rodada de atualização visual: separação rigorosa entre estado publicado e desenvolvimento; definição explícita das duas áreas físicas do projeto; seleção fotográfica sob autoridade do usuário; geração automatizada de pranchas; matriz editorial; preservação de originais; controle de transformações; gates técnicos/editoriais/Git; sincronização remota segura; verificação pública; registro e rollback.
