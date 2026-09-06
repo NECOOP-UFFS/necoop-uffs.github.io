@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Arquivo de Posts Anteriores — NECOOP/UFFS</title>
+    <meta name="description" content="Arquivo histórico e cronológico dos informes, notícias e registros de extensão do NECOOP/UFFS.">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://necoop-uffs.github.io/posts-anteriores.html">
+    <meta property="og:title" content="Arquivo de Posts Anteriores — NECOOP/UFFS">
+    <meta property="og:description" content="Memória e histórico documental das ações de pesquisa e extensão do NECOOP/UFFS.">
+    <meta property="og:image" content="https://necoop-uffs.github.io/assets/necoop-simbolo.png">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Folha de estilo única do site -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Estilização específica do Arquivo Histórico */
+        .archive-header-nav {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #d8e2dc;
+            padding-bottom: 12px;
+        }
+
+        .back-link {
+            color: #1b4332;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .archive-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .archive-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #52b788;
+            border-radius: 4px;
+            padding: 18px 20px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: border-color 0.15s ease;
+        }
+
+        .archive-card:hover {
+            border-left-color: #1b4332;
+        }
+
+        .archive-thumb {
+            flex-shrink: 0;
+            width: 160px;
+            height: 110px;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .archive-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .archive-body {
+            flex-grow: 1;
+        }
+
+        .archive-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82em;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .archive-date {
+            background-color: #f0f4f1;
+            color: #1b4332;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 3px;
+            border: 1px solid #d8e2dc;
+        }
+
+        .archive-category {
+            background-color: #e8f5e9;
+            color: #1b4332;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        .archive-title {
+            font-size: 1.1em;
+            color: #1b4332;
+            margin: 2px 0 6px 0;
+            line-height: 1.35;
+        }
+
+        .archive-excerpt {
+            font-size: 0.9em;
+            color: #444;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .year-divider {
+            margin: 30px 0 15px 0;
+            font-size: 1.25em;
+            color: #1b4332;
+            border-bottom: 2px solid #1b4332;
+            padding-bottom: 4px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .archive-card {
+                flex-direction: column;
+            }
+            .archive-thumb {
+                width: 100%;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO INSTITUCIONAL -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP - Núcleo de Estudos em Cooperação" class="logo-img">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o NECOOP</a></li>
+                    <li><a href="projetos.html">Extensão & Pesquisa</a></li>
+                    <li><a href="producoes.html">Publicações & Artigos</a></li>
+                    <li><a href="observatorio.html" class="active">ObservaCoop</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER COM FAIXA VERDE PADRÃO -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Arquivo Histórico de Posts</h1>
+            <p class="subtitle">Memória documental, registros de atividades de extensão e informes anteriores do NECOOP.</p>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-container">
+
+        <article class="block-card">
+            <div class="archive-header-nav">
+                <a href="observatorio.html" class="back-link">← Voltar para o ObservaCoop & Notícias Recentes</a>
+                <span style="font-size: 0.85em; color: #666;">Registros Históricos Conservados</span>
+            </div>
+
+            <p>
+                Este acervo preserva o registro cronológico das atividades de extensão universitária, oficinas de formação, participação em eventos científicos e comunicações institucionais do NECOOP/UFFS.
+            </p>
+
+            <!-- SEÇÃO DE REGISTROS (2026 / HISTÓRICO) -->
+            <div class="year-divider">Registros de 2026 e Períodos Anteriores</div>
+
+            <div class="archive-feed">
+
+                <!-- POST HISTÓRICO 1 -->
+                <article class="archive-card">
+                    <div class="archive-thumb">
+                        <img src="assets/img/pag-sobre-html/formacao-rio-bonito-do-iguacu.jpg" alt="Oficina de formação em agroindústria e gestão">
+                    </div>
+                    <div class="archive-body">
+                        <div class="archive-meta">
+                            <span class="archive-date">Maio/2026</span>
+                            <span class="archive-category">Formação</span>
+                        </div>
+                        <h3 class="archive-title">Curso de Introdução à Economia Solidária e Gestão Cooperativa</h3>
+                        <p class="archive-excerpt">
+                            Realização de módulos de capacitação técnica em gestão coletiva para assentados da reforma agrária em Rio Bonito do Iguaçu (PR), com foco em organização de agroindústrias locais.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- POST HISTÓRICO 2 -->
+                <article class="archive-card">
+                    <div class="archive-thumb">
+                        <img src="assets/img/pag-sobre-html/maquete-virtual-da-agroindustria-indigena-guarani.jpeg" alt="Planejamento de agroindústria indígena">
+                    </div>
+                    <div class="archive-body">
+                        <div class="archive-meta">
+                            <span class="archive-date">Março/2026</span>
+                            <span class="archive-category">Pesquisa Aplicada</span>
+                        </div>
+                        <h3 class="archive-title">Elaboração de maquete virtual e planejamento de agroindústria em comunidade Guarani</h3>
+                        <p class="archive-excerpt">
+                            Reuniões de planejamento participativo e modelagem espacial para viabilização de unidade processadora de alimentos agroecológicos em terra indígena no Paraná.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- POST HISTÓRICO 3 -->
+                <article class="archive-card">
+                    <div class="archive-thumb">
+                        <img src="assets/img/pag-sobre-html/detalhe-do-tabuleiro-jogo-da-cooperacao.jpg" alt="Teste do protótipo do Jogo da Cooperação">
+                    </div>
+                    <div class="archive-body">
+                        <div class="archive-meta">
+                            <span class="archive-date">Novembro/2025</span>
+                            <span class="archive-category">Tecnologia Social</span>
+                        </div>
+                        <h3 class="archive-title">Validação do protótipo do "Jogo da Cooperação" em ambiente universitário</h3>
+                        <p class="archive-excerpt">
+                            Sessão de testes práticos do jogo didático desenvolvido pelo NECOOP com discentes da UFFS, avaliando a assimilação de conceitos sobre autogestão e tomado de decisão coletiva.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- NAVEGAÇÃO DE RETORNO -->
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="observatorio.html" class="back-link" style="font-size: 1em;">← Retornar à página principal do ObservaCoop</a>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP Rodapé" class="footer-logo">
+                <p><strong>NECOOP / UFFS</strong></p>
+                <p>Núcleo de Estudos em Cooperação da Universidade Federal da Fronteira Sul.</p>
+                <p>Laranjeiras do Sul — PR — Brasil</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Explorar</h5>
+                <ul>
+                    <li><a href="sobre.html">Sobre o NECOOP</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="producoes.html">Produções</a></li>
+                    <li><a href="observatorio.html">ObservaCoop</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Institucional</h5>
+                <ul>
+                    <li><a href="contato.html">Contato & Equipe</a></li>
+                    <li><a href="posts-anteriores.html">Arquivo de Posts</a></li>
+                    <li><a href="mailto:uffsnecoop@gmail.com">Contato Directo</a></li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.85em;"><strong>E-mail:</strong> uffsnecoop@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>NECOOP/UFFS · Universidade Federal da Fronteira Sul</p>
+        </div>
+    </footer>
+
+</body>
+</html>
