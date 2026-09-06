@@ -1,311 +1,404 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Publicações — NECOOP/UFFS</title>
-<meta name="description" content="Publicações e produções dos membros do NECOOP/UFFS nas áreas de cooperação, agroecologia, economia solidária e reforma agrária.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://necoop-uffs.github.io/publicacoes.html">
-<meta property="og:title" content="Publicações — NECOOP/UFFS">
-<meta property="og:description" content="Publicações e produções dos membros do NECOOP/UFFS.">
-<meta property="og:image" content="https://necoop-uffs.github.io/assets/necoop-simbolo.png">
-<meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Publicações — NECOOP/UFFS">
-<meta name="twitter:description" content="Publicações e produções dos membros do NECOOP/UFFS.">
-<meta name="twitter:image" content="https://necoop-uffs.github.io/assets/necoop-simbolo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Publicações — NECOOP/UFFS</title>
+    <meta name="description" content="Publicações e produções dos membros do NECOOP/UFFS nas áreas de cooperação, agroecologia, economia solidária e reforma agrária.">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://necoop-uffs.github.io/producoes.html">
+    <meta property="og:title" content="Publicações — NECOOP/UFFS">
+    <meta property="og:description" content="Publicações e produções dos membros do NECOOP/UFFS.">
+    <meta property="og:image" content="https://necoop-uffs.github.io/assets/necoop-simbolo.png">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Publicações — NECOOP/UFFS">
+    <meta name="twitter:description" content="Publicações e produções dos membros do NECOOP/UFFS.">
+    <meta name="twitter:image" content="https://necoop-uffs.github.io/assets/necoop-simbolo.png">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    <!-- Folha de estilo única do site -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Estilização específica do acervo documental */
+        .publication-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 0 0;
+        }
 
-:root{
-  --verde-mata:#1E3D2F;
-  --verde-broto:#6B8E4E;
-  --terra:#B2622D;
-  --milho:#E0A94B;
-  --papel:#F5EAD8;
-  --papel-alt:#EDE0C7;
-  --tinta:#24211C;
-  --linha:rgba(36,33,28,0.14);
-}
+        .publication-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #1b4332;
+            border-radius: 4px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
 
-*{box-sizing:border-box;margin:0;padding:0;}
+        .publication-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
 
-body{
-  background:var(--papel);
-  color:var(--tinta);
-  font-family:'Figtree',sans-serif;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+        .pub-header-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
 
-.wrap{
-  max-width:760px;
-  margin:0 auto;
-  padding:0 28px;
-}
+        .pub-year {
+            background-color: #1b4332;
+            color: #ffffff;
+            font-size: 0.8em;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
 
-h1,h2,h3{
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  color:var(--verde-mata);
-}
+        .pub-type {
+            background-color: #e8f5e9;
+            color: #1b4332;
+            font-size: 0.8em;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
 
-a{
-  color:var(--terra);
-  text-decoration:none;
-  border-bottom:1px solid rgba(139,66,38,0.35);
-}
+        .publication-title {
+            font-size: 1.1em;
+            color: #1b4332;
+            margin: 6px 0;
+            font-weight: bold;
+            line-height: 1.4;
+        }
 
-header{
-  border-bottom:1px solid var(--linha);
-  position:sticky;
-  top:0;
-  background:var(--papel);
-  z-index:20;
-}
+        .publication-authors {
+            font-size: 0.95em;
+            color: #222;
+            margin-bottom: 4px;
+        }
 
-.header-inner{
-  max-width:1120px;
-  margin:0 auto;
-  padding:20px 28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+        .publication-meta {
+            font-size: 0.88em;
+            color: #555;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
 
-.logo{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  font-family:'Fraunces',serif;
-  font-weight:700;
-  font-size:1.5rem;
-  color:var(--verde-mata);
-  line-height:1;
-}
+        .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #2d6a4f;
+            color: #ffffff !important;
+            padding: 6px 14px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+        }
 
-.logo-mark{
-  width:48px;
-  height:48px;
-  object-fit:contain;
-}
+        .btn-pdf:hover {
+            background-color: #1b4332;
+        }
 
-.logo small{
-  display:block;
-  font-family:'Figtree',sans-serif;
-  font-weight:500;
-  font-size:0.68rem;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  color:var(--verde-broto);
-  margin-top:2px;
-}
-
-nav a{
-  font-size:0.86rem;
-  font-weight:500;
-  color:var(--tinta);
-  border-bottom:none;
-}
-
-.page-head{
-  padding:56px 0 28px;
-  border-bottom:1px solid var(--linha);
-}
-
-.page-head h1{
-  font-size:clamp(1.7rem,4vw,2.4rem);
-  margin-bottom:14px;
-}
-
-.page-head p{
-  font-size:1.02rem;
-  color:#40392e;
-}
-
-.section{
-  padding:36px 0;
-  border-bottom:1px solid var(--linha);
-}
-
-.section h2{
-  font-size:1.2rem;
-  margin-bottom:6px;
-}
-
-.section .desc{
-  font-size:0.92rem;
-  color:#584f40;
-  margin-bottom:18px;
-  max-width:600px;
-}
-
-.doc-card{
-  background:var(--papel-alt);
-  padding:20px 22px;
-  margin-top:16px;
-  border-left:3px solid var(--terra);
-}
-
-.doc-card h3{
-  font-size:1.05rem;
-  margin-bottom:8px;
-}
-
-.doc-card p{
-  font-size:0.9rem;
-  color:#4b4439;
-  margin-bottom:14px;
-}
-
-.meta{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.72rem;
-  color:var(--verde-broto);
-  margin-bottom:12px;
-}
-
-.pasta-link{
-  display:inline-block;
-  margin-top:4px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.74rem;
-}
-
-.callout{
-  background:var(--papel-alt);
-  border-left:3px solid var(--verde-broto);
-  padding:16px 20px;
-  margin:30px 0;
-  font-size:0.9rem;
-}
-
-footer{
-  background:var(--verde-mata);
-  color:var(--papel);
-  padding:40px 0;
-}
-
-footer .wrap{
-  max-width:1120px;
-}
-
-footer p{
-  font-size:0.86rem;
-  color:#c9d4c5;
-}
-</style>
-
-<script data-goatcounter="https://necoop.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        .note-card {
+            background-color: #f4f6f5;
+            border: 1px solid #d0d7d3;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-top: 15px;
+            font-size: 0.92em;
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo">
-      <a href="index.html" style="border:none;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none;">
-        <img class="logo-mark" src="assets/necoop-simbolo.png" alt="Símbolo NECOOP">
-        <div>
-          NECOOP
-          <small>Núcleo de Estudos em Cooperação · UFFS</small>
+    <!-- CABEÇALHO INSTITUCIONAL -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP - Núcleo de Estudos em Cooperação" class="logo-img">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o NECOOP</a></li>
+                    <li><a href="projetos.html">Extensão & Pesquisa</a></li>
+                    <li><a href="producoes.html" class="active">Publicações & Artigos</a></li>
+                    <li><a href="observatorio/index.html">ObservaCoop</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-      </a>
-    </div>
-    <nav><a href="index.html">← Voltar ao site</a></nav>
-  </div>
-</header>
+    </header>
 
-<div class="wrap">
+    <!-- BANNER COM FAIXA VERDE PADRÃO (.hero-section) -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Produções · Publicações</h1>
+            <p class="subtitle">Produção científica e técnica do NECOOP.</p>
+        </div>
+    </section>
 
-  <div class="page-head">
-    <span class="eyebrow">Produções do NECOOP</span>
-    <h1>Publicações</h1>
-    <p>
-      Produções científicas, técnicas e acadêmicas de integrantes do
-      NECOOP, relacionadas às áreas de cooperação, agroecologia,
-      economia solidária e reforma agrária.
-    </p>
-  </div>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-container">
 
-  <div class="section">
+        <!-- INTRODUÇÃO -->
+        <article class="block-card">
+            <h2 class="block-title">Acervo Acadêmico e Técnico</h2>
+            <p>
+                Artigos, capítulos, teses, dissertações, trabalhos de eventos e materiais técnicos relacionados às pesquisas e atividades do Núcleo.
+            </p>
 
-    <h2>Cooperativismo, agroecologia e reforma agrária</h2>
+            <div class="note-card">
+                <p style="margin: 0;">
+                    <strong>Catálogo em atualização incremental:</strong> Os registros abaixo foram revisados e podem ser disponibilizados mesmo quando ainda faltam alguns dados bibliográficos. Essas informações serão complementadas progressivamente.
+                </p>
+            </div>
+        </article>
 
-    <p class="desc">
-      Seleção inicial de publicações disponibilizadas pelo Núcleo.
-      O catálogo será ampliado progressivamente a partir do acervo
-      existente.
-    </p>
+        <!-- EIXO 1: COOPERAÇÃO, COOPERATIVISMO E ECONOMIA SOLIDÁRIA -->
+        <article id="cooperativismo" class="block-card" style="margin-top: 30px;">
+            <h2 class="block-title">Cooperação, Cooperativismo e Economia Solidária</h2>
 
-    <div class="doc-card">
-      <h3>
-        Constituição e Gestão de Agroindústrias Cooperativas da Reforma Agrária
-      </h3>
+            <ul class="publication-list">
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2000</span>
+                        <span class="pub-type">Dissertação de mestrado</span>
+                    </div>
+                    <h3 class="publication-title">O desenvolvimento de cooperativas de produção coletiva de trabalhadores rurais no capitalismo: limites e possibilidades</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta">Universidade Federal do Paraná — Curso de Mestrado em Administração.</div>
+                    <a href="https://drive.google.com/file/d/1mKX7dN6JYuuyWIAlWM6_CVZf3tJeAjlK/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-      <p>
-        Publicação de Pedro Ivan Christoffoli, em coautoria com
-        I. Testa, C. Federici e E. Joaquim. Aborda aspectos
-        organizacionais, técnicos e econômicos envolvidos na criação
-        e gestão de agroindústrias cooperativas de pequeno porte
-        em áreas de assentamento da reforma agrária.
-      </p>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2015</span>
+                        <span class="pub-type">Capítulo de livro</span>
+                    </div>
+                    <h3 class="publication-title">Elementos introdutórios para uma história do cooperativismo e associativismo rurais no Brasil</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta"><em>Questão agrária, cooperação e agroecologia</em>, p. 169–188.</div>
+                    <a href="https://drive.google.com/file/d/1pvrq07w6fkQx27gNQGoHsxZv56yLwLxA/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-      <div class="meta">
-        Produção vinculada ao NECOOP
-      </div>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2018</span>
+                        <span class="pub-type">Trabalho de evento</span>
+                    </div>
+                    <h3 class="publication-title">Conglomerados cooperativos como estratégia de desenvolvimento territorial. Análise preliminar da experiência cooperativa de Mondragón</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli; Gustavo Trento Christoffoli</strong></div>
+                    <div class="publication-meta">II CONPES – Congresso de Pesquisadores em Economia Solidária.</div>
+                    <a href="https://drive.google.com/file/d/1_8CW96fxFrAwv6bXfCCT5vDintEosdl1/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-      <a
-        href="https://drive.google.com/file/d/1XKTheQRAskh73q9JYa_RwrwI40TN2mOx/view?usp=sharing"
-        target="_blank"
-        rel="noopener"
-      >
-        Acessar PDF →
-      </a>
-    </div>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2018</span>
+                        <span class="pub-type">Capítulo de livro</span>
+                    </div>
+                    <h3 class="publication-title">Crédito rural cooperativo e desenvolvimento local. Estudo de caso no município de Laranjeiras do Sul (PR)</h3>
+                    <div class="publication-authors"><strong>Rosecleia Burei Presa; Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta"><em>A Geografia na Contemporaneidade</em>.</div>
+                    <a href="https://drive.google.com/file/d/1B9KpQoiIpaZUiNMpLpKhSi0VSl_Ti89E/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-    <a
-      class="pasta-link"
-      href="https://drive.google.com/drive/u/1/folders/0BxVhwXR30r9vWklWODdVM3NsMDA"
-      target="_blank"
-      rel="noopener"
-    >
-      Acessar a pasta completa de publicações do NECOOP →
-    </a>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2008</span>
+                        <span class="pub-type">Artigo</span>
+                    </div>
+                    <h3 class="publication-title">Estímulo à cooperação entre os beneficiários da reforma agrária</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta">Revista da ABRA.</div>
+                    <a href="https://drive.google.com/file/d/1FZ01XQdT1zeOOZWOD5Q_N6FMHXI_MUY6/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
+            </ul>
+        </article>
 
-  </div>
+        <!-- EIXO 2: AGROECOLOGIA E TRANSIÇÃO DOS SISTEMAS DE PRODUÇÃO -->
+        <article id="agroecologia" class="block-card" style="margin-top: 30px;">
+            <h2 class="block-title">Agroecologia e Transição dos Sistemas de Produção</h2>
 
-  <div class="section">
+            <ul class="publication-list">
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2022</span>
+                        <span class="pub-type">Boletim didático / Material técnico</span>
+                    </div>
+                    <h3 class="publication-title">O Cultivo da Soja no método SPDH</h3>
+                    <div class="publication-authors"><strong>Darlan Rodrigo Marchesi et al.</strong></div>
+                    <div class="publication-meta">Instituto Sistema de Plantio Direto de Hortaliças (InstitutoSPDH).</div>
+                    <a href="https://drive.google.com/file/d/1dyWd9GA13jr94n-aeUrsfsAOE82Qw8SY/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-    <h2>Catálogo em ampliação</h2>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2018</span>
+                        <span class="pub-type">Artigo</span>
+                    </div>
+                    <h3 class="publication-title">Núcleos de Estudo em Agroecologia: construção coletiva e redes</h3>
+                    <div class="publication-authors"><strong>Josimeire Aparecida Leandrini et al.</strong></div>
+                    <div class="publication-meta"><em>Revista Brasileira de Agroecologia</em>, 13, Número Especial, p. 258–270.</div>
+                    <a href="https://drive.google.com/file/d/1r_7hl4ARDnLgYrZG2EF2EmOlzi4KcKC4/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-    <p class="desc">
-      Outras produções dos membros já estão identificadas no acervo
-      do NECOOP e serão incorporadas progressivamente, após conferência
-      dos dados bibliográficos e dos respectivos links públicos.
-    </p>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-type">Capítulo de livro</span>
+                    </div>
+                    <h3 class="publication-title">Sistema de Plantio Direto de Hortaliças: uma práxis da transição agroecológica com a agricultura familiar</h3>
+                    <div class="publication-authors"><strong>Valdemar Arl; Pedro Ivan Christoffoli; Jamil Abdalla Fayad</strong></div>
+                    <div class="publication-meta">Publicação em coletânea sobre transição agroecológica.</div>
+                    <a href="https://drive.google.com/file/d/1N8_g9cJE7EeKTc3uC68l1OQbsSBftqsT/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-    <div class="callout">
-      O catálogo será ampliado sem duplicar os arquivos do acervo.
-      Os documentos permanecem em seus repositórios de origem e esta
-      página funciona como porta de entrada pública para as produções.
-    </div>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2015</span>
+                        <span class="pub-type">Artigo / Trabalho científico</span>
+                    </div>
+                    <h3 class="publication-title">Levantamento e análise dos custos da atividade leiteira em unidades de produção convencional e em fase de transição agroecológica em municípios da Cantuquiriguaçu, PR</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta">Estudo empírico sobre custos de produção e transição agroecológica.</div>
+                    <a href="https://drive.google.com/file/d/1MdoRiJ2xD-1EzW6tRgM5FkM3HgUJzbA6/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
+            </ul>
+        </article>
 
-  </div>
+        <!-- EIXO 3: REFORMA AGRÁRIA, TERRITÓRIO E POLÍTICAS PÚBLICAS -->
+        <article id="reforma-agraria" class="block-card" style="margin-top: 30px;">
+            <h2 class="block-title">Reforma Agrária, Território e Políticas Públicas</h2>
 
-</div>
+            <ul class="publication-list">
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2021</span>
+                        <span class="pub-type">Artigo</span>
+                    </div>
+                    <h3 class="publication-title">Analysis of the causes of pesticide poisoning underreporting in the healthcare network in a municipality in Southern Brazil</h3>
+                    <div class="publication-authors"><strong>Eleonora Escobar Tosetto; Antonio Inácio Andrioli; Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta"><em>Ciência & Saúde Coletiva</em>, 26(12), p. 6037–6047. DOI: 10.1590/1413-812320212612.15182021.</div>
+                    <a href="https://drive.google.com/file/d/1aSvg35zvsZEZufugpfwoG1emtktwKIvC/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
 
-<footer>
-  <div class="wrap">
-    <p>
-      NECOOP/UFFS — Núcleo de Estudos em Cooperação,
-      ligado à Universidade Federal da Fronteira Sul —
-      Campus Laranjeiras do Sul, PR.
-    </p>
-  </div>
-</footer>
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2021</span>
+                        <span class="pub-type">Trabalho de evento</span>
+                    </div>
+                    <h3 class="publication-title">Efeito indução do PAA e PNAE sobre a adoção da cooperação e da agroecologia por agricultores familiares e assentados</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli; Rosecleia Burei Presa; Raoni Fernandes Azerêdo; Gustavo Trento Christoffoli</strong></div>
+                    <div class="publication-meta">Anais de evento científico.</div>
+                    <a href="https://drive.google.com/file/d/1WDd9uiDWmW9Zc_K7qZy4KZf1QDvpdzz3/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
+
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2017</span>
+                        <span class="pub-type">Trabalho de evento</span>
+                    </div>
+                    <h3 class="publication-title">Análise da operacionalização do Programa de Aquisição de Alimentos (PAA/CONAB) no Território Cantuquiriguaçu-PR</h3>
+                    <div class="publication-authors"><strong>Enise Barth-Teixeira; Cristina Sturmer dos Santos; Marcos Roberto Gregolin; Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta">Anais de evento científico.</div>
+                    <a href="https://drive.google.com/file/d/1KtPC2w2CaLCF5zWeAIfYwgu_7JcXNwcT/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
+
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2021</span>
+                        <span class="pub-type">Capítulo de livro</span>
+                    </div>
+                    <h3 class="publication-title">Desafios da construção de um movimento popular, socialista e agroecológico: a trajetória do modelo produtivo nos assentamentos do MST no período 1985-2020</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli; Valdemar Arl; Jamil Abdalla Fayad; Olivo Dambrós</strong></div>
+                    <div class="publication-meta">Publicação em coletânea de pesquisa agrária.</div>
+                    <a href="https://drive.google.com/file/d/1d6qRUHx7RJI7WZPxKfGZqMDtoCe9D3RQ/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
+
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-type">Capítulo de livro</span>
+                    </div>
+                    <h3 class="publication-title">A luta pela terra e o desenvolvimento local no Brasil</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta">Publicação em coletânea sobre desenvolvimento territorial.</div>
+                    <a href="https://drive.google.com/file/d/10vH4sjoh-1H7W3Wt8m_8t6xS5i4Le93o/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
+
+                <li class="publication-item">
+                    <div class="pub-header-line">
+                        <span class="pub-year">2009</span>
+                        <span class="pub-type">Tese de doutorado</span>
+                    </div>
+                    <h3 class="publication-title">O processo produtivo capitalista na agricultura e a introdução dos organismos geneticamente modificados: o caso da cultura da Soja Roundup Ready (RR) no Brasil</h3>
+                    <div class="publication-authors"><strong>Pedro Ivan Christoffoli</strong></div>
+                    <div class="publication-meta">Universidade de Brasília — Centro de Desenvolvimento Sustentável.</div>
+                    <a href="https://drive.google.com/file/d/1eSGWDdeVRa0Kezm7oS0YMtajv_7NK2cJ/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf">Acessar PDF &rarr;</a>
+                </li>
+            </ul>
+        </article>
+
+        <!-- COMPLEMENTAÇÃO E DADOS GERAIS -->
+        <article class="block-card" style="margin-top: 30px; background-color: #f9fbf9;">
+            <h2 class="block-title">Complementação Progressiva</h2>
+            <p>
+                O catálogo será enriquecido incrementalmente com resumos, palavras-chave, referências completas, DOI, informações editoriais e relações com projetos e temas do NECOOP. A ausência de um campo não impede a disponibilização de um documento já selecionado para o acervo.
+            </p>
+        </article>
+
+    </main>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="assets/imagens/logos/logo-necoop.png" alt="Logo NECOOP Rodapé" class="footer-logo">
+                <p><strong>NECOOP / UFFS</strong></p>
+                <p>Núcleo de Estudos em Cooperação da Universidade Federal da Fronteira Sul.</p>
+                <p>Laranjeiras do Sul — PR — Brasil</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Explorar</h5>
+                <ul>
+                    <li><a href="atuacao.html">Atuação</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="producoes.html">Produções</a></li>
+                    <li><a href="metodologias.html">Metodologias</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Institucional</h5>
+                <ul>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="links-uteis.html">Links úteis</a></li>
+                    <li><a href="mailto:uffsnecoop@gmail.com">Contato</a></li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.85em;"><strong>E-mail:</strong> uffsnecoop@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>NECOOP/UFFS · Universidade Federal da Fronteira Sul</p>
+        </div>
+    </footer>
 
 </body>
 </html>

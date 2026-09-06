@@ -1,261 +1,342 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos & Extensão | NECOOP - UFFS</title>
+    <!-- Folha de estilo única do site -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Ajustes específicos para a exibição de cards horizontais de projetos */
+        .grid-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
 
-  <title>Projetos — NECOOP/UFFS</title>
+        .project-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #1b4332;
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            flex-direction: row; /* Imagem à esquerda, texto à direita */
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-  <meta
-    name="description"
-    content="Projetos de pesquisa, extensão e formação desenvolvidos pelo NECOOP/UFFS."
-  >
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        /* Contêiner da Imagem (Lado Esquerdo) */
+        .project-media {
+            flex: 0 0 260px; /* Largura fixa para padronização da foto */
+            width: 260px;
+        }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+        .project-media figure {
+            margin: 0;
+        }
 
-  <link rel="stylesheet" href="assets/css/style.css?v=20260826-1536">
+        .project-media img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #e9e9e9;
+            display: block;
+        }
+
+        .project-media figcaption {
+            font-size: 0.8em;
+            color: #555;
+            margin-top: 6px;
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        /* Contêiner do Texto (Lado Direito) */
+        .project-content {
+            flex: 1;
+        }
+
+        .project-content h4 {
+            color: #1b4332;
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+            font-size: 1.2em;
+        }
+
+        .project-content p {
+            font-size: 0.95em;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Bloco de Destaque para Projetos Encerrados */
+        .callout-encerrados {
+            background-color: #f4f6f5;
+            border: 2px solid #2d6a4f;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        .btn-destaque {
+            display: inline-block;
+            background-color: #1b4332;
+            color: #ffffff !important;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: background-color 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .btn-destaque:hover {
+            background-color: #2d6a4f;
+        }
+
+        /* Responsividade para telas menores (smartphones) */
+        @media (max-width: 768px) {
+            .project-card {
+                flex-direction: column;
+            }
+            .project-media {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+            .project-media img {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="site-header">
-  <div class="container site-header-inner">
-
-    <a class="site-logo" href="index.html">
-      <img src="assets/necoop-simbolo.png" alt="Símbolo do NECOOP">
-      <span class="site-logo-text">NECOOP/UFFS</span>
-    </a>
-
-    <nav class="site-nav" aria-label="Navegação principal">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="atuacao.html">Atuação</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="producoes.html">Produções</a></li>
-        <li><a href="metodologias.html">Metodologias</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
-
-<main>
-
-<section class="projects-hero">
-  <div class="container">
-    <span class="eyebrow">Pesquisa · Extensão · Formação</span>
-
-    <h1>
-      Projetos em
-      <em>movimento.</em>
-    </h1>
-
-    <p>
-      Projetos de pesquisa, extensão, formação e desenvolvimento
-      articulam o trabalho do NECOOP com universidades, organizações,
-      comunidades e territórios.
-    </p>
-  </div>
-</section>
-
-<section class="projects-section">
-  <div class="container">
-
-    <div class="projects-grid">
-
-      <article class="project-card project-card-featured">
-        <div class="project-image">
-          <img
-            src="assets/fotos/projetos/acompanhamento-cooperativas.webp"
-            alt="Acompanhamento de cooperativas"
-            loading="eager">
+    <!-- CABEÇALHO INSTITUCIONAL -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP - Núcleo de Estudos em Cooperação" class="logo-img">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o NECOOP</a></li>
+                    <li><a href="projetos.html" class="active">Extensão & Pesquisa</a></li>
+                    <li><a href="producoes.html">Publicações & Artigos</a></li>
+                    <li><a href="observatorio/index.html">ObservaCoop</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="project-body">
-          <span class="project-status">Em andamento</span>
-
-          <h2>Acompanhamento de Cooperativas 2026</h2>
-
-          <p>
-            Projeto de acompanhamento, pesquisa e extensão junto a
-            cooperativas e organizações cooperativas.
-          </p>
-
-          <span class="project-area">
-            Cooperativismo · Economia solidária
-          </span>
+    <!-- BANNER COM FAIXA VERDE PADRÃO (.hero-section) -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Projetos de Pesquisa e Extensão</h1>
+            <p class="subtitle">Ações em andamento articuladas aos eixos fundamentais do NECOOP na UFFS.</p>
         </div>
-      </article>
+    </section>
 
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-container">
 
-      <article class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/fotos/projetos/jogo-cooperacao.webp"
-            alt="Jogo da Cooperação"
-            loading="lazy">
+        <!-- INTRODUÇÃO -->
+        <article class="block-card">
+            <h2 class="block-title">Pesquisa Aplicada e Práxis Extensionista</h2>
+            <p>
+                Os projetos em andamento no NECOOP fundamentam-se no levantamento empírico de dados, no acompanhamento territorial de experiências coletivas e na produção científica alinhada ao desenvolvimento regional. Buscamos aplicar o método da práxis como fundamento da nossa ação. 
+            </p>
+        </article>
+
+        <!-- EIXO 1: REFORMA AGRÁRIA -->
+        <article id="reforma-agraria" class="block-card" style="margin-top: 30px;">
+            <h2 class="block-title">Reforma Agrária</h2>
+            <p>Estudos e ações de extensão voltados aos assentamentos rurais, sustentabilidade dos sistemas produtivos familiares e fortalecimento organizacional das comunidades.</p>
+            
+            <div class="grid-projects">
+                <!-- Card Projeto -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <figure>
+                            <img src="assets/img/pag-projetos-html/Quedas-doacao-alimentos_foto-Juliana-Barbosa-MST.jpeg" alt="Acompanhamento a grupos e cooperativas">
+                            <figcaption><strong>Figura 1.</strong> Atividade de doação de alimentos por agricultores assentados em Quedas do Iguaçu, PR. Crédito - Juliana Barbosa MST-PR</figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-content">
+                        <h4>Acompanhamento a Cooperativas e Grupos</h4>
+                        <p>Assessoria técnica, diagnóstico de governança e suporte organizacional contínuo a cooperativas populares, grupos produtivos e associações de assentamentos rurais.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- EIXO 2: COOPERATIVISMO E ECONOMIA SOLIDÁRIA -->
+        <article id="cooperativismo" class="block-card" style="margin-top: 30px;">
+            <h2 class="block-title">Cooperativismo e Economia Solidária</h2>
+            <p>Investigação científica e monitoramento contínuo das dinâmicas econômicas, gestão, governança e viabilidade do setor cooperativo.</p>
+
+            <div class="grid-projects">
+                <!-- Card Projeto 1 -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <figure>
+                            <img src="assets/img/pag-projetos-html/ranking-coops-agronegocio.jpeg" alt="Pesquisa de campo sobre cooperativas">
+                            <figcaption><strong>Figura 2.</strong> Levantamento de dados primários e análise documental sobre o setor cooperativo.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-content">
+                        <h4>Pesquisa: Endividamento e Crise das Cooperativas do Agronegócio</h4>
+                        <p>Análise empírica e documental das determinantes econômico-financeiras, estruturais e de gestão na crise de cooperativas agropecuárias.</p>
+                    </div>
+                </div>
+
+                <!-- Card Projeto 2 -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <figure>
+                            <img src="assets/img/pag-projetos-html/mondragon_mcc.png" alt="Estudo sobre intercooperação Mondragón e Brasil">
+                            <figcaption><strong>Figura 3.</strong> Totem de entrada na sede da Corporação Mondragón, Arrasate - País Basco - Espanha.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-content">
+                        <h4>Publicação de Livro: Intercooperação Cooperativa em Mondragón e no Brasil</h4>
+                        <p>Sistematização de pesquisa comparativa sobre modelos de intercooperação, governança e desenvolvimento territorial entre a experiência de Mondragón e o contexto brasileiro.</p>
+                    </div>
+                </div>
+
+                <!-- Card Projeto 3 -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <figure>
+                            <img src="assets/img/pag-projetos-html/unidade-coamo.jpeg" alt="Painel de dados do ObservaCoop">
+                            <figcaption><strong>Figura 4.</strong> Unidade industrial da Cooperativa Coamo.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-content">
+                        <h4>Observatório da Cooperação e Cooperativismo (ObservaCoop)</h4>
+                        <p>Plataforma acadêmica contínua de monitoramento, sistematização de dados, análise de indicadores e difusão de informações sobre a agricultura familiar e o cooperativismo. Análises críticas sobre o cooperativismo do agronegócio. Estudos de caso específicos</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- EIXO 3: AGROECOLOGIA -->
+        <article id="agroecologia" class="block-card" style="margin-top: 30px;">
+            <h2 class="block-title">Agroecologia</h2>
+            <p>Ações de pesquisa e extensão focadas em modelos produtivos sustentáveis, manejo de agroecossistemas e transição agroecológica.</p>
+
+            <div class="grid-projects">
+                <!-- Card Projeto -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <figure>
+                            <img src="assets/img/pag-projetos-html/mulher-carpe-milho.jpeg" alt="Pesquisa de campo em transição agroecológica">
+                            <figcaption><strong>Figura 5.</strong> Acompanhamento prático em áreas de experimentação e transição agroecológica.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-content">
+                        <h4>Projeto Transição Agroecológica – Método da Práxis</h4>
+                        <p>Acompanhamento científico e extensionista de processos de transição agroecológica, articulando a investigação empírica de campo ao trabalho comunitário. Lavouras de Estudo; Método SPDH+; Diálogo de Saberes</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- EIXO 4: EDUCAÇÃO E FORMAÇÃO -->
+        <article id="educacao" class="block-card" style="margin-top: 30px;">
+            <h2 class="block-title">Educação e Formação (Metodologias Participativas)</h2>
+            <p>Desenvolvimento, validação e aplicação de ferramentas pedagógicas e materiais vivenciais voltados à formação cooperativa.</p>
+
+            <div class="grid-projects">
+                <!-- Card Projeto 1 -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <figure>
+                            <img src="assets/img/pag-projetos-html/caixa-jogo-cooperacao.jpeg" alt="Interface da versão digital do Jogo da Cooperação">
+                            <figcaption><strong>Figura 6.</strong> Desenvolvimento e simulação da versão digital do Jogo da Cooperação.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-content">
+                        <h4>Adaptação do Jogo da Cooperação – Versão Digital</h4>
+                        <p>Modelagem e transposição virtual do material pedagógico do Jogo da Cooperação, ampliando o alcance da tecnologia social para ambientes digitais de formação.</p>
+                    </div>
+                </div>
+
+                <!-- Card Projeto 2 -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <figure>
+                            <img src="assets/img/pag-projetos-html/capa-jogo-peq-produtor.jpg" alt="Tabuleiro do Jogo Pequeno Agricultor">
+                            <figcaption><strong>Figura 7.</strong> Capa Jogo Pequeno Agricultor.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-content">
+                        <h4>Adaptação do Jogo Pequeno Agricultor – Versão Tabuleiro</h4>
+                        <p>Reformulação e validação pedagógica do material vivencial voltado à simulação de dinâmicas produtivas, econômicas e sociais da agricultura familiar.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- BLOCO DE DESTAQUE: PROJETOS ENCERRADOS -->
+        <article class="callout-encerrados">
+            <h3 style="color: #1b4332; margin-top: 0; font-size: 1.4em;">Memória e Histórico de Pesquisas</h3>
+            <p style="color: #444; margin-bottom: 10px;">
+                Consulte o acervo histórico de pesquisas concluídas, relatórios técnicos finalizados e projetos de extensão encerrados pelo NECOOP.
+            </p>
+            <a href="projetos-encerrados.html" class="btn-destaque">
+                Consultar Acervo de Projetos Encerrados &rarr;
+            </a>
+        </article>
+
+    </main>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="assets/imagens/logos/logo-necoop.png" alt="Logo NECOOP Rodapé" class="footer-logo">
+                <p><strong>NECOOP - Núcleo de Estudos em Cooperação</strong></p>
+                <p>Universidade Federal da Fronteira Sul (UFFS)</p>
+                <p>Campus Laranjeiras do Sul - PR</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Navegação</h5>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o Núcleo</a></li>
+                    <li><a href="projetos.html">Projetos & Extensão</a></li>
+                    <li><a href="producoes.html">Artigos & Publicações</a></li>
+                    <li><a href="observatorio/index.html">ObservaCoop</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Contato Institucional</h5>
+                <p><strong>E-mail:</strong> necoop@uffs.edu.br</p>
+                <p><strong>Vínculo:</strong> Universidade Federal da Fronteira Sul</p>
+                <p>Laranjeiras do Sul — PR — Brasil</p>
+            </div>
         </div>
-
-        <div class="project-body">
-          <span class="project-status">Em desenvolvimento</span>
-
-          <h2>Jogo da Cooperação</h2>
-
-          <p>
-            Desenvolvimento de um jogo educativo sobre cooperação,
-            a partir de uma plataforma de tabuleiro.
-          </p>
-
-          <span class="project-area">
-            Cooperativismo · Educação e formação
-          </span>
-
-          <a class="project-link" href="jogo-da-cooperacao.html">
-            Conhecer o projeto →
-          </a>
+        <div class="footer-bottom">
+            <p>&copy; NECOOP & ObservaCoop - UFFS. Conteúdo acadêmico e de extensão sob licença pública.</p>
         </div>
-      </article>
-
-
-      <article class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/fotos/projetos/jogo-pequeno-agricultor.webp"
-            alt="Jogo Pequeno Agricultor"
-            loading="lazy">
-        </div>
-
-        <div class="project-body">
-          <span class="project-status">Em desenvolvimento</span>
-
-          <h2>Jogo Pequeno Agricultor</h2>
-
-          <p>
-            Desenvolvimento de jogo educativo relacionado ao
-            planejamento agrícola, produção e comercialização.
-          </p>
-
-          <span class="project-area">
-            Agroecologia · Educação e formação
-          </span>
-
-          <a class="project-link" href="pequeno-agricultor.html">
-            Conhecer o projeto →
-          </a>
-        </div>
-      </article>
-
-
-      <article class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/fotos/projetos/dinamicas-cooperacao.webp"
-            alt="Dinâmicas de Cooperação para Aulas"
-            loading="lazy">
-        </div>
-
-        <div class="project-body">
-          <span class="project-status">Em desenvolvimento</span>
-
-          <h2>Dinâmicas de Cooperação para Aulas</h2>
-
-          <p>
-            Tradução, adaptação e desenvolvimento de dinâmicas
-            relacionadas à cooperação para utilização em processos
-            educativos.
-          </p>
-
-          <span class="project-area">
-            Cooperativismo · Educação e formação
-          </span>
-        </div>
-      </article>
-
-
-      <article class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/fotos/projetos/site-observatorio.webp"
-            alt="Site e Observatório do NECOOP"
-            loading="lazy">
-        </div>
-
-        <div class="project-body">
-          <span class="project-status">Em andamento</span>
-
-          <h2>Site e Observatório</h2>
-
-          <p>
-            Organização, atualização e desenvolvimento do site do
-            NECOOP e de uma estrutura de observação e divulgação
-            do Núcleo.
-          </p>
-
-          <span class="project-area">
-            Pesquisa · Comunicação
-          </span>
-        </div>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-
-<footer class="site-footer">
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-        <h3>NECOOP/UFFS</h3>
-        <p>
-          Núcleo de Estudos em Cooperação da Universidade Federal
-          da Fronteira Sul.
-        </p>
-      </div>
-
-      <div>
-        <h4>Explorar</h4>
-        <ul>
-          <li><a href="atuacao.html">Atuação</a></li>
-          <li><a href="producoes.html">Produções</a></li>
-          <li><a href="metodologias.html">Metodologias</a></li>
-          <li><a href="noticias.html">Notícias</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Institucional</h4>
-        <ul>
-          <li><a href="equipe.html">Equipe</a></li>
-          <li><a href="links-uteis.html">Links úteis</a></li>
-          <li><a href="mailto:uffsnecoop@gmail.com">Contato</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      NECOOP/UFFS · Universidade Federal da Fronteira Sul
-    </div>
-
-  </div>
-
-</footer>
-
-<script src="assets/js/site.js"></script>
+    </footer>
 
 </body>
 </html>

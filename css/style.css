@@ -1,0 +1,285 @@
+/* ==========================================================================
+   ESTILO INSTITUCIONAL CENTRALIZADO - NECOOP & OBSERVACOOP (UFFS)
+   ========================================================================== */
+
+:root {
+    --verde-institucional: #005a36;
+    --verde-escuro: #003320;
+    --verde-claro: #e8f5e9;
+    --cinza-fundo: #f4f6f8;
+    --cinza-borda: #e2e8f0;
+    --texto-principal: #1e293b;
+    --texto-suave: #475569;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--cinza-fundo);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ESTRUTURA DO CABEÇALHO INSTITUCIONAL */
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha o logo e a navegação no centro vertical */
+}
+
+/* Ajuste do Logotipo */
+.logo-img {
+    max-height: 50px; /* Limita a altura do logo para não estourar o cabeçalho */
+    width: auto;
+    display: block;
+}
+
+/* NAVEGAÇÃO E MENU */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Garante alinhamento dos itens na mesma linha base */
+    gap: 15px;
+}
+
+.main-nav li {
+    display: inline-block;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    font-size: 0.95em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+/* Correção do Botão Ativo (Sobre o NECOOP) */
+.main-nav a.active,
+.main-nav a:hover {
+    background-color: #1b4332; /* Verde institucional */
+    color: #ffffff;
+}
+}
+
+/* HERO / BANNER */
+.hero-section {
+    background-color: var(--verde-institucional);
+    color: #ffffff;
+    padding: 3.5rem 1.5rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.hero-content .subtitle {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    margin-bottom: 1.8rem;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: var(--verde-institucional);
+}
+
+.btn-secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+/* BLOCOS E CARDS DA PÁGINA */
+.main-container {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+.block-card {
+    background: #ffffff;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.block-title {
+    color: var(--verde-institucional);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--verde-claro);
+    padding-bottom: 0.5rem;
+}
+
+/* GALERIA FOTOGRÁFICA */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-card {
+    background: #ffffff;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.img-rotate-90 {
+    transform: rotate(90deg);
+}
+
+.gallery-card figcaption {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    background-color: #fafafa;
+}
+
+/* EIXOS DE ATUAÇÃO */
+.grid-eixos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.eixo-card {
+    background: var(--cinza-fundo);
+    border-left: 4px solid var(--verde-institucional);
+    padding: 1.5rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.eixo-card h4 {
+    color: var(--verde-institucional);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.eixo-card p {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    margin-bottom: 1rem;
+}
+
+.eixo-card a {
+    color: var(--verde-institucional);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* RODAPÉ INSTITUCIONAL */
+.site-footer {
+    background-color: var(--verde-escuro);
+    color: #ffffff;
+    padding-top: 3rem;
+    margin-top: auto;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-col h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 0.4rem;
+}
+
+.footer-col p, .footer-col li {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
+
+.footer-logo {
+    max-height: 45px;
+    width: auto;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
