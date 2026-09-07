@@ -5,259 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materiais Educativos & Tecnologias Sociais | NECOOP/UFFS</title>
     
-    <!-- Folha de estilo centralizada do NECOOP -->
+    <!-- Folha de estilo centralizada do NECOOP (SEM ALTERAÇÃO NO CSS) -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Estilos complementares para organização dos materiais didáticos -->
-    <style>
-        .materials-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .material-card {
-            display: flex;
-            background: var(--cinza-fundo);
-            border-left: 4px solid var(--verde-institucional);
-            border-radius: 0 6px 6px 0;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            align-items: stretch;
-        }
-
-        .material-thumb {
-            width: 240px;
-            min-width: 240px;
-            height: 200px;
-            background-color: #e2e8f0;
-            overflow: hidden;
-        }
-
-        .material-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .material-content {
-            padding: 1.2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
-        }
-
-        .material-content h4 {
-            color: var(--verde-institucional);
-            font-size: 1.15rem;
-            margin-bottom: 0.4rem;
-            line-height: 1.3;
-        }
-
-        .material-content .meta-info {
-            font-size: 0.85rem;
-            color: var(--texto-suave);
-            margin-bottom: 0.6rem;
-        }
-
-        .material-content p {
-            font-size: 0.95rem;
-            color: var(--texto-principal);
-            margin-bottom: 0.8rem;
-            line-height: 1.5;
-        }
-
-        .material-actions {
-            display: flex;
-            gap: 0.8rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-download {
-            background-color: var(--verde-institucional);
-            color: #ffffff !important;
-            padding: 0.4rem 0.9rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.2s;
-        }
-
-        .btn-download:hover {
-            background-color: var(--verde-escuro);
-        }
-
-        /* Responsividade para dispositivos móveis */
-        @media (max-width: 768px) {
-            .material-card {
-                flex-direction: column;
-            }
-            .material-thumb {
-                width: 100%;
-                min-width: 100%;
-                height: 180px;
-            }
-        }
-    </style>
 
     <!-- Contador de acessos GoatCounter -->
     <script data-goatcounter="https://necoop.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
-<!-- CABEÇALHO INSTITUCIONAL -->
-<header class="site-header">
-    <div class="header-container">
-        <a href="index.html">
-            <img src="assets/necoop-simbolo.png" alt="Logotipo NECOOP/UFFS" class="logo-img">
-        </a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre o NECOOP</a></li>
-                <li><a href="index.html#projetos">Projetos & Extensão</a></li>
-                <li><a href="observatorio.html">ObservaCoop</a></li>
-                <li><a href="mat-educ.html" class="active">Materiais Educativos</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <!-- CABEÇALHO INSTITUCIONAL PADRONIZADO -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/img/logos/logo-necoop.png" alt="NECOOP - Núcleo de Estudos em Cooperação" class="logo-img">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o NECOOP</a></li>
+                    <li><a href="projetos.html">Extensão & Pesquisa</a></li>
+                    <li><a href="producoes.html">Publicações & Artigos</a></li>
+                    <li><a href="mat-educ.html" class="active">Materiais Educativos</a></li>
+                    <li><a href="observatorio/index.html">ObservaCoop</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- HERO / BANNER PRINCIPAL -->
-<section class="hero-section">
-    <div class="hero-content">
-        <h1>Materiais Educativos & Tecnologias Sociais</h1>
-        <p class="subtitle">Recursos didáticos, manuais pedagógicos e jogos colaborativos para a formação humana e emancipatória</p>
-        <p>Publicações de livre acesso desenvolvidas a partir de pesquisas empíricas e vivências de extensão universitária do NECOOP/UFFS.</p>
-    </div>
-</section>
-
-<!-- CONTEÚDO PRINCIPAL -->
-<main class="main-container">
-
-    <!-- APRESENTAÇÃO E FUNDAMENTAÇÃO DAS TECNOLOGIAS PEDAGÓGICAS -->
-    <section class="block-card">
-        <h2 class="block-title">Apresentação & Usos Pedagógicos</h2>
-        <p style="margin-bottom: 1rem; text-align: justify;">
-            Os materiais educativos sistematizados nesta seção são frutos do trabalho integrado entre pesquisa acadêmica e extensão universitária no âmbito do <strong>NECOOP / UFFS</strong>. Orientados pelos princípios da educação popular, da autogestão e da agroecologia, nossos guias, manuais e jogos foram concebidos como <em>tecnologias sociais</em> voltadas a apoiar processos formativos dinâmicos, dialógicos e transformadores.
-        </p>
-        <p style="margin-bottom: 1rem; text-align: justify;">
-            <strong>Aplicações fundamentais e públicos-alvo:</strong>
-        </p>
-        <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: var(--texto-principal);">
-            <li style="margin-bottom: 0.5rem;"><strong>Ambiente Escolar e Redes de Ensino:</strong> Subsídios práticos para docentes da educação básica, técnica e do campo no desenvolvimento de cooperativas escolares, hortas pedagógicas e metodologias ativas de aprendizagem cooperativa.</li>
-            <li style="margin-bottom: 0.5rem;"><strong>Assessoria Técnica e Extensão Rural:</strong> Ferramentas de apoio para educadores populares, extensionistas e assessores que atuam no fortalecimento de cooperativas habitacionais, associações rurais e empreendimentos da Economia Solidária.</li>
-            <li style="margin-bottom: 0.5rem;"><strong>Movimentos Sociais e Coletivos Rurais:</strong> Manuais e jogos cooperativos destinados à oficina de formação de lideranças, gestão autogestionária e práticas agroecológicas no campo.</li>
-        </ul>
-        <p style="text-align: justify; font-size: 0.9rem; color: var(--texto-suave); background-color: var(--verde-claro); padding: 0.8rem; border-radius: 4px;">
-            ℹ️ <strong>Licença de Livre Acesso:</strong> Todos os materiais podem ser baixados, impressos e distribuídos gratuitamente para fins educativos, comunitários e de pesquisa, desde que mantida a citação da fonte e autoria institucional (NECOOP/UFFS).
-        </p>
+    <!-- BANNER DE TÍTULO DA PÁGINA -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Materiais Educativos & Tecnologias Sociais</h1>
+            <p class="subtitle">Recursos didáticos, manuais pedagógicos e jogos colaborativos para a formação humana e emancipatória.</p>
+        </div>
     </section>
 
-    <!-- ACERVO DE MATERIAIS, GUIAS E JOGOS -->
-    <section class="block-card">
-        <h2 class="block-title">Acervo de Publicações & Recursos Didáticos</h2>
-        
-        <div class="materials-stack">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-container">
+
+        <!-- APRESENTAÇÃO E FUNDAMENTAÇÃO DAS TECNOLOGIAS PEDAGÓGICAS -->
+        <article class="block-card">
+            <h2 class="block-title">Apresentação & Usos Pedagógicos</h2>
+            <p>
+                Os materiais educativos sistematizados nesta seção são frutos do trabalho integrado entre pesquisa acadêmica e extensão universitária no âmbito do <strong>NECOOP / UFFS</strong>. Orientados pelos princípios da educação popular, da autogestão e da agroecologia, nossos guias, manuais e jogos foram concebidos como <em>tecnologias sociais</em> voltadas a apoiar processos formativos dinâmicos, dialógicos e transformadores.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Aplicações fundamentais e públicos-alvo:</strong>
+            </p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                <li><strong>Ambiente Escolar e Redes de Ensino:</strong> Subsídios práticos para docentes da educação básica, técnica e do campo no desenvolvimento de cooperativas escolares, hortas pedagógicas e metodologias ativas de aprendizagem cooperativa.</li>
+                <li><strong>Assessoria Técnica e Extensão Rural:</strong> Ferramentas de apoio para educadores populares, extensionistas e assessores que atuam no fortalecimento de cooperativas habitacionais, associações rurais e empreendimentos da Economia Solidária.</li>
+                <li><strong>Movimentos Sociais e Coletivos Rurais:</strong> Manuais e jogos cooperativos destinados à oficina de formação de lideranças, autogestão e práticas agroecológicas no campo.</li>
+            </ul>
+
+            <div class="eixo-card" style="margin-top: 1.5rem;">
+                <p>ℹ️ <strong>Licença de Livre Acesso:</strong> Todos os materiais podem ser baixados, impressos e distribuídos gratuitamente para fins educativos, comunitários e de pesquisa, desde que mantida a citação da fonte e autoria institucional (NECOOP/UFFS).</p>
+            </div>
+        </article>
+
+        <!-- ACERVO DE MATERIAIS USANDO O COMPONENTE JÁ EXISTENTE (.figure-card-horizontal) -->
+        <article class="block-card">
+            <h2 class="block-title">Acervo de Publicações & Recursos Didáticos</h2>
             
-            <!-- MATERIAL 1: GUIA COOPERAÇÃO NA ESCOLA -->
-            <article class="material-card">
-                <div class="material-thumb">
-                    <img src="assets/capa-guia-cooperacao-escola.jpg" alt="Capa do Guia da Cooperação na Escola" onerror="this.onerror=null; this.src='assets/necoop-simbolo.png';">
+            <!-- MATERIAL 1 -->
+            <div class="figure-card-horizontal">
+                <div class="figure-card-thumb">
+                    <img src="assets/img/capas/capa-guia-cooperacao.png" alt="Capa do Guia da Cooperação na Escola" onerror="this.onerror=null; this.src='assets/img/logos/logo-necoop.png';">
                 </div>
-                <div class="material-content">
-                    <div>
-                        <h4>Guia da Cooperação na Escola: Metodologias e Práticas de Aprendizagem Colaborativa</h4>
-                        <p class="meta-info"><strong>Categoria:</strong> Guia Pedagógico · <strong>Formato:</strong> PDF / EPUB · <strong>Autoria:</strong> Equipe NECOOP/UFFS</p>
-                        <p>Apresenta propostas pedagógicas para a introdução dos princípios do cooperativismo na rotina escolar. Inclui roteiros de oficinas, diretrizes para a organização de cooperativas estudantis e dinâmicas interativas.</p>
-                    </div>
-                    <div class="material-actions">
-                        <a href="https://drive.google.com/file/d/1KtPC2w2CaLCF5zWeAIfYwgu_7JcXNwcT/view" target="_blank" rel="noopener noreferrer" class="btn-download">Baixar PDF ↗</a>
-                        <a href="posts/guias-epub-educadores.html" class="btn-download" style="background-color: var(--texto-suave);">Versão EPUB →</a>
-                    </div>
+                <div class="figure-card-caption">
+                    <h3>Guia da Cooperação na Escola: Metodologias e Práticas de Aprendizagem Colaborativa</h3>
+                    <p style="font-size: 0.85rem; margin: 0.4rem 0;"><strong>Categoria:</strong> Guia Pedagógico · <strong>Formato:</strong> PDF / EPUB · <strong>Autoria:</strong> Equipe NECOOP/UFFS</p>
+                    <p>Apresenta propostas pedagógicas para a introdução dos princípios do cooperativismo na rotina escolar.</p>
+                    <p style="margin-top: 0.8rem;">
+                        <a href="https://drive.google.com/file/d/1KtPC2w2CaLCF5zWeAIfYwgu_7JcXNwcT/view" target="_blank" rel="noopener noreferrer" class="card-link">Baixar PDF ↗</a>
+                        &nbsp;|&nbsp;
+                        <a href="posts/guias-epub-educadores.html" class="card-link">Versão EPUB →</a>
+                    </p>
                 </div>
-            </article>
+            </div>
 
-            <!-- MATERIAL 2: GUIA METODOLÓGICO DE AGROECOLOGIA -->
-            <article class="material-card">
-                <div class="material-thumb">
-                    <img src="assets/capa-guia-agroecologia.jpg" alt="Capa do Guia Metodológico de Agroecologia" onerror="this.onerror=null; this.src='assets/necoop-simbolo.png';">
+            <!-- MATERIAL 2 -->
+            <div class="figure-card-horizontal">
+                <div class="figure-card-thumb">
+                    <img src="assets/capa-guia-agroecologia.jpg" alt="Capa do Guia de Agroecologia para educadores" onerror="this.onerror=null; this.src='assets/img/capas/capa-guia-agroecologia.png';">
                 </div>
-                <div class="material-content">
-                    <div>
-                        <h4>Guia Metodológico de Agroecologia e Extensão Rural Participativa</h4>
-                        <p class="meta-info"><strong>Categoria:</strong> Manual de Campo · <strong>Formato:</strong> PDF / EPUB · <strong>Autoria:</strong> Pesquisadores NECOOP/UFFS</p>
-                        <p>Sistematização de ferramentas diagnósticas e metodologias participativas para assessoria a grupos de agricultores familiares e transição agroecológica nos territórios rurais.</p>
-                    </div>
-                    <div class="material-actions">
-                        <a href="https://drive.google.com/file/d/1KtPC2w2CaLCF5zWeAIfYwgu_7JcXNwcT/view" target="_blank" rel="noopener noreferrer" class="btn-download">Baixar PDF ↗</a>
-                        <a href="posts/guias-epub-educadores.html" class="btn-download" style="background-color: var(--texto-suave);">Versão EPUB →</a>
-                    </div>
+                <div class="figure-card-caption">
+                    <h3>Agroecologia - Guia metodológico para educadores(as) das escolas do campo</h3>
+                    <p style="font-size: 0.85rem; margin: 0.4rem 0;"><strong>Categoria:</strong> Manual de Campo · <strong>Formato:</strong> PDF / EPUB · <strong>Autoria:</strong> Pesquisadores NECOOP/UFFS</p>
+                    <p> Teoria e metodologias para a agroecoologia, voltado para educadores de escolas do campo. Produzido em parceria com o Projeto Escola do Campo - MEC/UFFS</p>
+                    <p style="margin-top: 0.8rem;">
+                        <a href="https://drive.google.com/file/d/1WRSg-d-CsXhWL835P-wfM0QGNFFWojut/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="card-link">Baixar PDF ↗</a>
+                        &nbsp;|&nbsp;
+                        <a href="posts/guias-epub-educadores.html" class="card-link">Versão EPUB →</a>
+                    </p>
                 </div>
-            </article>
+            </div>
 
-            <!-- MATERIAL 3: JOGO COOPERATIVO -->
-            <article class="material-card">
-                <div class="material-thumb">
-                    <img src="assets/capa-jogo-cooperativo.jpg" alt="Tabuleiro do Jogo Cooperativo de Gestão Popular" onerror="this.onerror=null; this.src='assets/necoop-simbolo.png';">
+            <!-- MATERIAL 3 -->
+            <div class="figure-card-horizontal">
+                <div class="figure-card-thumb">
+                    <img src="assets/img/capas/capa-livro-jogos-cooperativos.jpg" alt="Tabuleiro do Jogo Cooperativo" onerror="this.onerror=null; this.src='assets/img/logos/logo-necoop.png';">
                 </div>
-                <div class="material-content">
-                    <div>
-                        <h4>Jogo Pedagógico da Autogestão e Cooperação Popular</h4>
-                        <p class="meta-info"><strong>Categoria:</strong> Jogo Didático / Tabuleiro Imprimível · <strong>Formato:</strong> PDF (Print & Play)</p>
-                        <p>Tecnologia social lúdica desenhada para oficinas de formação inicial. Simula os desafios cotidianos de tomada de decisão coletiva, planejamento financeiro e solidariedade em empreendimentos associativos.</p>
-                    </div>
-                    <div class="material-actions">
-                        <a href="https://drive.google.com/file/d/1KtPC2w2CaLCF5zWeAIfYwgu_7JcXNwcT/view" target="_blank" rel="noopener noreferrer" class="btn-download">Baixar Kit do Jogo (PDF) ↗</a>
-                    </div>
+                <div class="figure-card-caption">
+                    <h3>Livro Jogos Cooperativos</h3>
+                    <p style="font-size: 0.85rem; margin: 0.4rem 0;"><strong>Categoria:</strong> Jogos Didáticos para escolas e grupos· <strong>Formato:</strong> PDF (Print & Play)</p>
+                    <p>O livro representa a síntese de um largo processo de aplicação e teste de jogos cooperativos a fim de avaliar seu uso em ambientes educativos. Parte do pressuposto que nem todos jogos ditos cooperativos são de fato construtores de coesão e consciência coletiva nos grupos. A equipe do NECOOP buscou aplicar e avaliar cada jogo a fim de certificar-se de sua utilidade formativa</p>
+                    <p style="margin-top: 0.8rem;">
+                        <a href="https://drive.google.com/file/d/1tbg64_-ZgfHJe6lhCGwWcRV-jvnFz36q/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="card-link">Baixar livro (PDF) ↗</a>
+                    </p>
                 </div>
-            </article>
+            </div>
 
+        </article>
+
+    </main>
+
+    <!-- RODAPÉ INSTITUCIONAL PADRONIZADO -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP Rodapé" class="footer-logo">
+                <p><strong>NECOOP - Núcleo de Estudos em Cooperação</strong></p>
+                <p>Universidade Federal da Fronteira Sul (UFFS)</p>
+                <p>Campus Laranjeiras do Sul - PR</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Navegação</h5>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o Núcleo</a></li>
+                    <li><a href="projetos.html">Projetos & Extensão</a></li>
+                    <li><a href="producoes.html">Artigos & Publicações</a></li>
+                    <li><a href="mat-educ.html">Materiais Educativos</a></li>
+                    <li><a href="observatorio/index.html">ObservaCoop</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Contato Institucional</h5>
+                <p><strong>E-mail:</strong> necoop@uffs.edu.br</p>
+                <p><strong>Vínculo:</strong> Universidade Federal da Fronteira Sul</p>
+                <p>Laranjeiras do Sul — PR — Brasil</p>
+            </div>
         </div>
-    </section>
-
-</main>
-
-<!-- RODAPÉ INSTITUCIONAL CENTRALIZADO -->
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="footer-col">
-            <img src="assets/necoop-simbolo.png" alt="Símbolo NECOOP" class="footer-logo">
-            <h5>NECOOP / UFFS</h5>
-            <p>Núcleo de Estudos em Cooperação</p>
-            <p>Universidade Federal da Fronteira Sul — Campus Laranjeiras do Sul (PR)</p>
+        <div class="footer-bottom">
+            <p>&copy; NECOOP & ObservaCoop - UFFS. Conteúdo acadêmico e de extensão sob licença pública.</p>
         </div>
-        
-        <div class="footer-col">
-            <h5>Navegação</h5>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre o NECOOP</a></li>
-                <li><a href="index.html#projetos">Projetos & Extensão</a></li>
-                <li><a href="observatorio.html">ObservaCoop</a></li>
-                <li><a href="mat-educ.html">Materiais Educativos</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h5>Eixos de Pesquisa</h5>
-            <p>• Cooperativismo Popular e Agroecologia</p>
-            <p>• Políticas Públicas para a Agricultura Familiar</p>
-            <p>• Diagnósticos Territoriais e Ações de Extensão</p>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2026 NECOOP — Núcleo de Estudos em Cooperação / UFFS. Licença de uso público e acadêmico.</p>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>

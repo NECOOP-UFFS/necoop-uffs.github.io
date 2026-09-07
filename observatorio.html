@@ -8,92 +8,6 @@
     <!-- Folha de estilo centralizada -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Estilos específicos para padronização horizontal dos quadros de notícias -->
-    <style>
-        .news-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .news-card-horizontal {
-            display: flex;
-            background: var(--cinza-fundo);
-            border-left: 4px solid var(--verde-institucional);
-            border-radius: 0 6px 6px 0;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            align-items: stretch;
-        }
-
-        .news-thumb {
-            width: 260px;
-            min-width: 260px;
-            height: 190px;
-            background-color: #e2e8f0;
-            overflow: hidden;
-        }
-
-        .news-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .news-content {
-            padding: 1.2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
-        }
-
-        .news-content h4 {
-            color: var(--verde-institucional);
-            font-size: 1.15rem;
-            margin-bottom: 0.4rem;
-            line-height: 1.3;
-        }
-
-        .news-content .meta-info {
-            font-size: 0.85rem;
-            color: var(--texto-suave);
-            margin-bottom: 0.6rem;
-        }
-
-        .news-content p {
-            font-size: 0.95rem;
-            color: var(--texto-principal);
-            margin-bottom: 0.8rem;
-            line-height: 1.5;
-        }
-
-        .news-content a {
-            color: var(--verde-institucional);
-            font-weight: 600;
-            text-decoration: none;
-            align-self: flex-start;
-        }
-
-        .news-content a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsividade para telas menores (celulares) */
-        @media (max-width: 768px) {
-            .news-card-horizontal {
-                flex-direction: column;
-            }
-            .news-thumb {
-                width: 100%;
-                min-width: 100%;
-                height: 180px;
-            }
-        }
-    </style>
-
     <!-- Contador de acessos GoatCounter -->
     <script data-goatcounter="https://necoop.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -102,16 +16,18 @@
 <!-- CABEÇALHO INSTITUCIONAL -->
 <header class="site-header">
     <div class="header-container">
-        <a href="index.html">
+        <a href="index.html" class="brand-logo">
             <img src="assets/img/logos/logo-necoop.png" alt="Logotipo NECOOP/UFFS" class="logo-img">
         </a>
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre o NECOOP</a></li>
-                <li><a href="index.html#projetos">Projetos & Extensão</a></li>
+                <li><a href="sobre.html">Sobre o NECOOP</a></li>
+                <li><a href="projetos.html">Extensão & Pesquisa</a></li>
+                <li><a href="producoes.html">Publicações & Artigos</a></li>
+                <li><a href="mat-educ.html">Materiais Educativos</a></li>
                 <li><a href="observatorio.html" class="active">ObservaCoop</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </div>
@@ -121,12 +37,14 @@
 <section class="hero-section">
     <div class="hero-content">
         <h1>ObservaCoop</h1>
-        <h2> Observatório da Cooperação e Agroecologia — NECOOP/UFFS</h2> 
+        <h2>Observatório da Cooperação e Agroecologia — NECOOP/UFFS</h2> 
 
-<p> 
-        </p>Espaço dedicado ao monitoramento, systematização e difusão de diagnósticos empíricos, notas técnicas, relatórios de pesquisa e ações de extensão universitária. O observatório foca em 3 eixos: <p><strong> a) Agronegócio e Questão Agrária; 
-<p>b) Cooperação no Meio Popular; e
-<p>c) Agroecologia e Questões Ambientais</p>
+        <p> 
+        Espaço dedicado ao monitoramento, systematização e difusão de diagnósticos empíricos, notas técnicas, relatórios de pesquisa e ações de extensão universitária. O observatório foca em 3 eixos:
+        </p>
+        <p><strong> a) Agronegócio e Questão Agrária;</strong></p>
+        <p><strong>b) Cooperação no Meio Popular; e</strong></p>
+        <p><strong>c) Agroecologia e Questões Ambientais</strong></p>
     </div>
 </section>
 
@@ -141,56 +59,47 @@
             <article class="eixo-card">
                 <h4>Estudos sobre o Território Cantuquiriguaçu (PR)</h4>
                 <p><strong>Autoria/Equipe:</strong> Pesquisadores do NECOOP / UFFS — Campus Laranjeiras do Sul (PR)</p>
-                <p>ANÁLISE DA OPERACIONALIZAÇÃO DO PROGRAMA DE
-AQUISIÇÃO DE ALIMENTOS (PAA/CONAB) NO TERRITÓRIO CANTUQUIRIGUAÇU-PR.</p>
-                <a href="https://drive.google.com/file/d/1KtPC2w2CaLCF5zWeAIfYwgu_7JcXNwcT/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="border: 1px solid var(--verde-institucional);">
+                <p>ANÁLISE DA OPERACIONALIZAÇÃO DO PROGRAMA DE AQUISIÇÃO DE ALIMENTOS (PAA/CONAB) NO TERRITÓRIO CANTUQUIRIGUAÇU-PR.</p>
+                <a href="https://drive.google.com/file/d/1KtPC2w2CaLCF5zWeAIfYwgu_7JcXNwcT/view" target="_blank" rel="noopener noreferrer" class="btn-primary">
                     Acessar Relatório Completo (PDF) ↗
                 </a>
             </article>
         </div>
     </section>
 
-    <!-- EIXO 2: NOTÍCIAS E REGISTROS DE EXTENSÃO (ORGANIZAÇÃO EMPILHADA COM FOTO À ESQUERDA) -->
+    <!-- EIXO 2: NOTÍCIAS E REGISTROS DE EXTENSÃO -->
     <section class="block-card">
         <h2 class="block-title">Notícias & Informes</h2>
         
-        <div class="news-stack">
-            
-            <!-- NOTÍCIA 1 -->
-            <article class="news-card-horizontal">
-                <div class="news-thumb">
-                    <img src="assets/img/pag-observatorio-html/curso-abpes-cofecon-ecosol.png" alt="Imagem ilustrativa do curso ABPES/Cofecon" onerror="this.onerror=null; this.src='assets/necoop-simbolo.png';">
-                </div>
-                <div class="news-content">
-                    <div>
-                        <h4>ABPES e Cofecon oferecem curso gratuito sobre Economia Solidária</h4>
-                        <p class="meta-info"><strong>Registro:</strong> Agosto de 2026 · Ações de Formação NECOOP</p>
-                        <p>Iniciativa promoveu dez encontros nacionais abordando os fundamentos teóricos e os desafios contemporâneos da economia solidária. O registro audiovisual completo permanece disponível para consulta acadêmica.</p>
-                    </div>
-                    <a href="posts/curso-economia-solidaria-abpes-cofecon.html">Ler matéria completa →</a>
-                </div>
-            </article>
+        <!-- NOTÍCIA 1 -->
+        <article class="figure-card-horizontal">
+            <div class="figure-card-thumb">
+                <img src="assets/img/pag-observatorio-html/curso-abpes-cofecon-ecosol.png" alt="Imagem ilustrativa do curso ABPES/Cofecon" onerror="this.onerror=null; this.src='assets/necoop-simbolo.png';" class="figure-card-img">
+            </div>
+            <div class="figure-card-caption">
+                <h3>ABPES e Cofecon oferecem curso gratuito sobre Economia Solidária</h3>
+                <p><strong>Registro:</strong> Agosto de 2026 · Ações de Formação NECOOP</p>
+                <p>Iniciativa promoveu dez encontros nacionais abordando os fundamentos teóricos e os desafios contemporâneos da economia solidária. O registro audiovisual completo permanece disponível para consulta acadêmica.</p>
+                <p><a href="posts/curso-economia-solidaria-abpes-cofecon.html" class="card-link">Ler matéria completa &rarr;</a></p>
+            </div>
+        </article>
 
-            <!-- NOTÍCIA 2 -->
-            <article class="news-card-horizontal">
-                <div class="news-thumb">
-                    <img src="assets/img/pag-observatorio-html/guias-epub.png" alt="Capa dos guias do NECOOP em leitores digitais" onerror="this.onerror=null; this.src='assets/necoop-simbolo.png';">
-                </div>
-                <div class="news-content">
-                    <div>
-                        <h4>Dois guias do NECOOP agora disponíveis em formato EPUB</h4>
-                        <p class="meta-info"><strong>Registro:</strong> Agosto de 2026 · Materiais Educativos</p>
-                        <p>Publicações voltadas para a formação de educadores populares ("Guia da Cooperação na Escola" e "Guia Metodológico de Agroecologia") ganham edições digitais adaptadas para leitura em smartphones e e-readers.</p>
-                    </div>
-                    <a href="posts/guias-epub-educadores.html">Ler matéria completa →</a>
-                </div>
-            </article>
-
-        </div>
+        <!-- NOTÍCIA 2 -->
+        <article class="figure-card-horizontal">
+            <div class="figure-card-thumb">
+                <img src="assets/img/pag-observatorio-html/guias-epub.png" alt="Capa dos guias do NECOOP em leitores digitais" onerror="this.onerror=null; this.src='assets/necoop-simbolo.png';" class="figure-card-img">
+            </div>
+            <div class="figure-card-caption">
+                <h3>Dois guias do NECOOP agora disponíveis em formato EPUB</h3>
+                <p><strong>Registro:</strong> Agosto de 2026 · Materiais Educativos</p>
+                <p>Publicações voltadas para a formação de educadores populares ("Guia da Cooperação na Escola" e "Guia Metodológico de Agroecologia") ganham edições digitais adaptadas para leitura em smartphones e e-readers.</p>
+                <p><a href="posts/guias-epub-educadores.html" class="card-link">Ler matéria completa &rarr;</a></p>
+            </div>
+        </article>
 
         <!-- BOTÃO PARA REGISTROS E NOTÍCIAS ANTERIORES -->
-        <div style="margin-top: 2rem; text-align: center; border-top: 1px solid var(--cinza-borda); padding-top: 1.5rem;">
-            <a href="posts-anteriores.html" class="btn btn-secondary" style="background-color: var(--verde-escuro); color: #ffffff;">
+        <div class="eixo-card">
+            <a href="posts-anteriores.html" class="btn-primary">
                 📂 Acessar Acervo de Notícias e Registros Anteriores
             </a>
         </div>
@@ -198,37 +107,37 @@ AQUISIÇÃO DE ALIMENTOS (PAA/CONAB) NO TERRITÓRIO CANTUQUIRIGUAÇU-PR.</p>
 
 </main>
 
-<!-- RODAPÉ INSTITUCIONAL CENTRALIZADO -->
+<!-- RODAPÉ INSTITUCIONAL -->
 <footer class="site-footer">
     <div class="footer-grid">
         <div class="footer-col">
-            <img src="assets/necoop-simbolo.png" alt="Símbolo NECOOP" class="footer-logo">
-            <h5>NECOOP / UFFS</h5>
-            <p>Núcleo de Estudos em Cooperação</p>
-            <p>Universidade Federal da Fronteira Sul — Campus Laranjeiras do Sul (PR)</p>
+            <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP Rodapé" class="footer-logo">
+            <p><strong>NECOOP - Núcleo de Estudos em Cooperação</strong></p>
+            <p>Universidade Federal da Fronteira Sul (UFFS)</p>
+            <p>Campus Laranjeiras do Sul - PR</p>
         </div>
         
         <div class="footer-col">
             <h5>Navegação</h5>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre o NECOOP</a></li>
-                <li><a href="index.html#projetos">Projetos & Extensão</a></li>
+                <li><a href="sobre.html">Sobre o Núcleo</a></li>
+                <li><a href="projetos.html">Projetos & Extensão</a></li>
+                <li><a href="producoes.html">Artigos & Publicações</a></li>
+                <li><a href="mat-educ.html">Materiais Educativos</a></li>
                 <li><a href="observatorio.html">ObservaCoop</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
             </ul>
         </div>
 
         <div class="footer-col">
-            <h5>Eixos de Pesquisa</h5>
-            <p>• Cooperativismo Popular e Agroecologia</p>
-            <p>• Políticas Públicas para a Agricultura Familiar</p>
-            <p>• Diagnósticos Territoriais e Ações de Extensão</p>
+            <h5>Contato Institucional</h5>
+            <p><strong>E-mail:</strong> necoop@uffs.edu.br</p>
+            <p><strong>Vínculo:</strong> Universidade Federal da Fronteira Sul</p>
+            <p>Laranjeiras do Sul — PR — Brasil</p>
         </div>
     </div>
-    
     <div class="footer-bottom">
-        <p>&copy; 2026 NECOOP — Núcleo de Estudos em Cooperação / UFFS. Licença de uso público e acadêmico.</p>
+        <p>&copy; NECOOP & ObservaCoop - UFFS. Conteúdo acadêmico e de extensão sob licença pública.</p>
     </div>
 </footer>
 
