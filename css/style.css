@@ -1,285 +1,378 @@
 /* ==========================================================================
-   ESTILO INSTITUCIONAL CENTRALIZADO - NECOOP & OBSERVACOOP (UFFS)
+   NECOOP & OBSERVACOOP - SISTEMA DE ESTILOS CENTRALIZADO (MATRIZ GLOBAL)
+   Universidade Federal da Fronteira Sul (UFFS)
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   1. VARIÁVEIS INSTITUCIONAIS (SISTEMA DE DESIGN)
+   -------------------------------------------------------------------------- */
 :root {
-    --verde-institucional: #005a36;
-    --verde-escuro: #003320;
-    --verde-claro: #e8f5e9;
-    --cinza-fundo: #f4f6f8;
+    /* Cores Institucionais */
+    --verde-institucional: #006837;
+    --verde-escuro: #004d28;
+    --verde-suave: #e6f0eb;
+    
+    /* Neutros e Tipografia */
+    --fundo-pagina: #f8f9fa;
+    --fundo-card: #ffffff;
+    --texto-principal: #2d3748;
+    --texto-suave: #4a5568;
     --cinza-borda: #e2e8f0;
-    --texto-principal: #1e293b;
-    --texto-suave: #475569;
+    --cinza-fundo-alt: #fafafa;
+    
+    /* Fontes e Sombras */
+    --fonte-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --sombra-card: 0 2px 6px rgba(0, 0, 0, 0.06);
+    --sombra-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --raio-borda: 6px;
 }
 
+/* --------------------------------------------------------------------------
+   2. RESET E REGRAS BASE
+   -------------------------------------------------------------------------- */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--cinza-fundo);
+    font-family: var(--fonte-principal);
+    background-color: var(--fundo-pagina);
     color: var(--texto-principal);
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ESTRUTURA DO CABEÇALHO INSTITUCIONAL */
+/* Container Estrutural */
+.main-container {
+    max-width: 1140px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. NAVEGAÇÃO E CABEÇALHO INSTITUCIONAL
+   -------------------------------------------------------------------------- */
 .site-header {
     background-color: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-    width: 100%;
+    border-bottom: 3px solid var(--verde-institucional);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 .header-container {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinha o logo e a navegação no centro vertical */
+    align-items: center;
 }
 
-/* Ajuste do Logotipo */
 .logo-img {
-    max-height: 50px; /* Limita a altura do logo para não estourar o cabeçalho */
+    height: 60px;
     width: auto;
-    display: block;
 }
 
-/* NAVEGAÇÃO E MENU */
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    align-items: center; /* Garante alinhamento dos itens na mesma linha base */
-    gap: 15px;
-}
-
-.main-nav li {
-    display: inline-block;
+    list-style: none;
+    gap: 1.5rem;
 }
 
 .main-nav a {
     text-decoration: none;
-    color: #333333;
-    font-weight: bold;
-    font-size: 0.95em;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    display: inline-block;
+    color: var(--texto-principal);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
 }
 
-/* Correção do Botão Ativo (Sobre o NECOOP) */
-.main-nav a.active,
+.main-nav a.active, 
 .main-nav a:hover {
-    background-color: #1b4332; /* Verde institucional */
-    color: #ffffff;
-}
+    color: var(--verde-institucional);
+    border-bottom: 2px solid var(--verde-institucional);
 }
 
-/* HERO / BANNER */
+/* --------------------------------------------------------------------------
+   4. BANNERS E CABEÇALHOS DE SEÇÃO
+   -------------------------------------------------------------------------- */
 .hero-section {
     background-color: var(--verde-institucional);
     color: #ffffff;
-    padding: 3.5rem 1.5rem;
+    padding: 3rem 1.5rem;
     text-align: center;
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .hero-content h1 {
     font-size: 2.2rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .hero-content .subtitle {
-    font-size: 1.15rem;
-    opacity: 0.95;
-    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
 }
 
-.hero-actions {
+.section-header {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--cinza-borda);
 }
 
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s, background-color 0.2s;
-}
+.section-header-left { flex: 1; }
+.section-header-right { flex: 1; color: var(--texto-suave); font-size: 0.95rem; }
 
-.btn-primary {
-    background-color: #ffffff;
+.tagline {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     color: var(--verde-institucional);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
 }
 
-.btn-secondary {
-    border: 2px solid #ffffff;
-    color: #ffffff;
-}
-
-/* BLOCOS E CARDS DA PÁGINA */
-.main-container {
-    max-width: 1200px;
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
-    flex: 1;
-}
-
+/* --------------------------------------------------------------------------
+   5. COMPONENTES DE CONTEÚDO E ARTIGOS (BLOCK-CARD)
+   -------------------------------------------------------------------------- */
 .block-card {
-    background: #ffffff;
+    background: var(--fundo-card);
+    padding: 2.5rem;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    margin-bottom: 2rem;
     border: 1px solid var(--cinza-borda);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
 .block-title {
     color: var(--verde-institucional);
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--verde-claro);
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--cinza-borda);
     padding-bottom: 0.5rem;
 }
 
-/* GALERIA FOTOGRÁFICA */
-.grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+.block-card p {
+    margin-bottom: 1rem;
+    text-align: justify;
 }
 
-.gallery-card {
-    background: #ffffff;
+.block-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. COMPONENTES DE EVIDÊNCIAS E FIGURAS (RIGOR CIENTÍFICO)
+   -------------------------------------------------------------------------- */
+/* Figura Centralizada / Vertical (Padrão) */
+.figure-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.figure-container img {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    object-fit: cover;
+}
+
+.figure-caption {
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+    margin-top: 0.6rem;
+    font-style: italic;
+    text-align: justify;
+}
+
+/* Figura Horizontal (Foto à Esquerda, Texto de Evidência à Direita) */
+.figure-card-horizontal {
+    display: flex;
+    align-items: center;
+    background-color: var(--cinza-fundo-alt);
     border: 1px solid var(--cinza-borda);
-    border-radius: 6px;
+    border-left: 4px solid var(--verde-institucional);
+    border-radius: var(--raio-borda);
+    margin: 2rem 0;
     overflow: hidden;
+    gap: 1.5rem;
 }
 
-.gallery-card img {
+.figure-card-thumb {
+    width: 320px;
+    min-width: 320px;
+    height: 220px;
+    overflow: hidden;
+    background-color: var(--cinza-borda);
+}
+
+.figure-card-thumb img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.img-rotate-90 {
-    transform: rotate(90deg);
-}
-
-.gallery-card figcaption {
-    padding: 0.8rem 1rem;
-    font-size: 0.85rem;
+.figure-card-caption {
+    padding: 1rem 1.5rem 1rem 0;
+    font-size: 0.9rem;
     color: var(--texto-suave);
-    background-color: #fafafa;
+    line-height: 1.5;
+    flex: 1;
 }
 
-/* EIXOS DE ATUAÇÃO */
-.grid-eixos {
+/* --------------------------------------------------------------------------
+   7. GRELHAS DE CARDS (ÁREAS DE ATUAÇÃO / PROJETOS)
+   -------------------------------------------------------------------------- */
+/* Layout em Grid Multicoluna */
+.grid-cards-vertical {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
-    margin-top: 1rem;
+    margin: 1.5rem 0;
 }
 
-.eixo-card {
-    background: var(--cinza-fundo);
-    border-left: 4px solid var(--verde-institucional);
-    padding: 1.5rem;
-    border-radius: 0 6px 6px 0;
+/* Cartão Individual */
+.card-vertical {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--cinza-borda);
+    border-radius: var(--raio-borda);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.eixo-card h4 {
-    color: var(--verde-institucional);
-    font-size: 1.2rem;
+.card-vertical:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-hover);
+}
+
+.card-vertical-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--verde-institucional);
+}
+
+.card-vertical-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.card-vertical-body h3, 
+.card-vertical-body h4 {
+    font-size: 1.1rem;
+    color: var(--texto-principal);
     margin-bottom: 0.5rem;
 }
 
-.eixo-card p {
-    font-size: 0.95rem;
+.card-vertical-body p {
+    font-size: 0.875rem;
     color: var(--texto-suave);
+    line-height: 1.4;
     margin-bottom: 1rem;
 }
 
-.eixo-card a {
+.card-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
     color: var(--verde-institucional);
-    font-weight: 600;
     text-decoration: none;
 }
 
-/* RODAPÉ INSTITUCIONAL */
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   8. RODAPÉ INSTITUCIONAL
+   -------------------------------------------------------------------------- */
 .site-footer {
-    background-color: var(--verde-escuro);
+    background-color: #1a202c;
     color: #ffffff;
-    padding-top: 3rem;
-    margin-top: auto;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    margin-top: 4rem;
 }
 
 .footer-grid {
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 1.5rem 2rem 1.5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .footer-col h5 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 0.4rem;
-}
-
-.footer-col p, .footer-col li {
-    font-size: 0.9rem;
-    color: #cbd5e1;
-    margin-bottom: 0.5rem;
+    color: var(--verde-suave);
 }
 
 .footer-col ul {
     list-style: none;
 }
 
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
 .footer-col a {
-    color: #cbd5e1;
+    color: #cbd5e0;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .footer-col a:hover {
     color: #ffffff;
+    text-decoration: underline;
 }
 
 .footer-logo {
-    max-height: 45px;
-    width: auto;
-    margin-bottom: 0.8rem;
-    display: block;
+    max-height: 50px;
+    margin-bottom: 1rem;
 }
 
 .footer-bottom {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 1rem 0;
+    max-width: 1140px;
+    margin: 2.5rem auto 0 auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2d3748;
     text-align: center;
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: #a0aec0;
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 1rem; }
+    .main-nav ul { display: flex; list-style: none; flex-wrap: wrap; align-items: center; gap: 1,25rem; }
+    .section-header { flex-direction: column; gap: 0.5rem; }
+    .figure-card-horizontal { flex-direction: column; align-items: stretch; }
+    .figure-card-thumb { width: 100%; min-width: 100%; height: 200px; }
+    .figure-card-caption { padding: 1rem; }
+    .block-card { padding: 1.5rem; }
 }

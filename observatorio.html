@@ -13,25 +13,8 @@
 </head>
 <body>
 
-<!-- CABEÇALHO INSTITUCIONAL -->
-<header class="site-header">
-    <div class="header-container">
-        <a href="index.html" class="brand-logo">
-            <img src="assets/img/logos/logo-necoop.png" alt="Logotipo NECOOP/UFFS" class="logo-img">
-        </a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre o NECOOP</a></li>
-                <li><a href="projetos.html">Extensão & Pesquisa</a></li>
-                <li><a href="producoes.html">Publicações & Artigos</a></li>
-                <li><a href="mat-educ.html">Materiais Educativos</a></li>
-                <li><a href="observatorio.html" class="active">ObservaCoop</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<!-- CONTAINER DO CABEÇALHO (Carregado via header.html) -->
+<div id="header-placeholder"></div>
 
 <!-- HERO / BANNER PRINCIPAL -->
 <section class="hero-section">
@@ -40,7 +23,7 @@
         <h2>Observatório da Cooperação e Agroecologia — NECOOP/UFFS</h2> 
 
         <p> 
-        Espaço dedicado ao monitoramento, systematização e difusão de diagnósticos empíricos, notas técnicas, relatórios de pesquisa e ações de extensão universitária. O observatório foca em 3 eixos:
+        Espaço dedicado ao monitoramento, sistematização e difusão de diagnósticos empíricos, notas técnicas, relatórios de pesquisa e ações de extensão universitária. O observatório foca em 3 eixos:
         </p>
         <p><strong> a) Agronegócio e Questão Agrária;</strong></p>
         <p><strong>b) Cooperação no Meio Popular; e</strong></p>
@@ -107,39 +90,27 @@
 
 </main>
 
-<!-- RODAPÉ INSTITUCIONAL -->
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="footer-col">
-            <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP Rodapé" class="footer-logo">
-            <p><strong>NECOOP - Núcleo de Estudos em Cooperação</strong></p>
-            <p>Universidade Federal da Fronteira Sul (UFFS)</p>
-            <p>Campus Laranjeiras do Sul - PR</p>
-        </div>
-        
-        <div class="footer-col">
-            <h5>Navegação</h5>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre o Núcleo</a></li>
-                <li><a href="projetos.html">Projetos & Extensão</a></li>
-                <li><a href="producoes.html">Artigos & Publicações</a></li>
-                <li><a href="mat-educ.html">Materiais Educativos</a></li>
-                <li><a href="observatorio.html">ObservaCoop</a></li>
-            </ul>
-        </div>
+<!-- CONTAINER DO RODAPÉ (Carregado via footer.html) -->
+<div id="footer-placeholder"></div>
 
-        <div class="footer-col">
-            <h5>Contato Institucional</h5>
-            <p><strong>E-mail:</strong> necoop@uffs.edu.br</p>
-            <p><strong>Vínculo:</strong> Universidade Federal da Fronteira Sul</p>
-            <p>Laranjeiras do Sul — PR — Brasil</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; NECOOP & ObservaCoop - UFFS. Conteúdo acadêmico e de extensão sob licença pública.</p>
-    </div>
-</footer>
+<!-- SCRIPT DE INCORPORAÇÃO AUTOMÁTICA DO HEADER E FOOTER VIA FETCH -->
+<script>
+    // Carrega o cabeçalho
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Erro ao carregar o header:', error));
+
+    // Carrega o rodapé
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Erro ao carregar o footer:', error));
+</script>
 
 </body>
 </html>
