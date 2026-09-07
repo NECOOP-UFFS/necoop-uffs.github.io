@@ -23,7 +23,7 @@
         <h2>Observatório da Cooperação e Agroecologia — NECOOP/UFFS</h2> 
 
         <p> 
-        Espaço dedicado ao monitoramento, sistematização e difusão de diagnósticos empíricos, notas técnicas, relatórios de pesquisa e ações de extensão universitária. O observatório foca em 3 eixos:
+        Espaço dedicado ao monitoramento, systematização e difusão de diagnósticos empíricos, notas técnicas, relatórios de pesquisa e ações de extensão universitária. O observatório foca em 3 eixos:
         </p>
         <p><strong> a) Agronegócio e Questão Agrária;</strong></p>
         <p><strong>b) Cooperação no Meio Popular; e</strong></p>
@@ -93,23 +93,17 @@
 <!-- CONTAINER DO RODAPÉ (Carregado via footer.html) -->
 <div id="footer-placeholder"></div>
 
-<!-- SCRIPT DE INCORPORAÇÃO AUTOMÁTICA DO HEADER E FOOTER VIA FETCH -->
+<!-- SCRIPT DE INCORPORAÇÃO AUTOMÁTICA VIA FETCH -->
 <script>
-    // Carrega o cabeçalho
     fetch('header.html')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Erro ao carregar o header:', error));
+        .then(data => { document.getElementById('header-placeholder').innerHTML = data; })
+        .catch(err => console.error('Erro header:', err));
 
-    // Carrega o rodapé
     fetch('footer.html')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Erro ao carregar o footer:', error));
+        .then(data => { document.getElementById('footer-placeholder').innerHTML = data; })
+        .catch(err => console.error('Erro footer:', err));
 </script>
 
 </body>
