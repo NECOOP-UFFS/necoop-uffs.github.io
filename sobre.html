@@ -30,24 +30,8 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO INSTITUCIONAL -->
-    <header class="site-header">
-        <div class="header-container">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/img/logos/logo-necoop.png" alt="NECOOP - Núcleo de Estudos em Cooperação" class="logo-img">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html" class="active">Sobre o NECOOP</a></li>
-                    <li><a href="projetos.html">Extensão & Pesquisa</a></li>
-                    <li><a href="producoes.html">Publicações & Artigos</a></li>
-                    <li><a href="observatorio/index.html">ObservaCoop</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- CONTAINER DO CABEÇALHO -->
+<div id="header-placeholder"></div>
 
     <!-- BANNER DE TÍTULO DA PÁGINA -->
     <section class="hero-section">
@@ -154,38 +138,18 @@
 
     </main>
 
-    <!-- RODAPÉ INSTITUCIONAL -->
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <img src="assets/img/logos/logo-necoop.png" alt="Logo NECOOP Rodapé" class="footer-logo">
-                <p><strong>NECOOP - Núcleo de Estudos em Cooperação</strong></p>
-                <p>Universidade Federal da Fronteira Sul (UFFS)</p>
-                <p>Campus Laranjeiras do Sul - PR</p>
-            </div>
-            
-            <div class="footer-col">
-                <h5>Navegação</h5>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre o Núcleo</a></li>
-                    <li><a href="projetos.html">Projetos & Extensão</a></li>
-                    <li><a href="producoes.html">Artigos & Publicações</a></li>
-                    <li><a href="observatorio/index.html">ObservaCoop</a></li>
-                </ul>
-            </div>
+<!-- CONTAINER DO RODAPÉ -->
+<div id="footer-placeholder"></div>
 
-            <div class="footer-col">
-                <h5>Contato Institucional</h5>
-                <p><strong>E-mail:</strong> necoop@uffs.edu.br</p>
-                <p><strong>Vínculo:</strong> Universidade Federal da Fronteira Sul</p>
-                <p>Laranjeiras do Sul — PR — Brasil</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; NECOOP & ObservaCoop - UFFS. Conteúdo acadêmico e de extensão sob licença pública.</p>
-        </div>
-    </footer>
+<!-- SCRIPT DE INCORPORAÇÃO AUTOMÁTICA VIA FETCH -->
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => { document.getElementById('header-placeholder').innerHTML = data; })
+        .catch(err => console.error('Erro ao carregar o header:', err));
 
-</body>
-</html>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => { document.getElementById('footer-placeholder').innerHTML = data; })
+        .catch(err => console.error('Erro ao carregar o footer:', err));
+</script>
