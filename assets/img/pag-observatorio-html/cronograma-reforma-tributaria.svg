@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Cronograma da transição da Reforma Tributária</title>
+<desc id="desc">Linha do tempo de 2026 a 2033 mostrando as principais etapas da transição e pontos de atenção para cooperativas.</desc>
+<rect width="1200" height="675" fill="#f5f7f5"/>
+<rect x="0" y="0" width="1200" height="92" fill="#1b4332"/>
+<text x="60" y="42" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#ffffff">REFORMA TRIBUTÁRIA</text>
+<text x="60" y="72" font-family="Arial, sans-serif" font-size="17" fill="#dce8df">Cronograma da transição e pontos de atenção para as cooperativas</text>
+<line x1="95" y1="150" x2="1105" y2="150" stroke="#6b8e4e" stroke-width="7" stroke-linecap="round"/>
+<g font-family="Arial, sans-serif">
+  <g transform="translate(70,0)"><circle cx="95" cy="150" r="18" fill="#b2622d"/><text x="95" y="201" text-anchor="middle" font-size="25" font-weight="700" fill="#1b4332">2026</text><text x="95" y="232" text-anchor="middle" font-size="15" fill="#333">Ano de teste</text><text x="95" y="254" text-anchor="middle" font-size="14" fill="#555">IBS 0,1% + CBS 0,9%</text><text x="95" y="276" text-anchor="middle" font-size="14" fill="#555">novos documentos</text></g>
+  <g transform="translate(280,0)"><circle cx="95" cy="150" r="18" fill="#b2622d"/><text x="95" y="201" text-anchor="middle" font-size="25" font-weight="700" fill="#1b4332">2027</text><text x="95" y="232" text-anchor="middle" font-size="15" fill="#333">CBS efetiva</text><text x="95" y="254" text-anchor="middle" font-size="14" fill="#555">PIS/Cofins terminam</text><text x="95" y="276" text-anchor="middle" font-size="14" fill="#555">Imposto Seletivo</text></g>
+  <g transform="translate(490,0)"><circle cx="95" cy="150" r="18" fill="#b2622d"/><text x="95" y="201" text-anchor="middle" font-size="25" font-weight="700" fill="#1b4332">2028</text><text x="95" y="232" text-anchor="middle" font-size="15" fill="#333">Continuidade</text><text x="95" y="254" text-anchor="middle" font-size="14" fill="#555">adaptação e consolidação</text><text x="95" y="276" text-anchor="middle" font-size="14" fill="#555">dos procedimentos</text></g>
+  <g transform="translate(700,0)"><circle cx="95" cy="150" r="18" fill="#b2622d"/><text x="95" y="201" text-anchor="middle" font-size="25" font-weight="700" fill="#1b4332">2029</text><text x="95" y="232" text-anchor="middle" font-size="15" fill="#333">Transição começa</text><text x="95" y="254" text-anchor="middle" font-size="14" fill="#555">ICMS/ISS → IBS</text><text x="95" y="276" text-anchor="middle" font-size="14" fill="#555">IBS: 10% da transição</text></g>
+  <g transform="translate(910,0)"><circle cx="95" cy="150" r="18" fill="#1b4332"/><text x="95" y="201" text-anchor="middle" font-size="25" font-weight="700" fill="#1b4332">2030–33</text><text x="95" y="232" text-anchor="middle" font-size="15" fill="#333">Transição final</text><text x="95" y="254" text-anchor="middle" font-size="14" fill="#555">IBS cresce gradualmente</text><text x="95" y="276" text-anchor="middle" font-size="14" fill="#555">modelo integral em 2033</text></g>
+</g>
+<rect x="70" y="330" width="1060" height="245" rx="10" fill="#ffffff" stroke="#d8e2dc"/>
+<text x="105" y="370" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#1b4332">O que acompanhar nas cooperativas</text>
+<g font-family="Arial, sans-serif" font-size="16" fill="#444">
+<circle cx="115" cy="414" r="6" fill="#b2622d"/><text x="135" y="420">Adequação dos sistemas contábeis e fiscais e dos documentos eletrônicos</text>
+<circle cx="115" cy="454" r="6" fill="#b2622d"/><text x="135" y="460">Regras de créditos: manutenção, utilização e transferência</text>
+<circle cx="115" cy="494" r="6" fill="#b2622d"/><text x="135" y="500">Efeitos diferentes segundo ramo, porte e estrutura econômica</text>
+<circle cx="115" cy="534" r="6" fill="#b2622d"/><text x="135" y="540">Regulamentação e reivindicações do movimento cooperativista</text>
+</g>
+<text x="70" y="625" font-family="Arial, sans-serif" font-size="13" fill="#666">Fonte: síntese do NECOOP a partir de Receita Federal e Ministério da Fazenda. Não substitui a legislação e sua regulamentação.</text>
+</svg>
