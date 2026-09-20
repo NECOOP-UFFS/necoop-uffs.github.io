@@ -42,10 +42,24 @@ A integração Buffer MCP no ChatGPT já foi conectada e testada com sucesso no 
 2. Preparar o texto específico de cada rede. Incluir a URL pública direta da matéria no texto/caption; para Instagram, incluir o link completo na legenda, mesmo sabendo que URLs em legendas geralmente não ficam clicáveis.
 3. Criar pelo Buffer MCP um **rascunho** para o canal Instagram NECOOP, com o card vertical final anexado e a legenda completa.
 4. Criar pelo Buffer MCP um **rascunho** para o canal X NECOOP, com o card horizontal final anexado e texto adaptado ao limite/formato da rede, incluindo a URL direta.
-5. Utilizar o procedimento de mídia aceito pela integração MCP já validada. Não declarar que o card foi anexado apenas porque foi mencionado, selecionado ou incluído no texto: confirmar na resposta da ação e, quando possível, consultar/abrir o rascunho para verificar a mídia associada.
+5. Utilizar o procedimento de mídia aceito pela integração MCP já validada, conforme a seção **Hospedagem dos cards no GitHub para o Buffer** abaixo. Não declarar que o card foi anexado apenas porque foi mencionado, selecionado ou incluído no texto: confirmar na resposta da ação e, quando possível, consultar/abrir o rascunho para verificar a mídia associada.
 6. Confirmar separadamente para cada rede: canal correto, texto completo, URL direta, imagem/card correspondente e status **rascunho**. Não agendar nem publicar.
 7. Se o Buffer MCP não estiver disponível nesta sessão, ou se alguma operação falhar, não improvisar outro caminho nem afirmar conclusão. Registrar objetivamente a etapa pendente e retomar quando a integração estiver acessível.
 8. Entregar os links/identificadores dos rascunhos, quando retornados pela integração, e um resumo do status. **Nunca acionar publicação imediata, agendamento ou envio final sem autorização explícita do responsável humano.**
+
+## Hospedagem dos cards no GitHub para o Buffer — caminho já validado
+
+O requisito de URL pública de mídia do Buffer foi resolvido no fluxo do NECOOP: **hospedar o arquivo do card no próprio repositório GitHub, em uma pasta específica vinculada à publicação correspondente**, e fornecer ao Buffer a URL pública direta do arquivo.
+
+Procedimento obrigatório:
+
+1. No repositório `NECOOP-UFFS/necoop-uffs.github.io`, criar/usar uma pasta de mídia específica associada à matéria/post (seguir a convenção de diretórios já utilizada no repositório; não criar uma estrutura paralela sem necessidade).
+2. Salvar nessa pasta os arquivos finais aprovados dos cards de Instagram e X, preservando nomes claros e estáveis. Não usar arquivos temporários, prévias ou versões ainda não aprovadas.
+3. Obter a URL pública direta de cada imagem hospedada no GitHub, preferencialmente a URL raw/publicamente acessível que foi aceita no fluxo Buffer já testado. Testar a URL em acesso público antes de enviar ao MCP.
+4. Ao criar cada rascunho via Buffer MCP, associar a URL do arquivo correto: card vertical ao Instagram e card horizontal ao X. Não confundir permalink da matéria com URL pública da mídia; são recursos distintos e ambos devem estar no post quando aplicável.
+5. Verificar o retorno do MCP e, quando possível, abrir o rascunho no Buffer para confirmar que a imagem foi efetivamente carregada/associada. Uma URL inserida no texto não equivale a anexo de mídia.
+6. Registrar no pacote de divulgação os caminhos dos arquivos no repositório e as URLs públicas utilizadas no Buffer. Manter a relação entre pasta/card e a publicação específica para facilitar auditoria e reutilização.
+7. Se o upload/commit, acesso público ou associação da mídia falhar, não substituir por OpenClaw, serviço externo ou outra automação. Registrar a pendência e interromper a criação/validação do rascunho afetado.
 
 ## WhatsApp — pacote completo para encaminhamento
 
@@ -53,7 +67,7 @@ WhatsApp não é tratado como entrega de imagem isolada. Preparar um conjunto de
 
 **A. Imagem:** card quadrado 1080 × 1080 px, com logo oficial validado e chamada editorial.
 
-**B. Texto da mensagem, enviado separadamente abaixo/ junto da imagem:**
+**B. Texto da mensagem, enviado separadamente abaixo/junto da imagem:**
 - breve chamada para a nova publicação do NECOOP;
 - síntese clara do assunto e, se pertinente, dado/prazo central;
 - convite para leitura;
@@ -72,14 +86,14 @@ Entregar explicitamente o PNG e o texto final copiável, mantendo o link complet
 7. Conferir acentuação, números, datas, logo, URL direta, contraste, margens e legibilidade em cada formato.
 8. Preparar os textos específicos para Instagram, X e WhatsApp. Para WhatsApp, garantir imagem + mensagem copiável + link clicável.
 9. Apresentar os cards, prévia e textos por canal ao responsável humano para aprovação editorial.
-10. Após aprovação do material, organizar os arquivos finais no local de materiais de divulgação; versionar cópias no repositório quando apropriado. Não publicar temporários ou rascunhos no site.
-11. Usar o Buffer MCP conforme o procedimento acima para criar rascunhos de Instagram e X, anexando obrigatoriamente os respectivos cards. Manter como rascunho até autorização explícita; nunca presumir autorização para publicar.
+10. Após aprovação do material, organizar os arquivos finais no local de materiais de divulgação; versionar cópias no repositório na pasta específica da publicação, conforme a seção de hospedagem acima. Não publicar temporários ou rascunhos no site.
+11. Usar o Buffer MCP conforme o procedimento acima para criar rascunhos de Instagram e X, anexando obrigatoriamente os respectivos cards por suas URLs públicas no GitHub. Manter como rascunho até autorização explícita; nunca presumir autorização para publicar.
 12. Entregar o pacote WhatsApp completo (PNG + texto com URL direta clicável) para encaminhamento manual pelo responsável.
-13. Registrar URL, seção/editoria, arquivo-fonte do logo, arquivos finais, textos, resultado da checagem visual, identificadores/status dos rascunhos no Buffer, pacote WhatsApp e aprovação.
+13. Registrar URL da matéria, seção/editoria, arquivo-fonte do logo, caminhos/URLs GitHub dos cards, arquivos finais, textos, resultado da checagem visual, identificadores/status dos rascunhos no Buffer, pacote WhatsApp e aprovação.
 
 ## Checklist
 
-- [ ] URL direta pública conferida
+- [ ] URL direta pública da matéria conferida
 - [ ] Arquivo-fonte do logo oficial identificado e registrado
 - [ ] Logo oficial realmente incorporado ao PNG do Instagram
 - [ ] Logo oficial realmente incorporado ao PNG do X
@@ -93,8 +107,10 @@ Entregar explicitamente o PNG e o texto final copiável, mantendo o link complet
 - [ ] Legenda Instagram completa, com URL direta
 - [ ] Texto X adaptado, com URL direta
 - [ ] Post WhatsApp entregue como imagem + texto copiável + URL clicável
-- [ ] Rascunho Instagram criado via Buffer MCP, com card anexado e canal confirmado
-- [ ] Rascunho X criado via Buffer MCP, com card anexado e canal confirmado
+- [ ] Cards finais hospedados na pasta GitHub vinculada à publicação
+- [ ] URLs públicas diretas dos cards testadas
+- [ ] Rascunho Instagram criado via Buffer MCP, com card correto anexado e canal confirmado
+- [ ] Rascunho X criado via Buffer MCP, com card correto anexado e canal confirmado
 - [ ] Status de ambos confirmado como rascunho (não agendados/publicados)
 - [ ] Revisão/aprovação humana
 - [ ] Buffer mantido em rascunho até autorização
