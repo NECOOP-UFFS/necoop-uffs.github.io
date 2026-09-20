@@ -17,6 +17,9 @@ Após publicação e verificação pública da matéria, iniciar o pacote de div
 ## Identidade visual e mensagem
 
 - **Usar sempre o logo oficial correto do NECOOP.** Antes de criar a arte, localizar e verificar o arquivo no repositório GitHub, preferencialmente o recurso institucional já utilizado pelo site (atualmente referenciado em `header.html` como `assets/img/logos/logo-necoop.png`). Não redesenhar, substituir por texto digitado ou usar logo aproximado. Se não for possível obter/verificar o arquivo correto, interromper a finalização e solicitar o recurso; não publicar card sem logo.
+- O arquivo correto deve ser efetivamente incorporado aos pixels/à composição de **cada um dos três cards finais**. Localizar o arquivo ou mencionar o logo no prompt não comprova sua incorporação. Não considerar como concluído se o card tiver apenas “NECOOP” digitado, um espaço reservado, um logo semelhante ou o logo presente somente em um dos formatos.
+- **Gate obrigatório de QA do logo (fail-closed):** após exportar, abrir/inspecionar visualmente cada PNG final, em tamanho integral e em prévia reduzida. Confirmar que o logo oficial está visível, íntegro, legível, sem corte, sem distorção e sem sobreposição, com contraste adequado ao fundo. Conferir os três arquivos individualmente. Se qualquer formato falhar, corrigir e exportar novamente; não entregar como final, não anexar ao Buffer e não avançar para publicação até passar no teste.
+- Registrar o caminho/nome do arquivo-fonte do logo utilizado. Quando o recurso tiver sido fornecido pelo responsável humano, usar esse arquivo original, sem redesenhá-lo; redimensionamento proporcional é permitido.
 - Incluir uma chamada editorial curta, como **“Novo post do NECOOP”**, visível mas sem competir com o título/tema da matéria. O card deve comunicar que se trata de uma nova publicação, não apenas de um lembrete de prazo.
 - Hierarquia sugerida: identificação NECOOP + selo/chamada “Novo post do NECOOP” + tema/título conciso + informação-chave + convite para ler.
 - A seção **ObservaCoop — Observatório do Cooperativismo** deve ser identificada quando a matéria tiver sido publicada nessa seção ou tratar diretamente de conteúdo do ObservaCoop. Apresentá-la como assinatura/editoria secundária, preservando NECOOP como marca institucional principal. Não atribuir ObservaCoop a conteúdos de outras seções; em caso de dúvida, conferir a página publicada.
@@ -32,20 +35,25 @@ Após publicação e verificação pública da matéria, iniciar o pacote de div
 
 1. Confirmar que a matéria está publicada e que a URL pública direta abre corretamente.
 2. Extrair da página validada título, ideia central, dados/prazos essenciais e seção editorial. Não inventar fatos.
-3. Localizar e incorporar o logo oficial do NECOOP no GitHub; confirmar que o arquivo é o correto antes de compor a arte.
+3. Localizar e incorporar o logo oficial do NECOOP no GitHub ou usar arquivo original fornecido pelo responsável humano; confirmar a origem do recurso.
 4. Definir mensagem visual central e incluir “Novo post do NECOOP”. Identificar ObservaCoop apenas quando aplicável, como editoria secundária.
 5. Criar os três formatos; usar arte/imagem pertinente e não deixar os rascunhos de Instagram ou X sem imagem.
-6. Conferir acentuação, números, datas, logo, URL direta, contraste, margens e legibilidade em cada formato.
-7. Apresentar cards, prévia e textos por canal ao responsável humano para aprovação editorial.
-8. Após aprovação, organizar os arquivos finais no local de materiais de divulgação; versionar cópias no repositório quando apropriado. Não publicar temporários ou rascunhos no site.
-9. Preparar rascunhos no Buffer para Instagram e X, anexando obrigatoriamente o card correspondente. Manter como rascunho até autorização explícita; nunca presumir autorização para publicar.
-10. Entregar mensagem encaminhável para WhatsApp com link direto da matéria.
-11. Registrar URL, seção/editoria, arquivos, textos, aprovação e status dos rascunhos no Buffer.
+6. Executar o **Gate obrigatório de QA do logo** acima em cada PNG exportado. A simples existência do arquivo-fonte ou a presença de uma marca textual “NECOOP” não atende ao requisito.
+7. Conferir acentuação, números, datas, logo, URL direta, contraste, margens e legibilidade em cada formato.
+8. Apresentar cards, prévia e textos por canal ao responsável humano para aprovação editorial.
+9. Após aprovação, organizar os arquivos finais no local de materiais de divulgação; versionar cópias no repositório quando apropriado. Não publicar temporários ou rascunhos no site.
+10. Preparar rascunhos no Buffer para Instagram e X, anexando obrigatoriamente o card correspondente. Manter como rascunho até autorização explícita; nunca presumir autorização para publicar.
+11. Entregar mensagem encaminhável para WhatsApp com link direto da matéria.
+12. Registrar URL, seção/editoria, arquivo-fonte do logo, arquivos finais, textos, resultado da checagem visual, aprovação e status dos rascunhos no Buffer.
 
 ## Checklist
 
 - [ ] URL direta pública conferida
-- [ ] Logo oficial do NECOOP localizado e incorporado
+- [ ] Arquivo-fonte do logo oficial identificado e registrado
+- [ ] Logo oficial realmente incorporado ao PNG do Instagram
+- [ ] Logo oficial realmente incorporado ao PNG do X
+- [ ] Logo oficial realmente incorporado ao PNG do WhatsApp
+- [ ] QA visual individual dos três PNGs aprovado (integridade, proporção, corte, contraste e legibilidade)
 - [ ] Chamada “Novo post do NECOOP” incluída
 - [ ] ObservaCoop identificado, se aplicável, como editoria secundária
 - [ ] Card Instagram 4:5
@@ -61,5 +69,5 @@ Após publicação e verificação pública da matéria, iniciar o pacote de div
 ## Regras de controle
 
 - Nunca afirmar que um rascunho foi criado, que uma imagem foi anexada ou que uma publicação foi enviada sem confirmação operacional.
-- Se a matéria não estiver pública, o logo não puder ser verificado, faltar recurso visual essencial ou houver dúvida factual/editorial, registrar a pendência e não improvisar.
+- Se a matéria não estiver pública, o logo não puder ser verificado/incorporado, faltar recurso visual essencial ou houver dúvida factual/editorial, registrar a pendência e não improvisar.
 - A preparação do pacote é obrigatória para cada nova publicação; a postagem efetiva depende de aprovação humana.
