@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Reforma Tributária: cooperativas têm até 31 de outubro de 2026</title>
+  <desc id="desc">Arte de chamada em verde e amarelo para o prazo de opção pelo regime específico de IBS e CBS para 2027.</desc>
+  <defs>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#064e3b"/><stop offset="1" stop-color="#087f5b"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffdf55"/><stop offset="1" stop-color="#f5ad18"/></linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="28" fill="#f8faf7"/>
+  <path d="M0 0H1200V465Q900 530 650 450T0 500Z" fill="url(#green)"/>
+  <circle cx="1090" cy="75" r="190" fill="#ffffff" opacity=".055"/>
+  <circle cx="30" cy="445" r="170" fill="#ffffff" opacity=".045"/>
+  <text x="70" y="78" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" letter-spacing="5" fill="#fbd34d">REFORMA TRIBUTÁRIA</text>
+  <text x="70" y="151" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700" fill="#ffffff">COOPERATIVAS,</text>
+  <text x="70" y="204" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700" fill="#ffffff">ATENÇÃO AO PRAZO!</text>
+  <text x="70" y="255" font-family="Arial,Helvetica,sans-serif" font-size="25" fill="#e5f5ed">Opção pelo regime específico de IBS e CBS</text>
+  <text x="70" y="290" font-family="Arial,Helvetica,sans-serif" font-size="25" fill="#e5f5ed">com efeitos a partir de 2027</text>
+  <!-- Calendar / deadline -->
+  <rect x="720" y="82" width="390" height="320" rx="24" fill="#ffffff"/>
+  <rect x="720" y="82" width="390" height="80" rx="24" fill="url(#gold)"/>
+  <rect x="720" y="136" width="390" height="26" fill="url(#gold)"/>
+  <rect x="785" y="60" width="25" height="60" rx="12" fill="#dce7e1" stroke="#064e3b" stroke-width="7"/>
+  <rect x="1020" y="60" width="25" height="60" rx="12" fill="#dce7e1" stroke="#064e3b" stroke-width="7"/>
+  <text x="915" y="133" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#064e3b" letter-spacing="2">PRAZO FINAL</text>
+  <text x="915" y="270" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="112" font-weight="800" fill="#064e3b">31</text>
+  <text x="915" y="319" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="800" fill="#087f5b" letter-spacing="3">OUTUBRO</text>
+  <text x="915" y="362" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="700" fill="#1f2937">2026</text>
+  <!-- Cooperative network icon -->
+  <g transform="translate(72 352)" fill="#a7dfbd">
+    <circle cx="55" cy="0" r="23"/><circle cx="125" cy="12" r="19"/><circle cx="-15" cy="12" r="19"/>
+    <path d="M17 72Q17 27 55 27Q93 27 93 72V91H17Z"/><path d="M95 77Q95 40 125 40Q155 40 155 77V91H95Z"/><path d="M-45 77Q-45 40-15 40Q15 40 15 77V91H-45Z"/>
+  </g>
+  <text x="70" y="490" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" letter-spacing="2" fill="#087f5b">NOTÍCIAS &amp; INFORMES  |  SETEMBRO DE 2026</text>
+  <text x="70" y="548" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#17212b">Cooperativas têm até 31 de outubro para optar</text>
+  <text x="70" y="590" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#17212b">pelo regime específico de IBS e CBS</text>
+  <text x="70" y="640" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="#53616b">Entenda o prazo, os procedimentos e os cuidados para a opção em 2027.</text>
+  <rect x="70" y="678" width="240" height="54" rx="15" fill="#087f5b"/>
+  <text x="190" y="713" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">SAIBA MAIS  →</text>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#087f5b">
+    <rect x="750" y="681" width="160" height="42" rx="21" fill="#e5f3eb"/><text x="830" y="708" text-anchor="middle">COOPERATIVAS</text>
+    <rect x="925" y="681" width="125" height="42" rx="21" fill="#e5f3eb"/><text x="987" y="708" text-anchor="middle">IBS + CBS</text>
+  </g>
+</svg>
