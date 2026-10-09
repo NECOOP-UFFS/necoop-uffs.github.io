@@ -709,6 +709,101 @@ Além disso:
 - commit identificado;
 - verificação pública.
 
+
+
+# Module 19 — SEO, indexação e metadados obrigatórios
+
+A manutenção de páginas deve incluir, desde a criação ou revisão do HTML, os elementos necessários para que mecanismos de busca descubram, interpretem e apresentem corretamente o conteúdo. SEO técnico faz parte do padrão de publicação do NECOOP; não deve ficar como tarefa posterior ou depender da memória de quem edita.
+
+## Padrão obrigatório para o `<head>`
+
+Toda página HTML pública deve ter, conforme aplicável e sem duplicações:
+
+- `meta charset="UTF-8"`;
+- `meta name="viewport"`;
+- `<title>` único, descritivo e coerente com o conteúdo, incluindo NECOOP/UFFS quando natural;
+- `meta name="description"` exclusiva para a página, informativa e sem listas artificiais de palavras-chave;
+- `link rel="canonical"` apontando para a URL pública principal, absoluta, HTTPS e correspondente ao caminho real do arquivo;
+- folha de estilo e scripts usados pelo padrão visual do site, preservando o layout compartilhado;
+- metadados Open Graph (`og:title`, `og:description`, `og:url`, `og:type` e `og:image`) nas páginas em que já são usados ou em que a partilha social justifique, com URLs públicas válidas;
+- `twitter:card` e metadados correspondentes quando adotados no padrão da página.
+
+Exemplo de base — adaptar o texto e a URL à página real:
+
+```html
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Título específico da página — NECOOP/UFFS</title>
+  <meta name="description" content="Descrição factual, específica e concisa do conteúdo desta página.">
+  <link rel="canonical" href="https://necoop-uffs.github.io/caminho-real.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+```
+
+O exemplo é uma referência de conteúdo, não deve ser copiado literalmente sem substituir título, descrição, caminho e folha de estilo conforme a localização do arquivo. Em páginas dentro de subdiretórios, conferir caminhos relativos de CSS, imagens e scripts. Preservar a estrutura visual já existente e evitar inserir uma segunda folha de estilo, um segundo título ou metadados duplicados.
+
+## Regras para títulos, descrições e URLs canônicas
+
+1. Cada página deve ter um `<title>` e uma descrição que representem seu conteúdo real; não repetir a mesma descrição em todo o site.
+2. A descrição deve explicar o que a pessoa encontrará na página, usando naturalmente os termos pertinentes ao NECOOP, como cooperação, cooperativismo, economia solidária, agroecologia, extensão ou pesquisa quando forem relevantes.
+3. A URL canônica deve apontar para a própria versão pública principal da página. Não inventar caminhos, não usar URL de prévia/desenvolvimento e não apontar páginas distintas para a Home.
+4. Antes de adicionar metadados, verificar o `<head>` existente e complementar apenas o que falta. Não duplicar `description`, `canonical`, Open Graph ou outros campos.
+5. Não adicionar `noindex` nem bloquear rastreamento em `robots.txt` sem decisão explícita e justificada.
+6. Metadados devem refletir o conteúdo visível. Não inserir palavras-chave, datas, autoria, eventos ou afirmações não confirmadas apenas para tentar melhorar o posicionamento.
+
+## Sitemap e robots.txt
+
+O repositório deve manter `sitemap.xml` e `robots.txt` coerentes com o site publicado.
+
+### `sitemap.xml`
+
+- Incluir a Home e as páginas públicas relevantes que devem ser indexadas, incluindo notícias/artigos públicos permanentes.
+- Usar URLs absolutas HTTPS do domínio publicado.
+- Confirmar que cada URL listada corresponde a um arquivo existente e a uma página que deve ser indexada.
+- Não incluir imagens avulsas, arquivos de trabalho, backups, prévias, páginas de teste ou URLs inexistentes.
+- Remover do sitemap páginas excluídas ou substituídas; antes de removê-las do site, avaliar se é necessário preservar conteúdo, corrigir links ou criar redirecionamento quando a plataforma permitir.
+- Atualizar o sitemap sempre que novas páginas públicas relevantes forem adicionadas, removidas ou renomeadas.
+- Validar a sintaxe XML e conferir se as URLs não apresentam duplicações.
+
+### `robots.txt`
+
+- Verificar se o rastreamento das páginas públicas está permitido.
+- Manter uma declaração explícita do sitemap, por exemplo: `Sitemap: https://necoop-uffs.github.io/sitemap.xml`.
+- Não confundir permissão para rastreamento com garantia de indexação: mecanismos de busca decidem se e quando indexar uma página.
+
+## Checklist obrigatório antes de publicar
+
+Antes de concluir qualquer criação ou alteração de página pública, verificar:
+
+- [ ] título único e adequado;
+- [ ] descrição única, factual e presente;
+- [ ] URL canônica absoluta e correta;
+- [ ] caminhos de CSS, JavaScript, imagens e links funcionando;
+- [ ] metadados sociais coerentes, quando aplicáveis;
+- [ ] página incluída no sitemap quando for pública e relevante para indexação;
+- [ ] sitemap válido, sem URLs inexistentes ou duplicadas;
+- [ ] `robots.txt` permite rastreamento e aponta para o sitemap;
+- [ ] nenhuma diretiva acidental de `noindex`;
+- [ ] validação após a publicação na URL pública.
+
+O checklist deve ser aplicado também a páginas novas de notícias, artigos, publicações e materiais. Páginas de apoio técnico, rascunhos e prévias só devem ser incluídos no sitemap se forem intencionalmente páginas públicas indexáveis.
+
+## Acompanhamento de indexação
+
+Quando a tarefa tiver como objetivo melhorar a descoberta do site:
+
+1. verificar a resposta e o conteúdo público de `/robots.txt` e `/sitemap.xml`;
+2. comparar o sitemap com os arquivos públicos reais do repositório;
+3. procurar problemas de títulos, descrições, canônicas, links internos e páginas órfãs;
+4. registrar o que foi efetivamente corrigido e o que depende de contas externas;
+5. após publicação, verificar novamente as URLs públicas;
+6. orientar o responsável a cadastrar/verificar o site e enviar o sitemap no Bing Webmaster Tools e no Google Search Console, quando houver acesso autorizado;
+7. não afirmar que uma página foi indexada apenas porque foi publicada ou submetida; confirmar pelo mecanismo de busca ou ferramenta de webmaster.
+
+A ausência de um resultado em uma pesquisa isolada não prova, sozinha, que a página não está indexada. Distinguir publicação, rastreamento, indexação e posicionamento nos resultados.
+
+
 # Version note
 
-**V2.1** consolida o protocolo operacional e incorpora o aprendizado da primeira rodada de atualização visual: separação rigorosa entre estado publicado e desenvolvimento; definição explícita das duas áreas físicas do projeto; seleção fotográfica sob autoridade do usuário; geração automatizada de pranchas; matriz editorial; preservação de originais; controle de transformações; gates técnicos/editoriais/Git; sincronização remota segura; verificação pública; registro e rollback.
+**V2.2** consolida o protocolo operacional, incluindo SEO técnico obrigatório para páginas públicas, metadados por página, URLs canônicas, validação de sitemap/robots.txt e acompanhamento da indexação. Mantém também o aprendizado da primeira rodada de atualização visual: separação rigorosa entre estado publicado e desenvolvimento; definição explícita das duas áreas físicas do projeto; seleção fotográfica sob autoridade do usuário; geração automatizada de pranchas; matriz editorial; preservação de originais; controle de transformações; gates técnicos/editoriais/Git; sincronização remota segura; verificação pública; registro e rollback. A versão anterior, **V2.1**, consolidava o protocolo operacional e incorpora o aprendizado da primeira rodada de atualização visual: separação rigorosa entre estado publicado e desenvolvimento; definição explícita das duas áreas físicas do projeto; seleção fotográfica sob autoridade do usuário; geração automatizada de pranchas; matriz editorial; preservação de originais; controle de transformações; gates técnicos/editoriais/Git; sincronização remota segura; verificação pública; registro e rollback.
