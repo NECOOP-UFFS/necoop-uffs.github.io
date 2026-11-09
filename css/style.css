@@ -518,3 +518,86 @@ body {
     .figure-card-caption { padding: 1rem; }
     .block-card { padding: 1.5rem; }
 }
+
+
+/* --------------------------------------------------------------------------
+   10. PADRÃO DE LEITURA PARA MATÉRIAS EDITORIAIS — DESKTOP E MOBILE
+   -------------------------------------------------------------------------- */
+.article-content {
+    width: min(100% - 3rem, 820px);
+    margin-inline: auto;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.article-content p,
+.article-content li {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.article-content h2 {
+    font-size: 1.45rem;
+    line-height: 1.3;
+    margin: 2.6rem 0 1rem;
+}
+.article-byline {
+    margin: 0 0 1.8rem;
+    color: var(--texto-suave);
+    font-size: .8rem;
+    line-height: 1.4;
+    letter-spacing: .01em;
+}
+.article-byline strong {
+    color: var(--texto-principal);
+    font-weight: 600;
+}
+.article-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.article-content table {
+    max-width: 100%;
+}
+.article-content .table-wrap,
+.article-content .timeline-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 640px) {
+    .article-content {
+        width: 100%;
+        padding-inline: 1rem;
+        font-size: 1rem;
+    }
+    .article-content p,
+    .article-content li {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    .article-content h2 {
+        font-size: 1.3rem;
+        margin: 2.1rem 0 .85rem;
+    }
+    .article-byline {
+        font-size: .78rem;
+        margin-bottom: 1.4rem;
+    }
+    .article-content blockquote {
+        padding: .9rem 1rem;
+        margin: 1.4rem 0;
+        font-size: .96rem;
+    }
+    .article-content .sources {
+        overflow-wrap: anywhere;
+    }
+}
+@media (max-width: 380px) {
+    .article-content {
+        padding-inline: .85rem;
+    }
+    .article-content p,
+    .article-content li {
+        font-size: .96rem;
+    }
+}
